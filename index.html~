@@ -16,19 +16,22 @@
 				<a href="index.html" id="logo"><img src="images/logo.png" alt="logo"></a>
 				<ul>
 					<li class="selected">
-						<a href="index.html">主页</a>
+						<a href="index.html">Home</a>
 					</li>
 					<li>
-						<a href="about.html">关于ME</a>
+						<a href="about.html">About</a>
 					</li>
 					<li>
-						<a href="services.html">我的代码爱好</a>
+						<a href="services.html">Services</a>
 					</li>
 					<li>
-						<a href="portfolio.html">我的摄影爱好</a>
+						<a href="portfolio.html">Portfolio</a>
 					</li>
 					<li>
-						<a href="contact.html">偶尔发个骚</a>
+						<a href="contact.html">Contact</a>
+					</li>
+					<li>
+						<a href="blog.html">Blog</a>
 					</li>
 				</ul>
 				<form action="about.html">
