@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/publics/favicon.ico" type="image/x-icon" />
+    <title>Debian Wheezy 安装后要做的事</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/publics/main.css">
+  </head>
+
+  <body>
+    <div class="header">
+    </div>
+
+    <div class="content">
+      <h1>Debian Wheezy 安装后要做的事</h1>
+<div class="meta nowrap">
+  <span>分类：Linux</span>
+  <span>日期：2013年12月23日</span>
+</div>
+<hr>
+
+<div class="post">
+  <h3>更换源，并安装中文字体和输入法</h3>
+
+<ol>
+<li><p>编辑 <code>/etc/apt/source.list</code>, 加入以下内容</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">deb http://mirrors.ustc.edu.cn/debian/ wheezy main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/debian/ wheezy main non-free contrib
+</code></pre></div></li>
+<li><p>执行如下命令, 然后重启系统</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">aptitude update
+aptitude install ttf-wqy-microhei ttf-wqy-zenhei fcitx fcitx-pinyin
+</code></pre></div></li>
+</ol>
+
+<h3>安装常用软件</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo aptitude install sudo zsh axel tmux tree ntp subversion git-core chromium
+</code></pre></div>
+<h3>配置 sudo</h3>
+
+<p>编辑文件 <code>/etc/sudoers</code>, 添加如下内容</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">tangjiujun ALL=(ALL:ALL) ALL
+</code></pre></div>
+<h3>配置 zsh</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+chsh -s /bin/zsh    # 注销后生效
+</code></pre></div>
+<h3>安装 Flash</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">wget http://211.162.175.14/download/128566/134325/7/gz/183/135/1365813701559_903/install_flash_player_11_linux.x86_64.tar.gz
+tar zxvf install_flash_player_11_linux.x86_64.tar.gz
+sudo cp libflashplayer.so /usr/lib/mozilla/plugins/
+sudo cp -r usr/* /usr/
+</code></pre></div>
+<hr>
+
+<h3>安装 Emacs</h3>
+
+<ol>
+<li><p>添加 emacs-snapshot 源，在 <code>/etc/apt/source.list</code> 中加入：</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">deb http://emacs.naquadah.org/ stable/
+deb-src http://emacs.naquadah.org/ stable/
+</code></pre></div></li>
+<li><p>执行如下命令</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">wget -q -O - http://emacs.naquadah.org/key.gpg | sudo apt-key add -
+sudo aptitude update
+sudo aptitude install emacs-snapshot
+</code></pre></div></li>
+</ol>
+
+<h3>安装 WPS For Linux</h3>
+
+<ol>
+<li>在 <code>http://community.wps.cn/download/</code> 下载 <code>wps-office*_i386.deb</code></li>
+<li><p>安装</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo aptitude install ia32-libs ia32-libs-gtk libfreetype6
+sudo dpkg -i wps-office*_i386.deb
+</code></pre></div></li>
+</ol>
+
+
+  <hr>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'tangjiujun-techblog'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+    </div>
+
+    <div class="footer center">
+      <span class="nowrap">
+        文章统计：12篇，最后更新时间：2014-02-10
+      </span>
+    </div>
+
+  </body>
+</html>
