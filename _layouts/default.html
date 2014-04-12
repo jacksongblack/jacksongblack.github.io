@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="/publics/favicon.ico" type="image/x-icon" />
-    <title>{{ page.title }}</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/publics/main.css">
-  </head>
+<html lang="zh-cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8">
+<head>
+    <title>小宋的博客</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/default.less">
+</head>
+
+<body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/less-1.5.0.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<div class="content"></div>
+<div class="footer center"></div>
+</body>
+</html>
 
   <body>
-    <div class="header">
-    </div>
+  {{ content }}
+        <nav class="navbar navbar-collapse navbar-default navbar-fixed-bottom" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html">ruby</a></li>
+                <li><a href="blog.html">linux</a></li>
+                <li><a href="blog.html">javaScript</a></li>
+                <li><a href="blog.html">前端技术实验页</a></li>
+                <li><a href="blog.html">项目管理</a></li>
+            </ul>
+        </nav>
 
-    <div class="content">
-      {{ content }}
-    </div>
-
-    <div class="footer center">
-      <span class="nowrap">
-        文章统计：{{ site.posts || size }}篇，最后更新时间：{{ site.time | date: "%Y-%m-%d" }}
-      </span>
     </div>
 
   </body>
