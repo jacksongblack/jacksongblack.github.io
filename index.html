@@ -1,64 +1,9 @@
 ---
 layout: default
 ---
-
-<!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Fineminds Marketing Solutions Website Template</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-       	<link rel="stylesheet" href="css/blog.css" type="text/css">
-</head>
-<body>
-	<div class="border">
-		<div id="bg">
-			background
-		</div>
-		<div class="page">
-			<div class="sidebar">
-				<a href="index.html" id="logo"><img src="images/logo.png" alt="logo"></a>
-				<ul>
-					<li class="selected">
-						<a href="index.html">主页</a>
-					</li>
-					<li>
-						<a href="about.html">关于ME</a>
-					</li>
-					<li>
-						<a href="services.html">我的代码爱好</a>
-					</li>
-					<li>
-						<a href="portfolio.html">我的摄影爱好</a>
-					</li>
-					<li>
-						<a href="contact.html">偶尔发个骚</a>
-					</li>
-				</ul>
-				<form action="about.html">
-					<span>Newsletter Signup</span>
-					<input type="text" onClick="this.value='';" onFocus="this.select()" onBlur="this.value=!this.value?'Enter Valid Email Address':this.value;" value="Enter Valid Email Address">
-					<input type="submit" id="submit" value="submit">
-				</form>
-				<div class="connect">
-					<a href="http://freewebsitetemplates.com/go/facebook/" id="facebook">facebook</a> <a href="http://freewebsitetemplates.com/go/twitter/" id="twitter">twitter</a> <a href="http://freewebsitetemplates.com/go/googleplus/" id="googleplus">youtube</a>
-				</div>
-				<p>
-					Copyright 2023
-				</p>
-				<p>
-					Fineminds Marketing Solutions
-				</p>
-			</div>
-			<div class="body">
-				<div>
-                                 　{% for post in site.posts %}
-　　　　                        　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-　　　                            　{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+<header class="heard-style container">
+    <img class="logo" src="images/JackSong_logo.png">
+</header>
+<ul class="rslides">
+    <li><img src=""></li>
+</ul>
