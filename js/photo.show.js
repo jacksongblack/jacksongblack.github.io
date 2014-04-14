@@ -288,9 +288,8 @@ $(window).load(function(){
                     'margin-top'	: -theImage.height / 2 + 'px'
                 });
             };
-
+        $iw_ribbon.hide();
         return {init : init};
     })();
-
     ImageWall.init();
 });
