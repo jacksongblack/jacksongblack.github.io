@@ -19,7 +19,7 @@ header span{
 	text-shadow:1px 1px 1px #fff;
 }
 .iw_wrapper{
-	width:70%;
+	width:100%;
 	margin:30px auto 100px auto;
 	position:relative;
 }
@@ -79,7 +79,7 @@ ul.iw_thumbs li:nth-child(5n) img{
 	height:280px;
 }
 ul.iw_thumbs li:nth-child(6n) img{
-	height:440px;
+	height:220px;
 }
 ul.iw_thumbs li:nth-child(7n) img{
 	height:80px;
