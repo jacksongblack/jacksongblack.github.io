@@ -1,10 +1,4 @@
 @import url('reset.css');
-body{
-	background:#f7f7f7 url(../images/pinstripe.gif) repeat top left;
-	color:#000;
-	font-family: Georgia, "Times New Roman",sans-serif;
-	font-size:12px;
-}
 a{
 	color:#000;
 	text-decoration:none;
