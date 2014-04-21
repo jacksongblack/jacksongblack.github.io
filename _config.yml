@@ -4,4 +4,3 @@ redcarpet:
 
 permalink: /:categories/:year/:month/:day.html
 exclude: [Gemfile, Gemfile.lock, LICENSE, README.md, CNAME]
-safe: false
