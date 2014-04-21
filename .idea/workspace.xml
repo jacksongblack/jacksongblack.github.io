@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91b45a1d-9495-47d4-a87e-185ec6dfde20" name="Default" comment="全部修改样式">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_plugins/category_archive_plugin.rb" afterPath="$PROJECT_DIR$/_plugins/category_archive_plugin.rb" />
     </list>
     <ignored path="jacksongblack.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,19 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="0" selection-start="3264" selection-end="3264" vertical-scroll-proportion="3.930131" vertical-offset="0" max-vertical-offset="1908">
+            <state line="100" column="0" selection-start="3264" selection-end="3264" vertical-scroll-proportion="-12.962963" vertical-offset="1450" max-vertical-offset="1908">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category_archive_plugin.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="category_archive_plugin.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_plugins/category_archive_plugin.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="26" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="792">
+            <state line="8" column="23" selection-start="184" selection-end="184" vertical-scroll-proportion="0.29690722" vertical-offset="0" max-vertical-offset="810">
               <folding />
             </state>
           </provider>
@@ -117,9 +115,9 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/_layouts/category_index.html" />
         <option value="$PROJECT_DIR$/_posts/2014-4-19-项目管理的系统思维.md" />
-        <option value="$PROJECT_DIR$/_plugins/category_archive_plugin.rb" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/_plugins/category_archive_plugin.rb" />
       </list>
     </option>
   </component>
@@ -175,6 +173,48 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jacksongblack.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jacksongblack.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jacksongblack.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jacksongblack.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jacksongblack.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jacksongblack.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jacksongblack.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_plugins" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -575,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_plugins/category_archive_plugin.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="6" selection-start="1409" selection-end="1409" vertical-scroll-proportion="-10.962963" vertical-offset="226" max-vertical-offset="684">
@@ -591,7 +624,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="0" selection-start="3264" selection-end="3264" vertical-scroll-proportion="3.930131" vertical-offset="0" max-vertical-offset="1908">
+        <state line="100" column="0" selection-start="3264" selection-end="3264" vertical-scroll-proportion="-12.962963" vertical-offset="1450" max-vertical-offset="1908">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_plugins/category_archive_plugin.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="23" selection-start="184" selection-end="184" vertical-scroll-proportion="0.29690722" vertical-offset="0" max-vertical-offset="810">
           <folding />
         </state>
       </provider>
