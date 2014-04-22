@@ -1,25 +1,23 @@
 ---
 layout: default
 ---
-<div class="row " data-spy="scroll" data-target=".navbar-example">
-    <div class="col-md-1 navbar-example affix" role="complementary">
-        <ul class="nav bs-sidenav nav-tabs">
-            {% for category in site.category-list %}
-            <li><a href="#{{ category }}">{{ category }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="col-md-9">
+<nav id="posts" class="left_category navbar-example">
+    <ul class="nav nav-stacked nav-pills  nav-tabs">
         {% for category in site.category-list %}
-        {% for post in site.categories[category] %}
-        <div id="{{ category }}">
-            <ul>
-                <li>
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                </li>
-            </ul>
-        </div>
+        <li><a href="#{{ category }}">{{ category }}</a></li>
         {% endfor %}
-        {% endfor %}
-    </div>
+    </ul>
+</nav>
+<div class="col-md-9 left_post_list">
+    <a class="glyphicon glyphicon-arrow-left"></a>
+    {% for category in site.category-list %}
+    {% for post in site.categories[category] %}
+
+        <ul class="nav nav-tabs" id="{{ category }}">
+            <li>
+                <a href="{{ post.url }}" >{{ post.title }}</a>
+            </li>
+        </ul>
+    {% endfor %}
+    {% endfor %}
 </div>
