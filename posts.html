@@ -10,7 +10,7 @@ layout: default
     </ul>
 </nav>
 <div id="posts" class="left_posts_list ">
-    <h2>博客目录,点击查看</h2>
+    <li class="glyphicon glyphicon-align-justify">博客目录</li>
     {% for category in site.category-list %}
     {% for post in site.categories[category] %}
     <ul class="nav nav-tabs hide" id="{{ category }}">
@@ -23,7 +23,7 @@ layout: default
 </div>
 <div class="post">
     <div class="show_post ">
-        <h1>你还没有选择要看的文章</h1>
+        <a>你还没有选择要看的文章</a>
     </div>
 </div>
 

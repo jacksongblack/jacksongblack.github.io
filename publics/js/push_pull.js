@@ -66,22 +66,24 @@ ElementDisplay.prototype = {
 }
 
 function DisplayMode(){
-    this.category = new ElementDisplay(".left_category","left_category_hide","left_category")
+    this.categories = new ElementDisplay(".left_category","left_category_hide","left_category")
     this.posts = new ElementDisplay("#posts","left_posts_list_hide","left_posts_list")
     this.category_switch = new ElementDisplay(".category_switch","glyphicon-arrow-right","glyphicon-arrow-left")
-
+    this.category = new ElementDisplay("#category","hide","")
 }
 
 DisplayMode.prototype = {
     constructor:DisplayMode,
     shutDown:function(){
-        this.category.hide()
+        this.categories.hide()
         this.posts.hide()
         this.category_switch.hide()
+        this.category.hide()
     },
     openUp:function(){
-        this.category.show()
+        this.categories.show()
         this.posts.show()
         this.category_switch.show()
+        this.category.show()
     }
 }
