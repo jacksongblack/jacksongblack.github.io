@@ -1,35 +1,77 @@
 ---
 layout: default
 ---
-<<<<<<< HEAD
-
-<div class="row">
-    <div class="col-lg-2">
-<% for category-list  %>
-    </div>
-    <div class="col-lg-4"></div>
-    <div class="col-lg-6">
-
-    </div>
-=======
-<nav id="posts" class="left_category navbar-example">
-    <ul class="nav nav-stacked nav-pills  nav-tabs">
+<nav  class="left_category navbar-example">
+    <a class="glyphicon glyphicon-arrow-left category_switch" href="#category">博客种类</a>
+    <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
         {% for category in site.category-list %}
-        <li><a href="#{{ category }}">{{ category }}</a></li>
+        <li><a href="#{{ category }}" class="">{{ category }}</a></li>
         {% endfor %}
     </ul>
 </nav>
-<div class="col-md-9 left_post_list">
-    <a class="glyphicon glyphicon-arrow-left"></a>
+<div id="posts" class="col-md-9 left_posts_list">
+    <h2>博客目录,点击查看</h2>
     {% for category in site.category-list %}
     {% for post in site.categories[category] %}
 
-        <ul class="nav nav-tabs" id="{{ category }}">
+        <ul class="nav nav-tabs hide" id="{{ category }}">
             <li>
-                <a href="{{ post.url }}" >{{ post.title }}</a>
+                <a href="{{ post.url }}"  >{{ post.title }}</a>
             </li>
         </ul>
     {% endfor %}
     {% endfor %}
->>>>>>> a1feb418ceebcc134de8d0dbda82df73b72e58b3
 </div>
+<div class="show_post">
+   <h1>你还没有选择要看的文章</h1>
+</div>
+<script type="text/javascript">
+ $(document).ready(function(){
+     var category_switch = $(".category_switch")
+     var pushOrPull = new PullOrPush(".category_switch")
+     var category =  $(".left_category")
+     var posts = $("#posts")
+     category_switch.click(function(){
+      if (pushOrPull.getStatus()){
+          pushOrPull.show(function(link){
+              category.removeClass("left_category")
+              category.addClass("left_category")
+              category.removeClass("left_category_hide")
+              link.addClass("glyphicon-arrow-left")
+              link.removeClass("glyphicon-arrow-right")
+              posts.removeClass("left_posts_list_hide")
+              posts.addClass("left_posts_list")
+          })
+
+      }else{
+          pushOrPull.hide(function(link){
+              link.removeClass("glyphicon-arrow-left")
+              link.addClass("glyphicon-arrow-right")
+              category.addClass("left_category_hide")
+              category.removeClass("left_category")
+              posts.removeClass("left_posts_list")
+              posts.addClass("left_posts_list_hide")
+          })
+
+
+      }
+     })
+     $("#category li a").each(function(){
+      var hideOrShow = new PullOrPush("[href="+ $(this).attr("href") +"]")
+         $(this).click(function(){
+         if (hideOrShow.getStatus()){
+             hideOrShow.show(function(link){
+                 link.addClass("marker_color")
+             })
+         }else{
+             hideOrShow.hide(function(link){
+                 link.removeClass("marker_color")
+             })
+         }
+     })
+     })
+
+
+ })
+
+</script>
