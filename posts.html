@@ -13,7 +13,6 @@ layout: default
     <h2>博客目录,点击查看</h2>
     {% for category in site.category-list %}
     {% for post in site.categories[category] %}
-
     <ul class="nav nav-tabs hide" id="{{ category }}">
         <li>
             <a href="{{ post.url }}" onclick="return false">{{ post.title }}{{ post.date }}</a>
@@ -23,7 +22,7 @@ layout: default
     {% endfor %}
 </div>
 <div class="post">
-    <div class="show_post container">
+    <div class="show_post ">
         <h1>你还没有选择要看的文章</h1>
     </div>
 </div>

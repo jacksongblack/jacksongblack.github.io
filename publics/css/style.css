@@ -1,4 +1,4 @@
-@import url('reset.css');
+@import url('../js/reset.css');
 a{
 	color:#000;
 	text-decoration:none;
