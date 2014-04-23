@@ -13,7 +13,7 @@ layout: default
     <li class="glyphicon glyphicon-align-justify">博客目录</li>
     {% for category in site.category-list %}
     {% for post in site.categories[category] %}
-    <ul class="nav nav-tabs hide" id="{{ category }}">
+    <ul class="nav nav-tabs category_hide" id="{{ category }}">
         <li>
             <a href="{{ post.url }}" onclick="return false">{{ post.title }}{{ post.date }}</a>
         </li>
