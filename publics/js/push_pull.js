@@ -33,3 +33,7 @@ PullOrPush.prototype = {
 
  }
 }
+
+function CategoryDisplay(){
+
+}
