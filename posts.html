@@ -22,7 +22,7 @@ layout: default
     {% endfor %}
 </div>
 <div class="post">
-    <div class="show_post ">
+    <div id="show_post" class="show_post ">
         <a>你还没有选择要看的文章</a>
     </div>
 </div>
@@ -68,10 +68,7 @@ layout: default
                     html.removeHtml()
                     html.addHtml(result)
                     displayMode.shutDown()
-                   if(typeof duoshuo == "function"){
-                       $("#duoshuo").remove()
-                       duoshuo()
-                   }
+                    toggleDuoshuoComments("#show_post")
                 })
             })
         })
