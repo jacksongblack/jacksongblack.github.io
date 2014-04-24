@@ -33,7 +33,7 @@ layout: default
         var pushOrPull = new PullOrPush(".category_switch")
         var displayMode = new DisplayMode()
         category_switch.click(function () {
-            if (pushOrPull.getStatus()) {
+            if (pushOrPull.getStatus("glyphicon-arrow-left")) {
                 pushOrPull.show(function (link) {
                     displayMode.openUp()
                 })
@@ -49,7 +49,7 @@ layout: default
         $("#category li a").each(function () {
             var hideOrShow = new PullOrPush("[href=" + $(this).attr("href") + "]")
             $(this).click(function () {
-                if (hideOrShow.getStatus()) {
+                if (hideOrShow.getStatus("marker_color")) {
                     hideOrShow.show(function (link) {
                         link.addClass("marker_color")
                     })

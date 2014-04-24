@@ -19,10 +19,10 @@ PullOrPush.prototype = {
         }
         ;
     },
-    getStatus: function () {
+    getStatus: function (triggeSrtate) {
         var str = this.link.attr("class")
         try {
-            var status = str.match(" glyphicon-arrow-left")
+            var status = str.match(triggeSrtate)
         } catch (error) {
             console.log(error)
         }
