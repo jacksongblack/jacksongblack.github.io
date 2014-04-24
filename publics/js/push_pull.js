@@ -6,31 +6,31 @@ function PullOrPush(docment) {
 PullOrPush.prototype = {
     constructor: PullOrPush,
     show: function (fn) {
-        this.element.removeClass("category_hide")
+        this.element.removeClass("posts_hide")
         if (typeof(fn) == "function") {
             fn(this.link, this.element)
         }
         ;
     },
     hide: function (fn) {
-        this.element.addClass("category_hide");
+        this.element.addClass("posts_hide");
         if (typeof(fn) == "function") {
             fn(this.link, this.element)
         }
         ;
     },
     getStatus: function () {
-        var str = this.element.attr("class")
+        var str = this.link.attr("class")
         try {
-            var status = str.match("category_hide")
+            var status = str.match(" glyphicon-arrow-left")
         } catch (error) {
             console.log(error)
         }
 
         if (status == null) {
-            return false
-        } else {
             return true
+        } else {
+            return false
         }
 
     }
@@ -69,7 +69,7 @@ function DisplayMode(){
     this.categories = new ElementDisplay(".left_category","left_category_hide","left_category")
     this.posts = new ElementDisplay("#posts","left_posts_list_hide","left_posts_list")
     this.category_switch = new ElementDisplay(".category_switch","glyphicon-arrow-right","glyphicon-arrow-left")
-    this.category_code = new ElementDisplay("#category","category_hide","category")
+    this.category_code = new ElementDisplay("#category","categories_hide","categories")
 }
 
 DisplayMode.prototype = {
@@ -79,7 +79,6 @@ DisplayMode.prototype = {
         this.posts.hide()
         this.category_switch.hide()
         this.category_code.hide()
-        console.log(this.category_code.hide)
     },
     openUp:function(){
         this.categories.show()
