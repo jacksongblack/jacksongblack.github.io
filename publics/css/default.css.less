@@ -1,7 +1,7 @@
 @navbar-backgrouder: #C4C4C4;
 @offset-padding: 15px;
 @posts-backgrouder-color: #D5D5D5;
-.left_category_basic(@width: 15%) {
+.left_category_basic(@width: 10%) {
   position: fixed;
   left: 0;
   width: @width;
@@ -10,7 +10,7 @@
   background-color: #DDDDDD;
 }
 
-.left_posts_basic(@left: 15%,@width: 16%) {
+.left_posts_basic(@left: 10%,@width: 20%) {
   position: fixed;
   left: @left;
   height: 100%;
@@ -58,12 +58,16 @@ body{
 .left_posts_list_hide{
   .left_posts_basic(5%)
 }
-.show_post{
+.post{
 .left_posts_basic(30%,70%);
   background-color: #ffffff;
+  overflow:auto;
+}
+.show_post{
+  padding: 10% 9% 10% 0;
 }
 
-.hide{
+.category_hide {
   display:block;
   overflow: hidden;
   width: 10px;

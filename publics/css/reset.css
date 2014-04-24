@@ -1,8 +1,4 @@
 /* CSS reset */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
-	margin:0;
-	padding:0;
-}
 html,body {
 	margin:0;
 	padding:0;
@@ -30,7 +26,7 @@ ol,ul {
 caption,th {
 	text-align:left;
 }
-h1,h2,h3,h4,h5,h6 {
+#photo_Wall h1,#photo_Wall h2,#photo_Wall h3,#photo_Wall h4,#photo_Wall h5,#photo_Wall h6 {
 	font-size:100%;
 	font-weight:normal;
 }
