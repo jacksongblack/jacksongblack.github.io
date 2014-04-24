@@ -68,6 +68,10 @@ layout: default
                     html.removeHtml()
                     html.addHtml(result)
                     displayMode.shutDown()
+                   if(typeof duoshuo == "function"){
+                       $("#duoshuo").remove()
+                       duoshuo()
+                   }
                 })
             })
         })
