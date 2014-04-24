@@ -6,3 +6,19 @@ permalink: /:year/:month/:day.html
 exclude: [Gemfile, Gemfile.lock, LICENSE, README.md, CNAME]
 category-list: [ruby, 运维, JS, 项目管理]
 safe: false
+
+comments :
+  provider : duoshuo
+  disqus :
+    short_name : jacksong
+  livefyre :
+    site_id : 123
+  duoshuo :
+    name : jacksong
+  intensedebate :
+    account : 123abc
+  facebook :
+    appid : 123
+    num_posts: 5
+    width: 580
+    colorscheme: light
