@@ -15,7 +15,7 @@ layout: default
     {% for post in site.categories[category] %}
     <ul class="nav nav-tabs posts_hide" id="{{ category }}">
         <li>
-            <a href="{{ post.url }}" onclick="return false">{{ post.title }}{{ post.date }}</a>
+            <a href="{{ post.url }}" onclick="return false">{{ post.title }}{{  page.date | date: "%x"  }}</a>
         </li>
     </ul>
     {% endfor %}
