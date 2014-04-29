@@ -2,7 +2,7 @@
 layout: default
 ---
 <nav class="left_category navbar-example">
-    <a class="glyphicon glyphicon-arrow-left category_switch" href="#category">博客种类</a>
+    <a class="glyphicon glyphicon-arrow-left category_switch" href="#category">种类</a>
     <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
         {% for category in site.category-list %}
         <li><a href="#{{ category }}" class="">{{ category }}(有{{ site.categories[category] | size }}篇)</a></li>
@@ -15,7 +15,7 @@ layout: default
     {% for post in site.categories[category] %}
     <ul class="nav nav-tabs posts_hide" id="{{ category }}">
         <li>
-            <a href="{{ post.url }}" onclick="return false">{{ post.title }}{{  page.date | date: "%x"  }}</a>
+            <a href="{{ post.url }}" onclick="return false">{{ post.title }}{{  page.date | date: "%x"  }}（点我查看）</a>
         </li>
     </ul>
     {% endfor %}
