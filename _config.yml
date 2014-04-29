@@ -4,7 +4,7 @@ redcarpet:
 
 permalink: /:year/:month/:day.html
 exclude: [Gemfile, Gemfile.lock, LICENSE, README.md, CNAME]
-category-list: [ruby, 运维, JS, 项目管理]
+category-list: [ROR, 运维, 前端技术, 项目管理 , 设计模式]
 safe: false
 
 comments :
