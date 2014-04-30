@@ -18,92 +18,108 @@
   background-color: @posts-backgrouder-color;
 }
 
-.hide(){
-  display:block;
+.hide() {
+  display: block;
   overflow: hidden;
   width: 10px;
   height: 0;
 }
+
 .logo {
-    width: 100%;
 }
 
-.navbar{
-    background: @navbar-backgrouder;
+.navbar {
+  background: @navbar-backgrouder;
 }
-.heard-style{
-    margin: 0 auto;
-    width: 100%;
+
+.heard-style {
+  margin: 0 auto;
+  width: 100%;
 }
-.photo{
+
+.photo {
 
 }
-body{
+
+body {
   padding-bottom: 70px;
 }
-.photo_wall{
-  color:#000;
-  font-family: Georgia, "Times New Roman",sans-serif;
-  font-size:12px;
+
+.photo_wall {
+  color: #000;
+  font-family: Georgia, "Times New Roman", sans-serif;
+  font-size: 12px;
   background: #f7f7f7 url("../images/wall.jpg") repeat top left;
   height: 720px;
 }
+
 .content {
   padding: 0 @offset-padding;
 }
 
-.left_category{
+.left_category {
   .left_category_basic()
 }
-.left_category_hide{
+
+.left_category_hide {
   .left_category_basic(5%);
 }
-.left_posts_list{
- .left_posts_basic()
+
+.left_posts_list {
+  .left_posts_basic()
 }
 
-.left_posts_list_hide{
+.left_posts_list_hide {
   .left_posts_basic(5%)
 }
-.post{
-.left_posts_basic(30%,70%);
+
+.post {
+  .left_posts_basic(30%, 70%);
   background-color: #ffffff;
-  overflow:auto;
+  overflow: auto;
 }
-.show_post{
+
+.show_post {
   padding: 10% 9% 10% 0;
 }
-.show_post abbr{
+
+.show_post abbr {
   margin: 0 auto 0 40%;
 }
 
 .posts_hide {
   .hide
 }
+
 .categories_hide {
   .hide
 }
-.marker_color{
+
+.marker_color {
   background-color: #66B3FF;
 }
+
 #myModal {
   margin: 25% 10% 0 0;
   overflow: visible
 }
-.progress_layout{
-   margin: 30% 20% 40% 20%
+
+.progress_layout {
+  margin: 30% 20% 40% 20%
 }
-.identifiers{
+
+.identifiers {
   text-align: right;
   padding-top: 8px;
   padding-right: 10px;
 }
-.duoshuo{
+
+.duoshuo {
   padding: 5% 5% 10% 5%;
 }
 
-.avatar{
-  position:relative;
+.avatar {
+  position: relative;
   margin: 72px 0 0 0;
   width: 12%;
   -moz-border-radius: 12px;
@@ -111,13 +127,26 @@ body{
   -webkit-border-bottom-left-radius: 10%;
   z-index: 2;
 }
-.about{
+
+.about {
+//  position: fixed;
+//  width: 100%;
+//  top: 10%;
+//  z-index: 9999;
   background-color: #426ab3;
-  margin: 0 0px 0 0;
+  filter: alpha(Opacity=40);
+  -moz-opacity: 0.6;
+  opacity: 0.91;
 }
-.describe{
+
+.describe {
 
 }
-.describe p, .describe ul li , .describe h2 {
+
+.describe p, .describe ul li, .describe h2 {
   color: #ffffff;
+}
+
+.back-image {
+  position: fixed;
 }
