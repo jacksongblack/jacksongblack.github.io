@@ -5,9 +5,7 @@ function LoadHtml(element){
 LoadHtml.prototype = {
     constructor:LoadHtml,
         getServer:function(fn){
-        $.get(this.url,function(data,status){
-            fn(data,status)
-        })
+        $.get(this.url,fn)
     }
 }
 

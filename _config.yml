@@ -4,13 +4,13 @@ redcarpet:
 
 permalink: /:year/:month/:day.html
 exclude: [Gemfile, Gemfile.lock, LICENSE, README.md, CNAME]
-category-list: [ROR, 运维, 前端技术, 项目管理 , 设计模式]
+category-list: [ROR, js, 运维, 前端技术, 项目管理 , 设计模式]
 safe: false
 
-comments :
-  provider : duoshuo
-  disqus :
-    short_name : jacksong
+comments:
+  provider: duoshuo
+  disqus:
+    short_name: jacksong
   livefyre :
     site_id : 123
   duoshuo :
