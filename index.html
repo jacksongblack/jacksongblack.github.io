@@ -72,9 +72,9 @@ layout: default
             var load = new LoadHtml(this)
             var html = new AlterHtml(".show_post")
             $(this).click(function () {
+                html.removeHtml()
                 $('.progress').show()
                 load.getServer(function (result) {
-                    html.removeHtml()
                     html.addHtml(result)
                     displayMode.shutDown()
                     toggleDuoshuoComments("#show_post")
