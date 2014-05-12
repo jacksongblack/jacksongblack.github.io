@@ -1,6 +1,3 @@
----
-layout: default
----
 <nav class="left_category navbar-example">
     <a class="glyphicon glyphicon-arrow-left category_switch" href="#category">种类</a>
     <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
@@ -29,9 +26,6 @@ layout: default
         </div>
     </div>
     <div id="show_post" class="show_post ">
-        {{ content }}
-        <!-- 多说评论框 start -->
-        <div class="ds-thread " {% if page.id %} data-thread-key="{{ page.id }}" {% endif %} {{ if page.title }}data-title="{{ page.title }}" {{ endif }} {{ if page.url }} data-url="{{ page.url }}"{{ endif }}></div>
-    <!-- 多说评论框 end -->
+        <abbr class="text-danger" title="attribute">亲！！！你还没有选择要看的文章~~</abbr>
     </div>
 </div>
