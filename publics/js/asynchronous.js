@@ -68,10 +68,10 @@ function ReadyPost() {
             html.removeHtml()
             displayMode.shutDown()
             load.getServer(function(){
-
                 toggleDuoshuoComments("#show_post")
+                $('.progress').hide()
             })
-            $('.progress').hide()
+
         })
     })
 }
