@@ -8,8 +8,8 @@ LoadHtml.prototype = {
         if(typeof(fn)  == "function"){
             $.get(this.url,function(response){
 
-               $("#show_post").append($(response).find("div#show_post").detach())
-//               fn()
+               $("#show_post").append($(response).find("div#show_post").children())
+               fn()
             })
         }
     }
@@ -21,7 +21,7 @@ function AlterHtml(docObj) {
 AlterHtml.prototype = {
     constructor: AlterHtml,
     removeHtml: function () {
-        this.docObj.remove( );
+        this.docObj.empty();
     },
     addHtml: function (html) {
         this.docObj.html(html)
@@ -68,10 +68,10 @@ function ReadyPost() {
             html.removeHtml()
             displayMode.shutDown()
             load.getServer(function(){
-
                 toggleDuoshuoComments("#show_post")
-            },"#show_post")
-            $('.progress').hide()
+                $('.progress').hide()
+            })
+
         })
     })
 }
