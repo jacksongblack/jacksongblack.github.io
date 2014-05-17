@@ -1,10 +1,10 @@
-function PullOrPush(docment) {
+function ShowsOrhides(docment) {
     this.link = $(docment)
     this.element = $(this.link.attr("href"))
 }
 
-PullOrPush.prototype = {
-    constructor: PullOrPush,
+ShowsOrhides.prototype = {
+    constructor: ShowsOrhides,
     show: function (fn) {
         this.element.removeClass("posts_hide")
         if (typeof(fn) == "function") {
@@ -19,10 +19,10 @@ PullOrPush.prototype = {
         }
         ;
     },
-    getStatus: function (triggeSrtate) {
+    getStatus: function (Srtatus) {
         var str = this.link.attr("class")
         try {
-            var status = str.match(triggeSrtate)
+            var status = str.match(Srtatus)
         } catch (error) {
             console.log(error)
         }
@@ -34,6 +34,10 @@ PullOrPush.prototype = {
         }
 
     }
+}
+function factoryShowsOrhides(el){
+    var obj = new ShowsOrhides(el)
+    return obj
 }
 
 function ElementDisplay(docElement, hideCss, showCss) {

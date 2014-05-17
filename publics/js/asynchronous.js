@@ -30,7 +30,7 @@ AlterHtml.prototype = {
 
 function ReadyPost() {
     var category_switch = $(".category_switch")
-    var pushOrPull = new PullOrPush(".category_switch")
+    var pushOrPull = new ShowsOrhides(".category_switch")
     var displayMode = new DisplayMode()
     category_switch.click(function () {
         if (pushOrPull.getStatus("glyphicon-arrow-left")) {
@@ -47,17 +47,20 @@ function ReadyPost() {
         }
     })
     $("#category li a").each(function () {
-        var hideOrShow = new PullOrPush("[href=" + $(this).attr("href") + "]")
+        var hideOrShowObj = factoryShowsOrhides("[href=" + $(this).attr("href") + "]")
+        var currentLink =this
         $(this).click(function () {
-            if (hideOrShow.getStatus("marker_color")) {
-                hideOrShow.show(function (link) {
-                    link.addClass("marker_color")
-                })
-            } else {
-                hideOrShow.hide(function (link) {
-                    link.removeClass("marker_color")
-                })
-            }
+            hideOrShowObj.show(function (link) {
+                link.addClass("marker_color")
+            })
+            $("#category li a").each(
+                function(){
+                    if(this != currentLink){
+                        factoryShowsOrhides("[href=" + $(this).attr("href") + "]").hide(function (link) {
+                            link.removeClass("marker_color")})
+                    }
+                }
+            )
         })
     })
     $("#posts ul li a").each(function () {
