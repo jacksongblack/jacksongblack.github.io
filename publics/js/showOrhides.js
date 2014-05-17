@@ -89,7 +89,7 @@ DisplayMode.prototype = {
         this.categories.hide()
         this.posts.hide()
         this.category_switch.hide(function(link){
-            link.html("关闭种类")
+            link.html("打开种类")
         })
         this.category_code.hide()
     },
