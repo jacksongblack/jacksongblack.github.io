@@ -46,13 +46,20 @@ function ElementDisplay(docElement, hideCss, showCss) {
     this.docObj = $(docElement)
 }
 ElementDisplay.prototype = {
-    show: function () {
+    constructor:ElementDisplay,
+    show: function (fn) {
         this.addOnlyOneClass(this.showCss)
         this.docObj.removeClass(this.hideCss)
+        if(typeof(fn) == "function"){
+            fn(this.docObj)
+        }
     },
-    hide: function () {
+    hide: function (fn) {
         this.docObj.removeClass(this.showCss)
         this.addOnlyOneClass(this.hideCss)
+        if(typeof(fn) == "function"){
+            fn(this.docObj)
+        }
     },
     addOnlyOneClass: function (addClass) {
         try {
@@ -81,13 +88,17 @@ DisplayMode.prototype = {
     shutDown:function(){
         this.categories.hide()
         this.posts.hide()
-        this.category_switch.hide()
+        this.category_switch.hide(function(link){
+            link.html("关闭种类")
+        })
         this.category_code.hide()
     },
     openUp:function(){
         this.categories.show()
         this.posts.show()
-        this.category_switch.show()
+        this.category_switch.show(function(link){
+            link.html("关闭种类")
+        })
         this.category_code.show()
     }
 }

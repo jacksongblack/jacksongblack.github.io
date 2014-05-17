@@ -1,5 +1,5 @@
 <nav class="left_category navbar-example">
-    <a class="glyphicon glyphicon-arrow-left category_switch" href="#category">种类</a>
+    <a class="glyphicon glyphicon-arrow-left category_switch" href="#category">关闭种类</a>
     <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
         {% for category_name in site.category-list %}
         <li><a href="#{{ category_name }}" class="">{{ category_name }}(有{{ site.categories[category_name] | size }}篇)</a>

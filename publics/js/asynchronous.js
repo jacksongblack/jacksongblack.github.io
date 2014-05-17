@@ -36,11 +36,13 @@ function ReadyPost() {
         if (pushOrPull.getStatus("glyphicon-arrow-left")) {
             pushOrPull.show(function (link) {
                 displayMode.openUp()
+                link.html("关闭种类")
             })
 
         } else {
             pushOrPull.hide(function (link) {
                 displayMode.shutDown()
+                link.html("打开种类")
             })
 
 
