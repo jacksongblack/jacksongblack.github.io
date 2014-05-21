@@ -1,6 +1,6 @@
 ---
 title: rails&mongoid配置问题记录
-category: Rails
+category: rails
 layout: post
 ---
 
