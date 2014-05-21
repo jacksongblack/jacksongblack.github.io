@@ -23,7 +23,9 @@ layout: post
 
     $ git clone git@github.com:mongoid/mongoid.git
     $ cd mongoid
-    $ gem build mongoid.gemspec  #注意安装过程会出现某些GEM没有安装，按照提示安装便可
+    $ gem build mongoid.gemspec
+    #注意安装过程会出现某些GEM没有安装，按照提示安装便可
+    $ gem install mongoid-x.x.x.bate
 
 现在生成配置文件
 
