@@ -33,4 +33,4 @@ layout: post
 
 我在这一步遇到个问题，rails 项目在require "sprockets/railtie"发生语法错误，运行bundle install时 提示运行 gem pristine --all
 这是用rvm设置gemset时，出现gem版本错误 运行这条命令后，恢复版本错误问题后，rails4不报语法错误了。解决时候注意手动安装
-没有匹配GEM
+没有安装或默认cache地址找不到的GEM
