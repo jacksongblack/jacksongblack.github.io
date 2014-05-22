@@ -39,3 +39,25 @@ layout: default
     <!-- 多说评论框 end -->
     </div>
 </div>
+<!--侧边便签块-->
+<div class=sidebar_right_menu>
+    <a id="open_sidebar" href="#recent">最近文章</a>
+</div>
+<!--最近文章-->
+<div id="recent">
+
+    <ul>
+        {% for post in site.posts  %}
+        <li>
+            <a href="{{ post.url}}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>>
+<script type="text/javascript">
+    $(window).ready(function(){
+        var displayMode = new DisplayMode()
+        displayMode.shutDown();
+    })
+</script>

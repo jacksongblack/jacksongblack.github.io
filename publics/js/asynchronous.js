@@ -79,4 +79,21 @@ function ReadyPost() {
 
         })
     })
+    $("#open_sidebar").sidr({
+        side:'right',
+        name:"recent",
+        onOpen:function(){
+            window.setTimeout(function(){
+                var recent_width = $("#recent").width()
+                $(".sidebar_right_menu").css("right",recent_width)
+            },200)
+
+        },
+        onClose:function(){
+            window.setTimeout(function(){
+                $(".sidebar_right_menu").css("right",0)
+            },200)
+        }
+        }
+    )
 }
