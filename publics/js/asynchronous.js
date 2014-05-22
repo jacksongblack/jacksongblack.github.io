@@ -4,12 +4,12 @@ function LoadHtml(element) {
 }
 LoadHtml.prototype = {
     constructor: LoadHtml,
-    getServer: function (fn,el) {
-        if(typeof(fn)  == "function"){
-            $.get(this.url,function(response){
+    getServer: function (fn, el) {
+        if (typeof(fn) == "function") {
+            $.get(this.url, function (response) {
 
-               $("#show_post").append($(response).find("div#show_post").children())
-               fn()
+                $("#show_post").append($(response).find("div#show_post").children())
+                fn()
             })
         }
     }
@@ -50,16 +50,17 @@ function ReadyPost() {
     })
     $("#category li a").each(function () {
         var hideOrShowObj = factoryShowsOrhides("[href=" + $(this).attr("href") + "]")
-        var currentLink =this
+        var currentLink = this
         $(this).click(function () {
             hideOrShowObj.show(function (link) {
                 link.addClass("marker_color")
             })
             $("#category li a").each(
-                function(){
-                    if(this != currentLink){
+                function () {
+                    if (this != currentLink) {
                         factoryShowsOrhides("[href=" + $(this).attr("href") + "]").hide(function (link) {
-                            link.removeClass("marker_color")})
+                            link.removeClass("marker_color")
+                        })
                     }
                 }
             )
@@ -72,7 +73,7 @@ function ReadyPost() {
             $('.progress').show()
             html.removeHtml()
             displayMode.shutDown()
-            load.getServer(function(){
+            load.getServer(function () {
                 toggleDuoshuoComments("#show_post")
                 $('.progress').hide()
             })
@@ -80,20 +81,24 @@ function ReadyPost() {
         })
     })
     $("#open_sidebar").sidr({
-        side:'right',
-        name:"recent",
-        onOpen:function(){
-            window.setTimeout(function(){
-                var recent_width = $("#recent").width()
-                $(".sidebar_right_menu").css("right",recent_width)
-            },200)
+            side: 'right',
+            name: "recent",
+            onOpen: function () {
+                window.setTimeout(function () {
+                    var recent_width = $("#recent").width();
+                    var sidebarObj = $(".sidebar_right_menu")
+                    sidebarObj.css("right", recent_width)
+                    sidebarObj.find("a").html("关闭最近")
+                }, 200)
 
-        },
-        onClose:function(){
-            window.setTimeout(function(){
-                $(".sidebar_right_menu").css("right",0)
-            },200)
-        }
+            },
+            onClose: function () {
+                window.setTimeout(function () {
+                    var sidebarObj =  $(".sidebar_right_menu")
+                    sidebarObj.css("right", 0)
+                    sidebarObj.find("a").html("最近文章")
+                }, 200)
+            }
         }
     )
 }
