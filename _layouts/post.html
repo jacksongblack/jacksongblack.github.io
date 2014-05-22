@@ -1,15 +1,17 @@
 ---
 layout: default
 ---
+        <!--侧边文章种类菜单-->
 <nav class="left_category navbar-example">
     <a class="glyphicon glyphicon-arrow-left category_switch" href="#category">关闭种类</a>
     <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
         {% for category_name in site.category-list %}
-        <li><a href="#{{ category_name }}" class="">{{ category_name }}(有{{ site.categories[category_name] | size }}篇)</a>
+        <li><a href="#{{ category_name }}" class="">{{ category_name }}<span class="badge">有{{ site.categories[category_name] | size }}篇</span></a>
         </li>
         {% endfor %}
     </ul>
 </nav>
+       <!--博客目录菜单-->
 <div id="posts" class="left_posts_list ">
     <li class="glyphicon glyphicon-align-justify">博客目录</li>
     {% for category_name in site.category-list %}
@@ -22,12 +24,14 @@ layout: default
     {% endfor %}
     {% endfor %}
 </div>
+        <!--正文显示-->
 <div id="post">
     <div class="progress_layout progress progress-striped active" style="display: none;">
         <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
              style="width: 100%">
         </div>
     </div>
+    <!--多说评论框-->
     <div id="show_post" class="show_post ">
         {{ content }}
         <!-- 多说评论框 start -->
