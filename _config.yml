@@ -4,8 +4,9 @@ redcarpet:
 
 permalink: /:year/:month/:day/:title.html
 exclude: [Gemfile, Gemfile.lock, LICENSE, README.md, CNAME]
-category-list: [ROR, js, 运维, 前端技术, 项目管理 , 设计模式]
+category-list: [rails, js, 运维, 前端技术, 项目管理 , 设计模式]
 safe: false
+pygments: true
 
 comments:
   provider: duoshuo
