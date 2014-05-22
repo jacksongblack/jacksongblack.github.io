@@ -1,9 +1,11 @@
+// 异步载入对象
 function LoadHtml(element) {
     this.element = $(element)
     this.url = this.element.attr("href")
 }
 LoadHtml.prototype = {
     constructor: LoadHtml,
+//  请求数据方法
     getServer: function (fn, el) {
         if (typeof(fn) == "function") {
             $.get(this.url, function (response) {
@@ -14,12 +16,12 @@ LoadHtml.prototype = {
         }
     }
 }
-
-function AlterHtml(docObj) {
+//清空或是增加页面内容
+function EditorHtml(docObj) {
     this.docObj = $(docObj)
 }
-AlterHtml.prototype = {
-    constructor: AlterHtml,
+EditorHtml.prototype = {
+    constructor: EditorHtml,
     removeHtml: function () {
         this.docObj.empty();
     },
@@ -27,7 +29,7 @@ AlterHtml.prototype = {
         this.docObj.html(html)
     }
 }
-
+//页面载入后初始化程序
 function ReadyPost() {
     var category_switch = $(".category_switch")
     var pushOrPull = new ShowsOrhides(".category_switch")
@@ -68,7 +70,7 @@ function ReadyPost() {
     })
     $("#posts ul li a").each(function () {
         var load = new LoadHtml(this)
-        var html = new AlterHtml(".show_post")
+        var html = new EditorHtml(".show_post")
         $(this).click(function () {
             $('.progress').show()
             html.removeHtml()

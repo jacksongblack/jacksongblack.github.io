@@ -1,3 +1,4 @@
+//获取文章并封装隐藏方法
 function ShowsOrhides(docment) {
     this.link = $(docment)
     this.element = $(this.link.attr("href"))
@@ -19,6 +20,7 @@ ShowsOrhides.prototype = {
         }
         ;
     },
+// 检查
     getStatus: function (Srtatus) {
         var str = this.link.attr("class")
         try {
@@ -75,7 +77,7 @@ ElementDisplay.prototype = {
 
     }
 }
-
+//封装两种显示模式
 function DisplayMode(){
     this.categories = new ElementDisplay(".left_category","left_category_hide","left_category")
     this.posts = new ElementDisplay("#posts","left_posts_list_hide","left_posts_list")
