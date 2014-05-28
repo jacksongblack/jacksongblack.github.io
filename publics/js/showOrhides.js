@@ -1,7 +1,7 @@
 //获取文章并封装隐藏方法
 function ShowsOrhides(docment) {
     this.link = $(docment)
-    this.element = $(this.link.attr("href"))
+    this.element = $(this.link.attr("data-url"))
 }
 
 ShowsOrhides.prototype = {

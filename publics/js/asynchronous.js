@@ -53,7 +53,7 @@ function ReadyPost() {
         }
     })
     $("#category li a").each(function () {
-        var hideOrShowObj = factoryShowsOrhides("[href=" + $(this).attr("href") + "]")
+        var hideOrShowObj = factoryShowsOrhides("[data-url=" + $(this).attr("data-url") + "]")
         var currentLink = this
         $(this).click(function () {
             hideOrShowObj.show(function (link) {
@@ -62,7 +62,7 @@ function ReadyPost() {
             $("#category li a").each(
                 function () {
                     if (this != currentLink) {
-                        factoryShowsOrhides("[href=" + $(this).attr("href") + "]").hide(function (link) {
+                        factoryShowsOrhides("[data-url=" + $(this).attr("data-url") + "]").hide(function (link) {
                             link.removeClass("marker_color")
                         })
                     }
