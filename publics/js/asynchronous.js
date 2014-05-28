@@ -9,8 +9,10 @@ LoadHtml.prototype = {
     getServer: function (fn, el) {
         if (typeof(fn) == "function") {
             $.get(this.url, function (response) {
-
-                $("#show_post").append($(response).find("div#show_post").children())
+                var ajaxHtml =$(response).find("div#show_post").children()
+                $("#show_post").append(ajaxHtml)
+                var state = {htmlContent:response}
+                  window.history.pushState(state,'',this.url)
                 fn()
             })
         }
@@ -104,3 +106,13 @@ function ReadyPost() {
         }
     )
 }
+//增加阅览器地址变化时的处理
+window.addEventListener("popstate",function(e){
+    if (e.state){
+        var ajaxHtml =$(e.state.htmlContent).find("div#show_post").children()
+        $("#show_post").empty()
+        $("#show_post").append(ajaxHtml)
+        toggleDuoshuoComments("#show_post")
+        $('.progress').hide()
+    }
+})
