@@ -84,7 +84,7 @@ $(window).load(function(){
                     .data('originalHeight',$img.height())
                     .stop()
                     .animate({
-                        height 		: '100px'
+                        height 		: '200px'
                     }, imgAnim.speed, imgAnim.easing);
 
                 // the ribbon will animate from the left or right
@@ -160,7 +160,7 @@ $(window).load(function(){
                     }, ribbonAnim.speed, function() {
                         $iw_ribbon.css({
                             'width'		: '0%',
-                            'height'	: '126px',
+                            'height'	: '226px',
                             'margin-top': '0px'
                         }).children('img').remove();
                     });
