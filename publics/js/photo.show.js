@@ -18,7 +18,9 @@ $(window).load(function(){
             init				= function() {
                 $iw_thumbs.imagesLoaded(function(){
                     $iw_thumbs.masonry({
-                        isAnimated	: true
+                        isAnimated	: true,
+                        isOriginLeft: false,
+                        "isOriginTop": false
                     });
                 });
                 getWindowsDim();
