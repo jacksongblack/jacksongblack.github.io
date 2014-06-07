@@ -1,11 +1,11 @@
 //获取文章并封装隐藏方法
-function ShowsOrhides(docment) {
+function bolgDisplayModel(docment) {
     this.link = $(docment)
     this.element = $(this.link.attr("data-url"))
 }
 
-ShowsOrhides.prototype = {
-    constructor: ShowsOrhides,
+bolgDisplayModel.prototype = {
+    constructor: bolgDisplayModel,
     show: function (fn) {
         this.element.removeClass("posts_hide")
         if (typeof(fn) == "function") {
@@ -37,18 +37,18 @@ ShowsOrhides.prototype = {
 
     }
 }
-function factoryShowsOrhides(el){
-    var obj = new ShowsOrhides(el)
+function factoryBlogDisplayModel(el){
+    var obj = new bolgDisplayModel(el)
     return obj
 }
 
-function ElementDisplay(docElement, hideCss, showCss) {
+function ElementDisplayModel(docElement, hideCss, showCss) {
     this.hideCss = hideCss;
     this.showCss = showCss;
     this.docObj = $(docElement)
 }
-ElementDisplay.prototype = {
-    constructor:ElementDisplay,
+ElementDisplayModel.prototype = {
+    constructor:ElementDisplayModel,
     show: function (fn) {
         this.addOnlyOneClass(this.showCss)
         this.docObj.removeClass(this.hideCss)
@@ -79,10 +79,10 @@ ElementDisplay.prototype = {
 }
 //封装两种显示模式
 function DisplayMode(){
-    this.categories = new ElementDisplay(".left_category","left_category_hide","left_category")
-    this.posts = new ElementDisplay("#posts","left_posts_list_hide","left_posts_list")
-    this.category_switch = new ElementDisplay(".category_switch","glyphicon-arrow-right","glyphicon-arrow-left")
-    this.category_code = new ElementDisplay("#category","categories_hide","categories")
+    this.categories = new ElementDisplayModel(".left_category","left_category_hide","left_category")
+    this.posts = new ElementDisplayModel("#posts","left_posts_list_hide","left_posts_list")
+    this.category_switch = new ElementDisplayModel(".category_switch","glyphicon-arrow-right","glyphicon-arrow-left")
+    this.category_code = new ElementDisplayModel("#category","categories_hide","categories")
 }
 
 DisplayMode.prototype = {
