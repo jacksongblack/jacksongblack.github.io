@@ -5,15 +5,30 @@ function LoadHtml(element) {
 }
 LoadHtml.prototype = {
     constructor: LoadHtml,
+    addUrlHistory: function (response) {
+        var state = {htmlContent: response}
+        window.history.pushState(state, '', this.url)
+    },
+    changeBlogContent: function (response) {
+        var ajaxHtml = $(response).find("div#show_post").children()
+        $("#show_post").append(ajaxHtml)
+    },
+    changeBlogTitle: function(response){
+        var ajaxHtml = $(response)[3].text
+        $("title").html(ajaxHtml)
+    },
+    reviewPage: function (response, fn) {
+        this.changeBlogContent(response);
+        this.addUrlHistory(response);
+        this.changeBlogTitle(response)
+        fn()
+    },
 //  请求数据方法
     getServer: function (fn, el) {
+        var thisMe = this
         if (typeof(fn) == "function") {
             $.get(this.url, function (response) {
-                var ajaxHtml =$(response).find("div#show_post").children()
-                $("#show_post").append(ajaxHtml)
-                var state = {htmlContent:response}
-                  window.history.pushState(state,'',this.url)
-                fn()
+                thisMe.reviewPage(response, fn);
             })
         }
     }
@@ -37,7 +52,7 @@ function initPage() {
     var pushOrPull = new bolgDisplayModel(".category_switch")
     var displayMode = new DisplayMode()
 
-    function init(){
+    function init() {
         bindCategoryLinkOnclickEvent();
         bindSidebarClickEvent();
         CategoryLinksWalkel();
@@ -62,6 +77,7 @@ function initPage() {
             }
         })
     }
+
     function removeCategoryBackgoundColor(currentLink) {
         $("#category li a").each(
             function () {
@@ -111,6 +127,7 @@ function initPage() {
             bindBlogLinkClickEvent.call(this);
         })
     }
+
     function bindSidebarClickEvent() {
         $("#open_sidebar").sidr({
                 side: 'right',
@@ -134,15 +151,15 @@ function initPage() {
         )
     }
 
-    return {init:init}
+    return {init: init}
 }
 
-$(window).ready(function(){
+$(window).ready(function () {
     initPage().init();
     //增加阅览器地址变化时的处理
-    window.addEventListener("popstate",function(e){
-        if (e.state){
-            var ajaxHtml =$(e.state.htmlContent).find("div#show_post").children()
+    window.addEventListener("popstate", function (e) {
+        if (e.state) {
+            var ajaxHtml = $(e.state.htmlContent).find("div#show_post").children()
             $("#show_post").empty()
             $("#show_post").append(ajaxHtml)
             toggleDuoshuoComments("#show_post")
