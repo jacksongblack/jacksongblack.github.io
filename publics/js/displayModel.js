@@ -1,11 +1,11 @@
 //获取文章并封装隐藏方法
-function bolgDisplayModel(docment) {
+function blogDisplayModel(docment) {
     this.link = $(docment)
     this.element = $(this.link.attr("data-url"))
 }
 
-bolgDisplayModel.prototype = {
-    constructor: bolgDisplayModel,
+blogDisplayModel.prototype = {
+    constructor: blogDisplayModel,
     show: function (fn) {
         this.element.removeClass("posts_hide")
         if (typeof(fn) == "function") {
@@ -38,7 +38,7 @@ bolgDisplayModel.prototype = {
     }
 }
 function factoryBlogDisplayModel(el){
-    var obj = new bolgDisplayModel(el)
+    var obj = new blogDisplayModel(el)
     return obj
 }
 

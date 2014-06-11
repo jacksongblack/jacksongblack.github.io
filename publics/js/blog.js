@@ -13,7 +13,7 @@ LoadHtml.prototype = {
         var ajaxHtml = $(response).find("div#show_post").children()
         $("#show_post").append(ajaxHtml)
     },
-    changeBlogTitle: function(response){
+    changeBlogTitle: function (response) {
         var ajaxHtml = $(response)[3].text
         $("title").html(ajaxHtml)
     },
@@ -49,7 +49,7 @@ EditorHtml.prototype = {
 //页面载入后初始化程序
 function initPage() {
     var category_switch = $(".category_switch")
-    var pushOrPull = new bolgDisplayModel(".category_switch")
+    var pushOrPull = new blogDisplayModel(".category_switch")
     var displayMode = new DisplayMode()
 
     function init() {
@@ -78,7 +78,7 @@ function initPage() {
         })
     }
 
-    function removeCategoryBackgoundColor(currentLink) {
+    function removeCategoryLinkBackgroundColor(currentLink) {
         $("#category li a").each(
             function () {
                 if (this != currentLink) {
@@ -90,21 +90,30 @@ function initPage() {
         )
     }
 
-    function addCategoryBackgoundColor() {
-        var hideOrShowObj = factoryBlogDisplayModel("[data-url=" + $(this).attr("data-url") + "]")
+    function addCategoryLinkBackgroundColor() {
+        var displayModel = factoryBlogDisplayModel("[data-url=" + $(this).attr("data-url") + "]")
         var currentLink = this
         $(this).click(function () {
-            hideOrShowObj.show(function (link) {
+            displayModel.show(function (link) {
                 link.addClass("marker_color")
             })
-            removeCategoryBackgoundColor(currentLink);
+            removeCategoryLinkBackgroundColor(currentLink);
         })
     }
 
     function CategoryLinksWalkel() {
         $("#category li a").each(function () {
-            addCategoryBackgoundColor.call(this);
+            addCategoryLinkBackgroundColor.call(this);
         })
+    }
+
+    function toggleDuoshuoComments(container) {
+        var obj = $(".ds-thread")
+        var el = document.createElement('div');//该div不需要设置class="ds-thread"
+        el.setAttribute('data-thread-key', obj.attr("data-thread-key"));//必选参数
+        el.setAttribute('data-url', obj.attr("data-url"));//必选参数
+        DUOSHUO.EmbedThread(el);
+        jQuery(container).append(el);
     }
 
     function bindBlogLinkClickEvent() {

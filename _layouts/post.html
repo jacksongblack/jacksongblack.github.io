@@ -20,10 +20,9 @@
     <script src="/publics/js/jquery.masonry.min.js"></script>
     <script src="/publics/js/jquery.sidr.min.js"></script>
     <script src="/publics/js/displayModel.js"></script>
-    <script src="/publics/js/blog.js"></script>
     <script>var duoshuoQuery = {short_name: "jacksong"};</script>
     <script src="http://static.duoshuo.com/embed.js"></script>
-    <script src="/publics/js/duoshuo.js"></script>
+    <script src="/publics/js/blog.js"></script>
     <script type="text/javascript">
         $(window).ready(function(){
             var displayMode = new DisplayMode()
@@ -57,23 +56,23 @@
     {% endfor %}
 </div>
 <!--正文显示-->
+<div class=sidebar_right_menu>
+    <a id="open_sidebar" href="#recent">最近文章</a>
+</div>
+<!--侧边便签块-->
 <div id="post">
     <div class="progress_layout progress progress-striped active" style="display: none;">
         <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
              style="width: 100%">
         </div>
     </div>
-    <!--多说评论框-->
+
     <div id="show_post" class="show_post ">
         {{ content }}
+        <!--多说评论框-->
         <!-- 多说评论框 start -->
-        <div class="ds-thread " {% if page.id %} data-thread-key="{{ page.id }}" {% endif %} {{ if page.title }}data-title="{{ page.title }}" {{ endif }} {{ if page.url }} data-url="{{ page.url }}"{{ endif }}></div>
+        <div class="ds-thread" {% if page.id %} data-thread-key="{{ page.id }}" {% endif %} {{ if page.title }}data-title="{{ page.title }}" {{ endif }} {{ if page.url }} data-url="{{ page.url }}"{{ endif }}></div>
     <!-- 多说评论框 end -->
-</div>
-</div>
-<!--侧边便签块-->
-<div class=sidebar_right_menu>
-    <a id="open_sidebar" href="#recent">最近文章</a>
 </div>
 <!--最近文章-->
 <div id="recent">
