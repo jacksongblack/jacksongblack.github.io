@@ -25,6 +25,7 @@ $(window).load(function(){
                 });
                 getWindowsDim();
                 initEventsHandler();
+                $("img").lazyload();
             },
         // calculate window dimentions
             getWindowsDim		= function() {

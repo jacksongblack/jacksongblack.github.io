@@ -8,6 +8,7 @@
     {{ else }}
     <title>小宋的博客</title>
     {{ endif }}
+
     <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="/publics/stylesheets/style.css">
@@ -23,6 +24,12 @@
     <script>var duoshuoQuery = {short_name:"jacksong"};</script>
     <script src="http://static.duoshuo.com/embed.js"></script>
     <script src="/publics/javascript/blog.js"></script>
+
+    {{ if page.title == "小宋的照片墙" }}
+    <link rel="stylesheet" type="text/css" href="/publics/stylesheets/reset.css">
+    <script src="/publics/javascript/jquery.lazyload.min.js"></script>
+    <script src="/publics/javascript/photo.show.js"></script>
+    {{ endif }}
 </head>
 
 <body class="container-fluid">
