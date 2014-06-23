@@ -57,7 +57,27 @@ function initPage() {
         bindSidebarClickEvent();
         CategoryLinksWalkel();
         BlogTextLinksWalker();
+        addSidebarHoverEvent();
+        addPostHoverEvent();
     }
+
+    function addSidebarHoverEvent(){
+        var sidebar =   $("#open_sidebar")
+        sidebar.hover(function(){   
+            sidebar.click();
+        })
+    }
+
+    function addPostHoverEvent(){
+        var post =  $("#post")
+        var sidebar =   $("#open_sidebar")
+        post.hover(function(){
+            if( sidebar.text() == "关闭最近" ){
+               sidebar.click();
+            }
+        })
+    }
+
 
     function bindCategoryLinkOnclickEvent() {
         category_switch.click(function () {
