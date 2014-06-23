@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="/publics/stylesheets/style.css">
     <link rel="stylesheet/less" type="text/css" href="/publics/stylesheets/default.css.less">
+    <link rel="stylesheet" type="text/css" href="/publics/stylesheets/reset.css">
     <link rel="stylesheet/less" type="text/css" href="/publics/stylesheets/jquery.sidr.light.css">
     <script src="/publics/javascript/jquery-1.11.0.min.js"></script>
     <script src="/publics/javascript/bootstrap.min.js"></script>
@@ -24,15 +25,12 @@
     <script>var duoshuoQuery = {short_name:"jacksong"};</script>
     <script src="http://static.duoshuo.com/embed.js"></script>
     <script src="/publics/javascript/blog.js"></script>
-
-    {{ if page.title == "小宋的照片墙" }}
-    <link rel="stylesheet" type="text/css" href="/publics/stylesheets/reset.css">
     <script src="/publics/javascript/jquery.lazyload.min.js"></script>
     <script src="/publics/javascript/photo.show.js"></script>
-    {{ endif }}
 </head>
 
 <body class="container-fluid">
+{{ page.tags }}
 {{ content }}
 <!--博客下边导航栏-->
 <nav class="navbar navbar-collapse navbar-default navbar-fixed-bottom navbar-color" role="navigation">
