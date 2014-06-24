@@ -49,8 +49,8 @@ EditorHtml.prototype = {
 //页面载入后初始化程序
 function initPage() {
     var category_switch = $(".category_switch")
-    var pushOrPull = new blogDisplayModel(".category_switch")
-    var displayMode = new DisplayMode()
+    var category_link_display_mode = new CategoryLinkDisplayModel(".category_switch")
+    var display_mode = new DisplayMode()
     var sidebar_link =   $("#open_sidebar")
 
     function init() {
@@ -60,6 +60,7 @@ function initPage() {
         BlogTextLinksWalker();
         addHoverEventInSidebarLink();
         addPostHoverEvent();
+        addHoverEventIncategoryNav();
     }
 
     function addHoverEventInSidebarLink(){
@@ -70,6 +71,15 @@ function initPage() {
         })
     }
 
+    function addHoverEventIncategoryNav(){
+       var nav_obj = $("nav.navbar-example")
+        nav_obj.hover(function(){
+            if( category_switch.text() ==  "打开种类" ){
+                category_switch.click();
+            }
+        })
+
+    }
     function addHoverEventCloseSidebar(jqueryObj, link) {
         jqueryObj.hover(function () {
             if (link.text() == "关闭最近") {
@@ -91,15 +101,15 @@ function initPage() {
 
     function bindCategoryLinkOnclickEvent() {
         category_switch.click(function () {
-            if (pushOrPull.getStatus("glyphicon-arrow-left")) {
-                pushOrPull.show(function (link) {
-                    displayMode.openUp()
+            if (category_link_display_mode.getStatus("glyphicon-arrow-left")) {
+                category_link_display_mode.show(function (link) {
+                    display_mode.openUp()
                     link.html("关闭种类")
                 })
 
             } else {
-                pushOrPull.hide(function (link) {
-                    displayMode.shutDown()
+                category_link_display_mode.hide(function (link) {
+                    display_mode.shutDown()
                     link.html("打开种类")
                 })
 
@@ -152,7 +162,7 @@ function initPage() {
         $(this).click(function () {
             $('.progress').show()
             html.removeHtml()
-            displayMode.shutDown()
+            display_mode.shutDown()
             load.getServer(function () {
                 toggleDuoshuoComments("#show_post")
                 $('.progress').hide()
