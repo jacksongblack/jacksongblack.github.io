@@ -51,33 +51,41 @@ function initPage() {
     var category_switch = $(".category_switch")
     var pushOrPull = new blogDisplayModel(".category_switch")
     var displayMode = new DisplayMode()
+    var sidebar_link =   $("#open_sidebar")
 
     function init() {
         bindCategoryLinkOnclickEvent();
         bindSidebarClickEvent();
         CategoryLinksWalkel();
         BlogTextLinksWalker();
-        addSidebarHoverEvent();
+        addHoverEventInSidebarLink();
         addPostHoverEvent();
     }
 
-    function addSidebarHoverEvent(){
-        var sidebar =   $("#open_sidebar")
-        sidebar.hover(function(){
-            if( sidebar.text() == "最近文章" ){
-                sidebar.click();
+    function addHoverEventInSidebarLink(){
+        sidebar_link.hover(function(){
+            if( sidebar_link.text() == "最近文章" ){
+                sidebar_link.click();
+            }
+        })
+    }
+
+    function addHoverEventCloseSidebar(jqueryObj, link) {
+        jqueryObj.hover(function () {
+            if (link.text() == "关闭最近") {
+                link.click();
+            }
+            if(category_switch.text() == "关闭种类"){
+                category_switch.click()
             }
         })
     }
 
     function addPostHoverEvent(){
-        var post =  $("#show_post")
-        var sidebar =   $("#open_sidebar")
-        post.hover(function(){
-            if( sidebar.text() == "关闭最近" ){
-               sidebar.click();
-            }
-        })
+        var show_post =  $("#show_post")
+        var post = $("#post")
+        addHoverEventCloseSidebar(show_post, sidebar_link);
+        addHoverEventCloseSidebar(post, sidebar_link);
     }
 
 
