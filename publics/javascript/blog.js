@@ -49,7 +49,7 @@ EditorHtml.prototype = {
 //页面载入后初始化程序
 function initPage() {
     var category_switch = $(".category_switch")
-    var category_link_display_mode = new CategoryLinkDisplayModel(".category_switch")
+    var category_link_display_mode = factoryBlogDisplayModel(".category_switch")
     var display_mode = new DisplayMode()
     var sidebar_link =   $("#open_sidebar")
 
