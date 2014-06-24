@@ -63,13 +63,15 @@ function initPage() {
 
     function addSidebarHoverEvent(){
         var sidebar =   $("#open_sidebar")
-        sidebar.hover(function(){   
-            sidebar.click();
+        sidebar.hover(function(){
+            if( sidebar.text() == "最近文章" ){
+                sidebar.click();
+            }
         })
     }
 
     function addPostHoverEvent(){
-        var post =  $("#post")
+        var post =  $("#show_post")
         var sidebar =   $("#open_sidebar")
         post.hover(function(){
             if( sidebar.text() == "关闭最近" ){
