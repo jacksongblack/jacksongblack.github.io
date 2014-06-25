@@ -61,6 +61,15 @@ function initPage() {
         addHoverEventInSidebarLink();
         addPostHoverEvent();
         addHoverEventIncategoryNav();
+        addHoverEventInCategoryLink();
+    }
+
+    function addHoverEventInCategoryLink(){
+       $("#category li a ").each(function(){
+           $(this).hover(function(){
+               $(this).click();
+           })
+       })
     }
 
     function addHoverEventInSidebarLink(){
