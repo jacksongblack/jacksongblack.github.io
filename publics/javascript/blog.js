@@ -81,8 +81,8 @@ function initPage() {
     }
 
     function addHoverEventIncategoryNav(){
-       var nav_obj = $("nav.navbar-example")
-        nav_obj.hover(function(){
+       var category_menu = $("#category_menu")
+        category_menu.hover(function(){
             if( category_switch.text() ==  "打开种类" ){
                 category_switch.click();
             }

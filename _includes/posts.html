@@ -1,5 +1,5 @@
 <!--侧边文章种类菜单-->
-<nav class="left_category navbar-example">
+<div class="left_category" id="category_menu">
     <a class="glyphicon glyphicon-arrow-left category_switch" >关闭种类</a>
     <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
         {% for category_name in site.category-list %}
@@ -7,7 +7,7 @@
         </li>
         {% endfor %}
     </ul>
-</nav>
+</div>>
 <!--博客目录菜单-->
 <div id="posts" class="left_posts_list ">
     <li class="glyphicon glyphicon-align-justify">博客目录</li>
