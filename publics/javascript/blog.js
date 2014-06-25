@@ -1,10 +1,10 @@
 // 异步载入对象
-function LoadHtml(element) {
+function AjaxLoadpage(element) {
     this.element = $(element)
     this.url = this.element.attr("href")
 }
-LoadHtml.prototype = {
-    constructor: LoadHtml,
+AjaxLoadpage.prototype = {
+    constructor: AjaxLoadpage,
     addUrlHistory: function (response) {
         var state = {htmlContent: response}
         window.history.pushState(state, '', this.url)
@@ -34,11 +34,11 @@ LoadHtml.prototype = {
     }
 }
 //清空或是增加页面内容
-function EditorHtml(docObj) {
+function EditorPage(docObj) {
     this.docObj = $(docObj)
 }
-EditorHtml.prototype = {
-    constructor: EditorHtml,
+EditorPage.prototype = {
+    constructor: EditorPage,
     removeHtml: function () {
         this.docObj.empty();
     },
@@ -57,11 +57,13 @@ function initPage() {
         bindCategoryLinkOnclickEvent();
         bindSidebarClickEvent();
         CategoryLinksWalkel();
-        BlogTextLinksWalker();
+        blogTitleLinksWalker();
+        blogSidebarTitleLinkWalker();
         addHoverEventInSidebarLink();
         addPostHoverEvent();
         addHoverEventIncategoryNav();
         addHoverEventInCategoryLink();
+
     }
 
     function addHoverEventInCategoryLink(){
@@ -166,8 +168,8 @@ function initPage() {
     }
 
     function bindBlogLinkClickEvent() {
-        var load = new LoadHtml(this)
-        var html = new EditorHtml(".show_post")
+        var load = new AjaxLoadpage(this)
+        var html = new EditorPage(".show_post")
         $(this).click(function () {
             $('.progress').show()
             html.removeHtml()
@@ -180,9 +182,14 @@ function initPage() {
         })
     }
 
-    function BlogTextLinksWalker() {
+    function blogTitleLinksWalker() {
         $("#posts ul li a").each(function () {
             bindBlogLinkClickEvent.call(this);
+        })
+    }
+    function blogSidebarTitleLinkWalker(){
+        $("#recent ul li a ").each(function(){
+            bindBlogLinkClickEvent.call(this)
         })
     }
 
