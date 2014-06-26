@@ -8,6 +8,13 @@
   <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
   <changefreq>always</changefreq>
   <priority>1.0</priority>
+    <data>
+    <display>
+      <html5_url>http://www.songyuchao.com{{ post.url }}</html5_url>
+      <wml_url></wml_url>
+      <xhtml_url></xhtml_url>
+    </display>
+    </data>
   </url>
   {% endfor %}
   <url>
@@ -15,11 +22,21 @@
   <lastmod>2014-05-20</lastmod>
   <changefreq>always</changefreq>
   <priority>1.0</priority>
+    <data>
+      <display>
+        <html5_url>http://www.songyuchao.com/photo_wall.html</html5_url>
+      </display>
+    </data>
   </url>
   <url>
    <loc>http://www.songyuchao.com/about.html</loc>
    <lastmod>2014-05-20</lastmod>
    <changefreq>always</changefreq>
    <priority>1.0</priority>
+    <data>
+      <display>
+        <html5_url>http://www.songyuchao.com/about.html</html5_url>
+      </display>
+    </data>
   </url>
 </urlset>
