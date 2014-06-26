@@ -63,6 +63,28 @@ function initPage() {
         addPostHoverEvent();
         addHoverEventIncategoryNav();
         addHoverEventInCategoryLink();
+        checkBrowserVersion();
+
+    }
+
+    function checkBrowserVersion(){
+        var userAgent = navigator.userAgent.toLowerCase();
+        // Figure out what browser is being used
+        jQuery.browser = {
+            version: (userAgent.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [])[1],
+            safari: /webkit/.test(userAgent),
+            opera: /opera/.test(userAgent),
+            msie: /msie/.test(userAgent) && !/opera/.test(userAgent),
+            mozilla: /mozilla/.test(userAgent) && !/(compatible|webkit)/.test(userAgent)
+        };
+
+        var ie_version = ["6.0","7.0","8.0","9.0"]
+
+       $.each(ie_version,function(n,value){
+           if ($.browser.msie&&($.browser.version == value)&&!$.support.style){
+               alert("亲！本站需要IE10以上的版本，或chrome，firefox等现代浏览器")
+           }
+       })
 
     }
 
