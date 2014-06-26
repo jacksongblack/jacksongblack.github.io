@@ -1,0 +1,25 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset>
+  {% for post in site.posts %}
+  <url>
+  <loc>{{ post.url }}</loc>
+  <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
+  <changefrep>always</changefrep>
+  <priority>1.0</priority>
+  </url>
+  {% endfor %}
+  <url>
+  <loc>/photo_wall.html</loc>
+  <lastmod>2014-05-20</lastmod>
+  <changefrep>always</changefrep>
+  <priority>1.0</priority>
+  </url>
+  <url>
+   <loc>/about.html</loc>
+   <lastmod>2014-05-20</lastmod>
+   <changefrep>always</changefrep>
+   <priority>1.0</priority>
+  </url>
+</urlset>
