@@ -82,7 +82,8 @@ function initPage() {
 
        $.each(ie_version,function(n,value){
            if ($.browser.msie&&($.browser.version == value)&&!$.support.style){
-               alert("亲！本站需要IE10以上的版本，或chrome，firefox等现代浏览器")
+               alert("亲！本站需要IE10以上的版本，或chrome，firefox等现代浏览器" +
+                   "火狐的地址 http://www.firefox.com.cn/download/")
            }
        })
 
