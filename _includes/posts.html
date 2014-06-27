@@ -1,16 +1,16 @@
 <!--侧边文章种类菜单-->
-<div class="left_category" id="category_menu">
-    <a class="glyphicon glyphicon-arrow-left category_switch" >关闭种类</a>
-    <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
+<div class="left_category " id="category_menu">
+    <a class="btn btn-warning  glyphicon glyphicon-minus   category_switch " style="width: 100%" type="button">关闭种类</a>
+        <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
         {% for category_name in site.category-list %}
         <li><a data-url="#{{ category_name }}" class="">{{ category_name }}<span class="badge">有{{ site.categories[category_name] | size }}篇</span></a>
         </li>
         {% endfor %}
     </ul>
-</div>>
+</div>>btn-info
 <!--博客目录菜单-->
 <div id="posts" class="left_posts_list ">
-    <li class="glyphicon glyphicon-align-justify">博客目录</li>
+        <a class="btn btn-info glyphicon glyphicon glyphicon-book " type="button" style="width: 100%">博客目录</a>
     {% for category_name in site.category-list %}
     {% for post in site.categories[category_name] %}
     <ul class="nav nav-tabs posts_hide" id="{{ category_name }}">

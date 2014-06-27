@@ -136,7 +136,7 @@ function initPage() {
 
     function bindCategoryLinkOnclickEvent() {
         category_switch.click(function () {
-            if (category_link_display_mode.getStatus("glyphicon-arrow-left")) {
+            if (category_link_display_mode.getStatus("glyphicon-minus")) {
                 category_link_display_mode.show(function (link) {
                     display_mode.openUp()
                     link.html("关闭种类")

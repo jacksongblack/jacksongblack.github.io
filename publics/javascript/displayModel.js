@@ -81,7 +81,7 @@ ElementDisplayModel.prototype = {
 function DisplayMode(){
     this.categories = new ElementDisplayModel(".left_category","left_category_hide","left_category")
     this.posts = new ElementDisplayModel("#posts","left_posts_list_hide","left_posts_list")
-    this.category_switch = new ElementDisplayModel(".category_switch","glyphicon-arrow-right","glyphicon-arrow-left")
+    this.category_switch = new ElementDisplayModel(".category_switch","glyphicon-plus","glyphicon-minus")
     this.category_code = new ElementDisplayModel("#category","categories_hide","categories")
 }
 
