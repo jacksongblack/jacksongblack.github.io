@@ -82,9 +82,7 @@ function initPage() {
 
        $.each(ie_version,function(n,value){
            if ($.browser.msie&&($.browser.version == value)&&!$.support.style){
-               alert("亲！你浏览器版本太低～～本站需要IE10以上的版本，或chrome，firefox等现代浏览器" +
-                   "～～～～即将跳转到火狐网站 ")
-               location.href = "http://www.firefox.com.cn/download/";
+               alert("亲～～！你的浏览器版本太低了，本博客可能达不到最佳显示效果！！")
            }
        })
 
