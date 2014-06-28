@@ -1,7 +1,7 @@
 <!--侧边文章种类菜单-->
 <div class="left_category " id="category_menu">
     <a class="btn btn-warning  glyphicon glyphicon-minus   category_switch " style="width: 100%" type="button">关闭种类</a>
-        <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
+    <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
         {% for category_name in site.category-list %}
         <li><a data-url="#{{ category_name }}" class="">{{ category_name }}<span class="badge">有{{ site.categories[category_name] | size }}篇</span></a>
         </li>
@@ -10,7 +10,7 @@
 </div>>btn-info
 <!--博客目录菜单-->
 <div id="posts" class="left_posts_list ">
-        <a class="btn btn-info glyphicon  glyphicon-book " type="button" style="width: 100%">博客目录</a>
+    <a class="btn btn-info glyphicon  glyphicon-book " type="button" style="width: 100%">博客目录</a>
     {% for category_name in site.category-list %}
     {% for post in site.categories[category_name] %}
     <ul class="nav nav-tabs posts_hide" id="{{ category_name }}">
@@ -29,10 +29,13 @@
         </div>
     </div>
     <div id="show_post" class="show_post ">
-        <abbr class="text-danger" title="attribute">亲！！！你还没有选择要看的文章~~</abbr>
+        <div style="text-align: center;">
+            <img src="http://img16.poco.cn/mypoco/myphoto/20140628/17/17479142020140628174123068.gif?400x524_110" style="width: 35%">
+
+        </div>
     </div>
 </div>
- <!--侧边便签块-->
+<!--侧边便签块-->
 <div class=sidebar_right_menu>
     <a id="open_sidebar" href="#recent">最近文章</a>
 </div>
@@ -40,7 +43,7 @@
 <div id="recent">
 
     <ul>
-        {% for post in site.posts  %}
+        {% for post in site.posts %}
         <li>
             <a href="{{ post.url}}" onclick="return false">{{ post.title }}</a>
         </li>
