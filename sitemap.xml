@@ -1,12 +1,10 @@
 ---
-        ---
-        <?xml version="1.0" encoding="UTF-8"?>
+---
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset>
   {% for post in site.posts %}
   <url>
     <loc>http://www.songyuchao.com{{ post.url }}</loc>
-    <title>{{ post.title }}</title>
-    <describer>{{ post.describer }}</describer>
     <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
