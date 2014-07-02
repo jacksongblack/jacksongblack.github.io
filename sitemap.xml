@@ -1,27 +1,31 @@
 ---
----
-<?xml version="1.0" encoding="UTF-8"?>
+        ---
+        <?xml version="1.0" encoding="UTF-8"?>
 <urlset>
   {% for post in site.posts %}
   <url>
-  <loc>http://www.songyuchao.com{{ post.url }}</loc>
-  <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
-  <changefreq>always</changefreq>
-  <priority>1.0</priority>
+    <loc>http://www.songyuchao.com{{ post.url }}</loc>
+    <title>{{ post.title }}</title>
+    <describer>{{ post.describer }}</describer>
+    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
     <data>
-    <display>
-      <html5_url>http://www.songyuchao.com{{ post.url }}</html5_url>
-      <wml_url></wml_url>
-      <xhtml_url></xhtml_url>
-    </display>
+      <display>
+        <html5_url>http://www.songyuchao.com{{ post.url }}</html5_url>
+        <wml_url></wml_url>
+        <xhtml_url></xhtml_url>
+      </display>
     </data>
   </url>
   {% endfor %}
   <url>
-  <loc>http://www.songyuchao.com/photo_wall.html</loc>
-  <lastmod>2014-05-20</lastmod>
-  <changefreq>always</changefreq>
-  <priority>1.0</priority>
+    <loc>http://www.songyuchao.com/photo_wall.html</loc>
+    <title>照片墙</title>
+    <describer>存储和展示自己的照片</describer>
+    <lastmod>2014-05-20</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
     <data>
       <display>
         <html5_url>http://www.songyuchao.com/photo_wall.html</html5_url>
@@ -29,10 +33,12 @@
     </data>
   </url>
   <url>
-   <loc>http://www.songyuchao.com/about.html</loc>
-   <lastmod>2014-05-20</lastmod>
-   <changefreq>always</changefreq>
-   <priority>1.0</priority>
+    <loc>http://www.songyuchao.com/about.html</loc>
+    <title>关于我</title>
+    <describer>我的自我介绍</describer>
+    <lastmod>2014-05-20</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
     <data>
       <display>
         <html5_url>http://www.songyuchao.com/about.html</html5_url>
@@ -40,10 +46,12 @@
     </data>
   </url>
   <url>
-   <loc>http://www.songyuchao.com/project.html</loc>
-   <lastmod>2014-05-20</lastmod>
-   <changefreq>always</changefreq>
-   <priority>1.0</priority>
+    <loc>http://www.songyuchao.com/project.html</loc>
+    <title>作品展示</title>
+    <describer>小宋的一些作品展示</describer>
+    <lastmod>2014-05-20</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
     <data>
       <display>
         <html5_url>http://www.songyuchao.com/about.html</html5_url>
