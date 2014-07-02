@@ -39,4 +39,15 @@
       </display>
     </data>
   </url>
+  <url>
+   <loc>http://www.songyuchao.com/project.html</loc>
+   <lastmod>2014-05-20</lastmod>
+   <changefreq>always</changefreq>
+   <priority>1.0</priority>
+    <data>
+      <display>
+        <html5_url>http://www.songyuchao.com/about.html</html5_url>
+      </display>
+    </data>
+  </url>
 </urlset>
