@@ -302,6 +302,8 @@ SearchBlog.prototype={
          load.getServer(function () {
              toggleDuoshuoComments("#show_post")
              $('.progress').hide()
+             var displayMode = new DisplayMode()
+             displayMode.shutDown();
          })
      })
     }
