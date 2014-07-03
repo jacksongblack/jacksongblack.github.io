@@ -60,7 +60,7 @@ function initPage() {
     var category_link_display_mode = factoryBlogDisplayModel(".category_switch")
     var display_mode = new DisplayMode()
     var sidebar_link = $("#open_sidebar")
-    var search = new SearchBlog("http://0.0.0.0:4000/search.xml")
+    var search = new SearchBlog("http://www.songyuchao.com/search.xml")
 
 
     function init() {
