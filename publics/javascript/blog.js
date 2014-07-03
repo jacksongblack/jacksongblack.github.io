@@ -297,6 +297,10 @@ SearchBlog.prototype={
      $("#search_form").submit(function(e){
          e.preventDefault();
         var regArray = searchBlogObj.fullTextSearch($("#search_input").val())
+         if(regArray.length = 0){
+             alert("没有搜到任何东西")
+             return
+         }
          var load = new AjaxLoadpage('',regArray[0].url)
          $('.progress').show()
          load.getServer(function () {
