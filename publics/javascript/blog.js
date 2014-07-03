@@ -295,9 +295,9 @@ SearchBlog.prototype = {
         return regArray
     },
     review: function (regArray) {
-         var html = "<div class='container'><div class='row'><h2>下面是包含关键字的文章</h2><hr class='featurette-divider'>"
+         var html = "<div class='container'><div class='row'><h2>下面是包含关键字的文章</h2>"
         $.each(regArray,function(){
-            html =  html + '<a href="'+ this.url +'" class="col-md-7">'+'<h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featurette-divider">'+'</a>' + ""
+            html =  html + '<hr class="featurette-divider"><a href="'+ this.url +'" class="col-md-7">'+'<h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featurette-divider">'+'</a>' + ""
 
         })
         html + "</div></div>"
