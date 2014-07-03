@@ -1,7 +1,14 @@
 // 异步载入对象
-function AjaxLoadpage(element) {
-    this.element = $(element)
-    this.url = this.element.attr("href")
+function AjaxLoadpage(element,url) {
+    if(typeof(url) != "undefined"){
+        this.url = url
+    }else{
+        this.element = $(element)
+        this.url = this.element.attr("href")
+    }
+
+
+    this.reviewHtml = new ReviewPage(".show_post")
 }
 AjaxLoadpage.prototype = {
     constructor: AjaxLoadpage,
@@ -11,13 +18,14 @@ AjaxLoadpage.prototype = {
     },
     changeBlogContent: function (response) {
         var ajaxHtml = $(response).find("div#show_post").children()
-        $("#show_post").append(ajaxHtml)
+        $("#show_post").html(ajaxHtml)
     },
     changeBlogTitle: function (response) {
         var ajaxHtml = $(response)[3].text
         $("title").html(ajaxHtml)
     },
     reviewPage: function (response, fn) {
+        this.reviewHtml.empty()
         this.changeBlogContent(response);
         this.addUrlHistory(response);
         this.changeBlogTitle(response)
@@ -25,7 +33,7 @@ AjaxLoadpage.prototype = {
     },
 //  请求数据方法
     getServer: function (fn, el) {
-        var thisMe = this
+        var thisMe = this;
         if (typeof(fn) == "function") {
             $.get(this.url, function (response) {
                 thisMe.reviewPage(response, fn);
@@ -34,16 +42,16 @@ AjaxLoadpage.prototype = {
     }
 }
 //清空或是增加页面内容
-function EditorPage(docObj) {
-    this.docObj = $(docObj)
+function ReviewPage(docObj) {
+    this.centent = $(docObj)
 }
-EditorPage.prototype = {
-    constructor: EditorPage,
-    removeHtml: function () {
-        this.docObj.empty();
+ReviewPage.prototype = {
+    constructor: ReviewPage,
+    empty: function () {
+        this.centent.empty();
     },
-    addHtml: function (html) {
-        this.docObj.html(html)
+    changerContent: function (html) {
+        this.centent.html(html)
     }
 }
 //页面载入后初始化程序
@@ -52,6 +60,8 @@ function initPage() {
     var category_link_display_mode = factoryBlogDisplayModel(".category_switch")
     var display_mode = new DisplayMode()
     var sidebar_link =   $("#open_sidebar")
+    var search = new SearchBlog("http://0.0.0.0:4000/search.xml")
+
 
     function init() {
         bindCategoryLinkOnclickEvent();
@@ -64,6 +74,7 @@ function initPage() {
         addHoverEventIncategoryNav();
         addHoverEventInCategoryLink();
         checkBrowserVersion();
+        search.getXmlHttpResponse();
 
     }
 
@@ -191,10 +202,8 @@ function initPage() {
 
     function bindBlogLinkClickEvent() {
         var load = new AjaxLoadpage(this)
-        var html = new EditorPage(".show_post")
         $(this).click(function () {
             $('.progress').show()
-            html.removeHtml()
             display_mode.shutDown()
             load.getServer(function () {
                 toggleDuoshuoComments("#show_post")
@@ -239,6 +248,60 @@ function initPage() {
     }
 
     return {init: init}
+}
+
+function SearchBlog(url){
+  this.url = url;
+  searchBlogObj = this
+}
+
+SearchBlog.prototype={
+    constructor:SearchBlog,
+    init:function(xml){
+        searchBlogObj.xmlToObjectArray(xml)
+        searchBlogObj.formTableSubmit()
+    },
+    getXmlHttpResponse:function(){
+        var fn = searchBlogObj.init
+        $.ajax({
+                url: this.url,
+                dataType:"xml",
+                success:function(xml){
+                  fn(xml)
+                }
+            }
+        )
+    },
+    xmlToObjectArray:function(xml){
+       var json = []
+       $(xml).find("*:first").children().each(function(i){
+          var obj =  {title:$(this).find("title").text(),content:$(this).find("content").text(),url:$(this).find("url").text()}
+          json.push(obj)
+       })
+        searchBlogObj.json = json
+    },
+    fullTextSearch:function(keyword){
+        var reg = new RegExp(keyword)
+        var regArray = []
+       $.each(searchBlogObj.json,function(n,v){
+           if(reg.test(this.title)|| reg.test(this.content)){
+               regArray.push(this)
+           }
+       })
+        return regArray
+    },
+    formTableSubmit:function(){
+     $("#search_form").submit(function(e){
+         e.preventDefault();
+        var regArray = searchBlogObj.fullTextSearch($("#search_input").val())
+         var load = new AjaxLoadpage('',regArray[0].url)
+         $('.progress').show()
+         load.getServer(function () {
+             toggleDuoshuoComments("#show_post")
+             $('.progress').hide()
+         })
+     })
+    }
 }
 
 $(window).ready(function () {

@@ -45,33 +45,33 @@ function factoryBlogDisplayModel(el){
 function ElementDisplayModel(docElement, hideCss, showCss) {
     this.hideCss = hideCss;
     this.showCss = showCss;
-    this.docObj = $(docElement)
+    this.centent = $(docElement)
 }
 ElementDisplayModel.prototype = {
     constructor:ElementDisplayModel,
     show: function (fn) {
         this.addOnlyOneClass(this.showCss)
-        this.docObj.removeClass(this.hideCss)
+        this.centent.removeClass(this.hideCss)
         if(typeof(fn) == "function"){
-            fn(this.docObj)
+            fn(this.centent)
         }
     },
     hide: function (fn) {
-        this.docObj.removeClass(this.showCss)
+        this.centent.removeClass(this.showCss)
         this.addOnlyOneClass(this.hideCss)
         if(typeof(fn) == "function"){
-            fn(this.docObj)
+            fn(this.centent)
         }
     },
     addOnlyOneClass: function (addClass) {
         try {
             if ($("."+ addClass).length == 0) {
-                this.docObj.addClass(addClass)
+                this.centent.addClass(addClass)
             } else {
                 return  false
             }
         } catch (error) {
-            this.docObj.addClass(addClass)
+            this.centent.addClass(addClass)
               console.log(error)
         }
 

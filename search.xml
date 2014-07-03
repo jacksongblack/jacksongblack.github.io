@@ -1,0 +1,13 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<blogs>
+{% for post in site.posts %}
+<blog>
+  <title>{{ post.title | xml_escape}}</title>
+  <content>{{ post.content | xml_escape  }}</content>
+  <url>http://www.songyuchao.com{{ post.url }}</url>
+</blog>
+  {% endfor %}
+</blogs>
