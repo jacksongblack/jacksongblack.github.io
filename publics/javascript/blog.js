@@ -77,7 +77,7 @@ function initPage() {
         search.getXmlHttpResponse();
 
     }
-
+//   检测浏览器版本信息
     function checkBrowserVersion() {
         var userAgent = navigator.userAgent.toLowerCase();
         // Figure out what browser is being used
@@ -98,7 +98,7 @@ function initPage() {
         })
 
     }
-
+// 绑定category超链接鼠标悬浮事件为点击该超链接
     function addHoverEventInCategoryLink() {
         $("#category li a ").each(function () {
             $(this).hover(function () {
@@ -106,7 +106,7 @@ function initPage() {
             })
         })
     }
-
+//绑定侧边栏超链接鼠标悬浮事件为点击事件
     function addHoverEventInSidebarLink() {
         sidebar_link.hover(function () {
             if (sidebar_link.text() == "最近文章") {
@@ -114,7 +114,7 @@ function initPage() {
             }
         })
     }
-
+//绑定种类超链接鼠标悬浮事件为点击事件
     function addHoverEventIncategoryNav() {
         var category_menu = $("#category_menu")
         category_menu.hover(function () {
@@ -124,7 +124,6 @@ function initPage() {
         })
 
     }
-
     function addHoverEventCloseSidebar(jqueryObj, link) {
         jqueryObj.hover(function () {
             if (link.text() == "关闭最近") {
@@ -243,8 +242,7 @@ function initPage() {
 
     return {init: init}
 }
-
-
+// 加载多说评论框
 function toggleDuoshuoComments(container) {
     var obj = $(".ds-thread")
     var el = document.createElement('div');//该div不需要设置class="ds-thread"
@@ -261,10 +259,12 @@ function SearchBlog(url) {
 
 SearchBlog.prototype = {
     constructor: SearchBlog,
+//    异步获取数据内容后的处理函数调用
     init: function (xml) {
         searchBlogObj.xmlToObjectArray(xml)
         searchBlogObj.formTableSubmit()
     },
+//    异步获取整个站点文章
     getXmlHttpResponse: function () {
         var fn = searchBlogObj.init
         $.ajax({
@@ -276,6 +276,7 @@ SearchBlog.prototype = {
             }
         )
     },
+//    将xml转换为对象的数组
     xmlToObjectArray: function (xml) {
         var json = []
         $(xml).find("*:first").children().each(function (i) {
@@ -284,6 +285,7 @@ SearchBlog.prototype = {
         })
         searchBlogObj.json = json
     },
+//    全站搜索
     fullTextSearch: function (keyword) {
         var reg = new RegExp(keyword)
         var regArray = []
@@ -294,6 +296,7 @@ SearchBlog.prototype = {
         })
         return regArray
     },
+//   搜索成功后重新渲染页面
     review: function (regArray) {
          var html = "<div class='container'><div class='row'><h2>下面是包含关键字的文章</h2>"
         $.each(regArray,function(){
@@ -303,6 +306,7 @@ SearchBlog.prototype = {
         html + "</div></div>"
         $("#show_post").html(html)
     },
+//    绑定搜索输入框获取输入框内容
     formTableSubmit: function () {
         var thisObj = this
         $("#search_form").submit(function (e) {
