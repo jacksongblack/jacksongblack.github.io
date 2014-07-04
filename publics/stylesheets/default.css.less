@@ -105,6 +105,13 @@ body {
   margin: 0 auto 0 40%;
 }
 
+.show_post a p{
+  display: block;     /*定义显示形式*/
+  overflow: hidden;      /*截取超出字符*/
+  text-overflow: ellipsis;     /*超出字符以…代替*/
+  white-space: nowrap;     /*确定超出宽度字符不换行*/
+}
+
 .posts_hide {
   .hide
 }

@@ -1,8 +1,8 @@
 // 异步载入对象
-function AjaxLoadpage(element,url) {
-    if(typeof(url) != "undefined"){
+function AjaxLoadpage(element, url) {
+    if (typeof(url) != "undefined") {
         this.url = url
-    }else{
+    } else {
         this.element = $(element)
         this.url = this.element.attr("href")
     }
@@ -59,7 +59,7 @@ function initPage() {
     var category_switch = $(".category_switch")
     var category_link_display_mode = factoryBlogDisplayModel(".category_switch")
     var display_mode = new DisplayMode()
-    var sidebar_link =   $("#open_sidebar")
+    var sidebar_link = $("#open_sidebar")
     var search = new SearchBlog("http://www.songyuchao.com/search.xml")
 
 
@@ -78,7 +78,7 @@ function initPage() {
 
     }
 
-    function checkBrowserVersion(){
+    function checkBrowserVersion() {
         var userAgent = navigator.userAgent.toLowerCase();
         // Figure out what browser is being used
         jQuery.browser = {
@@ -89,54 +89,55 @@ function initPage() {
             mozilla: /mozilla/.test(userAgent) && !/(compatible|webkit)/.test(userAgent)
         };
 
-        var ie_version = ["6.0","7.0","8.0","9.0"]
+        var ie_version = ["6.0", "7.0", "8.0", "9.0"]
 
-       $.each(ie_version,function(n,value){
-           if ($.browser.msie&&($.browser.version == value)&&!$.support.style){
-               alert("亲～～！你的浏览器版本太低了，本博客可能达不到最佳显示效果！！")
-           }
-       })
+        $.each(ie_version, function (n, value) {
+            if ($.browser.msie && ($.browser.version == value) && !$.support.style) {
+                alert("亲～～！你的浏览器版本太低了，本博客可能达不到最佳显示效果！！")
+            }
+        })
 
     }
 
-    function addHoverEventInCategoryLink(){
-       $("#category li a ").each(function(){
-           $(this).hover(function(){
-               $(this).click();
-           })
-       })
+    function addHoverEventInCategoryLink() {
+        $("#category li a ").each(function () {
+            $(this).hover(function () {
+                $(this).click();
+            })
+        })
     }
 
-    function addHoverEventInSidebarLink(){
-        sidebar_link.hover(function(){
-            if( sidebar_link.text() == "最近文章" ){
+    function addHoverEventInSidebarLink() {
+        sidebar_link.hover(function () {
+            if (sidebar_link.text() == "最近文章") {
                 sidebar_link.click();
             }
         })
     }
 
-    function addHoverEventIncategoryNav(){
-       var category_menu = $("#category_menu")
-        category_menu.hover(function(){
-            if( category_switch.text() ==  "打开种类" ){
+    function addHoverEventIncategoryNav() {
+        var category_menu = $("#category_menu")
+        category_menu.hover(function () {
+            if (category_switch.text() == "打开种类") {
                 category_switch.click();
             }
         })
 
     }
+
     function addHoverEventCloseSidebar(jqueryObj, link) {
         jqueryObj.hover(function () {
             if (link.text() == "关闭最近") {
                 link.click();
             }
-            if(category_switch.text() == "关闭种类"){
+            if (category_switch.text() == "关闭种类") {
                 category_switch.click()
             }
         })
     }
 
-    function addPostHoverEvent(){
-        var show_post =  $("#show_post")
+    function addPostHoverEvent() {
+        var show_post = $("#show_post")
         var post = $("#post")
         addHoverEventCloseSidebar(show_post, sidebar_link);
         addHoverEventCloseSidebar(post, sidebar_link);
@@ -210,8 +211,9 @@ function initPage() {
             bindBlogLinkClickEvent.call(this);
         })
     }
-    function blogSidebarTitleLinkWalker(){
-        $("#recent ul li a ").each(function(){
+
+    function blogSidebarTitleLinkWalker() {
+        $("#recent ul li a ").each(function () {
             bindBlogLinkClickEvent.call(this)
         })
     }
@@ -243,7 +245,6 @@ function initPage() {
 }
 
 
-
 function toggleDuoshuoComments(container) {
     var obj = $(".ds-thread")
     var el = document.createElement('div');//该div不需要设置class="ds-thread"
@@ -253,63 +254,66 @@ function toggleDuoshuoComments(container) {
     jQuery(container).append(el);
 }
 
-function SearchBlog(url){
+function SearchBlog(url) {
     this.url = url;
     searchBlogObj = this
 }
 
-SearchBlog.prototype={
-    constructor:SearchBlog,
-    init:function(xml){
+SearchBlog.prototype = {
+    constructor: SearchBlog,
+    init: function (xml) {
         searchBlogObj.xmlToObjectArray(xml)
         searchBlogObj.formTableSubmit()
     },
-    getXmlHttpResponse:function(){
+    getXmlHttpResponse: function () {
         var fn = searchBlogObj.init
         $.ajax({
                 url: this.url,
-                dataType:"xml",
-                success:function(xml){
-                  fn(xml)
+                dataType: "xml",
+                success: function (xml) {
+                    fn(xml)
                 }
             }
         )
     },
-    xmlToObjectArray:function(xml){
-       var json = []
-       $(xml).find("*:first").children().each(function(i){
-          var obj =  {title:$(this).find("title").text(),content:$(this).find("content").text(),url:$(this).find("url").text()}
-          json.push(obj)
-       })
+    xmlToObjectArray: function (xml) {
+        var json = []
+        $(xml).find("*:first").children().each(function (i) {
+            var obj = {title: $(this).find("title").text(), content: $(this).find("content").text(), url: $(this).find("url").text(),time:$(this).find("time").text()}
+            json.push(obj)
+        })
         searchBlogObj.json = json
     },
-    fullTextSearch:function(keyword){
+    fullTextSearch: function (keyword) {
         var reg = new RegExp(keyword)
         var regArray = []
-       $.each(searchBlogObj.json,function(n,v){
-           if(reg.test(this.title)|| reg.test(this.content)){
-               regArray.push(this)
-           }
-       })
+        $.each(searchBlogObj.json, function (n, v) {
+            if (reg.test(this.title) || reg.test(this.content)) {
+                regArray.push(this)
+            }
+        })
         return regArray
     },
-    formTableSubmit:function(){
-     $("#search_form").submit(function(e){
-         e.preventDefault();
-        var regArray = searchBlogObj.fullTextSearch($("#search_input").val())
-         if(regArray.length === 0){
-             alert("没有搜到任何东西")
-             return
-         }
-         var load = new AjaxLoadpage('',regArray[0].url)
-         $('.progress').show()
-         load.getServer(function () {
-             toggleDuoshuoComments("#show_post")
-             $('.progress').hide()
-             var displayMode = new DisplayMode()
-             displayMode.shutDown();
-         })
-     })
+    review: function (regArray) {
+         var html = "<div class='container'><div class='row'><h2>下面是包含关键字的文章</h2>"
+        $.each(regArray,function(){
+            html =  html + '<a href="'+ this.url +'" class="col-md-7">'+'<hr class="featurette-divider"><h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featurette-divider">'+'</a>' + ""
+
+        })
+        html + "</div></div>"
+        $("#show_post").html(html)
+    },
+    formTableSubmit: function () {
+        var thisObj = this
+        $("#search_form").submit(function (e) {
+            e.preventDefault();
+            var regArray = searchBlogObj.fullTextSearch($("#search_input").val())
+            if (regArray.length === 0) {
+                alert("没有搜到任何东西")
+                return
+            }
+            thisObj.review(regArray);
+        })
     }
 }
 

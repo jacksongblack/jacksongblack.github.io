@@ -8,6 +8,7 @@ layout: nil
   <title>{{ post.title | xml_escape}}</title>
   <content>{{ post.content | xml_escape  }}</content>
   <url>http://www.songyuchao.com{{ post.url }}</url>
+  <time>{{ post.date | date: "%Y-%m-%d" }}</time>
 </blog>
   {% endfor %}
 </blogs>
