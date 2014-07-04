@@ -160,9 +160,9 @@ XML_escape，逃避一些格式，就会造成jekyll出现错误。
 重新渲染页面，通过JS生成HTML
 
     review: function (regArray) {
-                 var html = "<div class='container'><div class='row'><h2>下面是包含关键字的文章</h2>"
+                 var html = "<di v class='cont ainer'><div class='row'><h2>下面是包含关键字的文章</h2>"
                 $.each(regArray,function(){
-                    html =  html + '<a href="'+ this.url +'" class="col-md-7">'+'<hr class="featurette-divider"><h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featurette-divider">'+'</a>' + ""
+                    html =  html + '<a h  ref="'+ this.url +'" class="co l-md-7">'+'<hr class="fe aturette-divider"><h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featu rette-divid er">'+'</a>' + ""
 
                 })
                 html + "</div></div>"
