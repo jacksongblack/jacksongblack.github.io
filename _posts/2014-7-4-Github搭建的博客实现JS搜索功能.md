@@ -60,7 +60,7 @@ describer: 只用JS实现全站博客文章的关键字搜索
         },
     //   搜索成功后重新渲染页面
         review: function (regArray) {
-             var html = "<div class='container'>下面是包含关键字的文章"
+             var html = "<di v class='contain er'>下面是包含关键字的文章"
             $.each(regArray,function(){
                 html =  html + '<a>'+'<h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featurette-divider">'+'</a>' + ""
 
