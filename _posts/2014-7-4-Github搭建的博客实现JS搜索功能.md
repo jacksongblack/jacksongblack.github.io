@@ -19,7 +19,7 @@ describer: 只用JS实现全站博客文章的关键字搜索
 
 全部代码
 
-    SearchBlog.prototype = {
+    Search.prototype = {
         constructor: SearchBlog,
     //    异步获取数据内容后的处理函数调用
         init: function (xml) {
