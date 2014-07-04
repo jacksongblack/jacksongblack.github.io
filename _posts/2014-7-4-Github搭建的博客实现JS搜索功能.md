@@ -60,12 +60,12 @@ describer: 只用JS实现全站博客文章的关键字搜索
         },
     //   搜索成功后重新渲染页面
         review: function (regArray) {
-             var html = "<div class='container'><div class='row'><h2>下面是包含关键字的文章</h2>"
+             var html = "<div class='container'>下面是包含关键字的文章"
             $.each(regArray,function(){
-                html =  html + '<a href="'+ this.url +'" class="col-md-7">'+'<hr class="featurette-divider"><h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featurette-divider">'+'</a>' + ""
+                html =  html + '<a>'+'<h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featurette-divider">'+'</a>' + ""
 
             })
-            html + "</div></div>"
+            html
             $("#show_post").html(html)
         },
     //    绑定搜索输入框获取输入框内容
