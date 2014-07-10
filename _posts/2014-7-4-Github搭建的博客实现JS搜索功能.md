@@ -156,4 +156,11 @@ XML_escape，逃避一些格式，就会造成jekyll出现错误。
 
 重新渲染页面，通过JS生成HTML
 
+    review: function (regArray) {
+                $.each(regArray,function(){
+
+                })
+                html + "</div></div>"
+                $("#show_post").html(html)
+     },
 
