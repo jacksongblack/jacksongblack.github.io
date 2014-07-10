@@ -154,7 +154,7 @@ XML_escape，逃避一些格式，就会造成jekyll出现错误。
             })
         }
 
-重新渲染页面，通过JS生成HTML
+重新渲染页面，通过JS生成HTML，另外我写了个jquery插件实现js代码部分[github地址](https://github.com/jacksongblack/jquery-search-site)
 
     review: function (regArray) {
                 $.each(regArray,function(){
