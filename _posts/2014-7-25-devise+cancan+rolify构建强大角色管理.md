@@ -4,7 +4,8 @@ category: rails
 title: devise+cancan+rolify构建强大角色管理
 describer: 摘录三个工具在rails项目中的使用
 ---
-原文地址:[我是连接](http://my.oschina.net/silentboy/blog/204772)
+## devise+cancan+rolify构建强大角色管理
+原文地址:[我是连接](http://my.oschina.net/silentboy/blog/204772)</br>
 原文中有些问题，我按自己的实践稍稍做了些修改。不知到是不是Gem升级到最新的缘故，不过还是解决了。
 
 devise、cancan和rolify这三个组件结合，可以建立完整而强大的用户权限模型。
