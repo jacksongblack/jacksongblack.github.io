@@ -33,7 +33,7 @@
         <h2>{{ category_name }}<small>Category</small></h2>
         <ul class="posts_list">
             {% for post in site.categories[category_name] %}
-            <li><a href="{{ post.url }}" onclick="return false">{{ post.title }}（{{ post.date | date: "%Y-%m-%d" }}）</a></li>
+            <li><a href="{{ post.url }}" onclick="return false">{{ post.title }}<small>{{ post.date | date: "%Y-%m-%d" }}</small></a></li>
             {% endfor %}
         </ul>
         {% endfor %}
