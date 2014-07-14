@@ -131,7 +131,7 @@ function initPage() {
         addHoverEventInCategoryLink();
         checkBrowserVersion();
         searchBlog.init("http://www.songyuchao.com/search.xml");
-//        $("#myModal").modal("hide");
+        $("#myModal").modal("hide");
      }
 //   检测浏览器版本信息
     function checkBrowserVersion() {
