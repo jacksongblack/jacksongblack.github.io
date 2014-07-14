@@ -12,13 +12,13 @@
 <div id="posts" class="left_posts_list ">
     <a class="btn btn-info glyphicon  glyphicon-book " type="button" style="width: 100%">博客目录</a>
     {% for category_name in site.category-list %}
-    {% for post in site.categories[category_name] %}
     <ul class="nav nav-tabs posts_hide" id="{{ category_name }}">
+    {% for post in site.categories[category_name] %}
         <li>
             <a href="{{ post.url }}" onclick="return false">{{ post.title }}（{{ post.date | date: "%Y-%m-%d" }}）</a>
         </li>
-    </ul>
     {% endfor %}
+    </ul>
     {% endfor %}
 </div>
 <!--正文显示-->
