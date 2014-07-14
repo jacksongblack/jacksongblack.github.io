@@ -122,5 +122,5 @@ cancan提供对资源的授权控制。例如，在视图中使用can?方法来�
           <%= link_to "About", home_about_path   %>
         <% end %>
     <% end %>
-    
+
 (完）
