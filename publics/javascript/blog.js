@@ -239,6 +239,9 @@ function initPage() {
             }
         )
     }
+    function move(settion){
+
+    }
 
     return {init: init}
 }
