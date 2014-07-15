@@ -79,10 +79,15 @@ ElementDisplayModel.prototype = {
 }
 //封装两种显示模式
 function DisplayMode(){
-    this.categories = new ElementDisplayModel(".left_category","left_category_hide","left_category")
-    this.posts = new ElementDisplayModel("#posts","left_posts_list_hide","left_posts_list")
-    this.category_switch = new ElementDisplayModel(".category_switch","glyphicon-plus","glyphicon-minus")
-    this.category_code = new ElementDisplayModel("#category","categories_hide","categories")
+    if (this instanceof DisplayMode){
+        this.categories = new ElementDisplayModel(".left_category","left_category_hide","left_category")
+        this.posts = new ElementDisplayModel("#posts","left_posts_list_hide","left_posts_list")
+        this.category_switch = new ElementDisplayModel(".category_switch","glyphicon-plus","glyphicon-minus")
+        this.category_code = new ElementDisplayModel("#category","categories_hide","categories")
+    }else{
+        return new DisplayMode()
+    }
+
 }
 
 DisplayMode.prototype = {
