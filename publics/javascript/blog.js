@@ -66,6 +66,7 @@ function initPage() {
     var searchBlog = {
        init:function(url){
            var me =this
+           var regKey = ""
            $.ajax({
                url: url,
                dataType: "xml",
@@ -93,13 +94,23 @@ function initPage() {
                     regArray.push(this)
                 }
             })
+            regKey = keyword
             return regArray
         },
         review: function (regArray) {
-            var html = "<div class='container'><h2>下面是包含关键字的文章<small>Search results</small></h2><ul class='posts_list'><li>"
+            var reg = RegExp('.*?'+regKey+'.*')
+            var html = '<div class="container"><h2>下面是包含关键字的文章<small>Search results</small></h2><ul class="search_results"><li>'
             $.each(regArray,function(){
-                html =  html + '<a href="'+ this.url +'" onclick="return false">'+'<hr class="featurette-divider"><h3>' + this.title +'</h3><p>'+ this.time +'</p><hr class="featurette-divider">'+'</a>' + ""
-
+                var content = "内容中没有匹配到关键字"
+                var reTag = /<(?:.|\s)*?>/g
+                if(this.content.match(reg) != null){
+                     content = this.content.match(reg)
+                     content =  content.toString().replace(reTag,"")
+                }
+                html =  html + '<a href="'+ this.url +'" onclick="return false">'+
+                    '<hr class="featurette-divider"><h3>' + this.title +'<small>'+
+                    this.time +'</small></h3>'+'</a>' +
+                    "<p>"+ content  +'</p><hr class="featurette-divider">'
             })
             html + "</li></ul></div>"
             $("#show_post").html(html)
