@@ -259,7 +259,7 @@ function initPage() {
     }
 
    function postlistWalkel(){
-       $(".posts_list li a").each(function(){
+       $(".search_results li a").each(function(){
            bindBlogLinkClickEvent.call(this)
        })
    }
