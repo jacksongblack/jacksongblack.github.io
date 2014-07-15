@@ -257,10 +257,11 @@ function initPage() {
     function bindBlogLinkClickEvent() {
         var load = new AjaxLoadpage(this)
         $(this).click(function () {
-            $('#prograss').modal({  keyboard: false})
+            $('.progress').show()
             display_mode.shutDown()
             load.getServer(function () {
                 toggleDuoshuoComments("#show_post")
+                $('.progress').hide()
             })
 
         })
