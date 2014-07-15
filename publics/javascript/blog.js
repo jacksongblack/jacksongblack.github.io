@@ -54,29 +54,85 @@ ReviewPage.prototype = {
         this.centent.html(html)
     }
 }
+
+
 //页面载入后初始化程序
 function initPage() {
     var category_switch = $(".category_switch")
     var category_link_display_mode = factoryBlogDisplayModel(".category_switch")
     var display_mode = new DisplayMode()
     var sidebar_link = $("#open_sidebar")
-    var search = new SearchBlog("http://www.songyuchao.com/search.xml")
 
+    var searchBlog = {
+       init:function(url){
+           var me =this
+           $.ajax({
+               url: url,
+               dataType: "xml",
+               success: function (xml) {
+                   me.xmlToObjectArray(xml)
+                   me.formTableSubmit();
+               }
+           })
+       },
+        xmlToObjectArray: function (xml) {
+            var me = this;
+            var json = []
+            $(xml).find("*:first").children().each(function (i) {
+                var obj = {title: $(this).find("title").text(), content: $(this).find("content").text(), url: $(this).find("url").text(),time:$(this).find("time").text()}
+                json.push(obj)
+            })
+            me.json = json
+        },
+        //    全站搜索
+        fullTextSearch: function (keyword) {
+            var reg = new RegExp(keyword)
+            var regArray = []
+            $.each(this.json, function (n, v) {
+                if (reg.test(this.title) || reg.test(this.content)) {
+                    regArray.push(this)
+                }
+            })
+            return regArray
+        },
+        review: function (regArray) {
+            var html = "<div class='container'><h2>下面是包含关键字的文章<small>Search results</small></h2><ul class='posts_list'><li>"
+            $.each(regArray,function(){
+                html =  html + '<a href="'+ this.url +'" onclick="return false">'+'<hr class="featurette-divider"><h3>' + this.title +'</h3><p>'+ this.time +'</p><hr class="featurette-divider">'+'</a>' + ""
 
+            })
+            html + "</li></ul></div>"
+            $("#show_post").html(html)
+        },
+        formTableSubmit: function () {
+            var me = this;
+            $("#search_form").submit(function (e) {
+                e.preventDefault();
+                var regArray = me.fullTextSearch($("#search_input").val())
+                if (regArray.length === 0) {
+                    alert("没有搜到任何东西")
+                    return
+                }
+                me.review(regArray);
+                postlistWalkel();
+            })
+        }
+    }
     function init() {
         bindCategoryLinkOnclickEvent();
         bindSidebarClickEvent();
         CategoryLinksWalkel();
         blogTitleLinksWalker();
         blogSidebarTitleLinkWalker();
+        postlistWalkel();
         addHoverEventInSidebarLink();
         addPostHoverEvent();
         addHoverEventIncategoryNav();
         addHoverEventInCategoryLink();
         checkBrowserVersion();
-        search.getXmlHttpResponse();
-
-    }
+        searchBlog.init("http://www.songyuchao.com/search.xml");
+        $("#myModal").modal("hide");
+     }
 //   检测浏览器版本信息
     function checkBrowserVersion() {
         var userAgent = navigator.userAgent.toLowerCase();
@@ -191,6 +247,12 @@ function initPage() {
         })
     }
 
+   function postlistWalkel(){
+       $(".posts_list li a").each(function(){
+           bindBlogLinkClickEvent.call(this)
+       })
+   }
+
 
     function bindBlogLinkClickEvent() {
         var load = new AjaxLoadpage(this)
@@ -255,74 +317,7 @@ function toggleDuoshuoComments(container) {
     jQuery(container).append(el);
 }
 
-function SearchBlog(url) {
-    this.url = url;
-    searchBlogObj = this
-}
 
-SearchBlog.prototype = {
-    constructor: SearchBlog,
-//    异步获取数据内容后的处理函数调用
-    init: function (xml) {
-        searchBlogObj.xmlToObjectArray(xml)
-        searchBlogObj.formTableSubmit()
-    },
-//    异步获取整个站点文章
-    getXmlHttpResponse: function () {
-        var fn = searchBlogObj.init
-        $.ajax({
-                url: this.url,
-                dataType: "xml",
-                success: function (xml) {
-                    fn(xml)
-                }
-            }
-        )
-    },
-//    将xml转换为对象的数组
-    xmlToObjectArray: function (xml) {
-        var json = []
-        $(xml).find("*:first").children().each(function (i) {
-            var obj = {title: $(this).find("title").text(), content: $(this).find("content").text(), url: $(this).find("url").text(),time:$(this).find("time").text()}
-            json.push(obj)
-        })
-        searchBlogObj.json = json
-    },
-//    全站搜索
-    fullTextSearch: function (keyword) {
-        var reg = new RegExp(keyword)
-        var regArray = []
-        $.each(searchBlogObj.json, function (n, v) {
-            if (reg.test(this.title) || reg.test(this.content)) {
-                regArray.push(this)
-            }
-        })
-        return regArray
-    },
-//   搜索成功后重新渲染页面
-    review: function (regArray) {
-         var html = "<div class='container'><div class='row'><h2>下面是包含关键字的文章</h2>"
-        $.each(regArray,function(){
-            html =  html + '<a href="'+ this.url +'" class="col-md-7">'+'<hr class="featurette-divider"><h3>' + this.title +'</h3><p>'+ this.time +'</p><p>'+ $(this.content).text()  +'</p>'+'<hr class="featurette-divider">'+'</a>' + ""
-
-        })
-        html + "</div></div>"
-        $("#show_post").html(html)
-    },
-//    绑定搜索输入框获取输入框内容
-    formTableSubmit: function () {
-        var thisObj = this
-        $("#search_form").submit(function (e) {
-            e.preventDefault();
-            var regArray = searchBlogObj.fullTextSearch($("#search_input").val())
-            if (regArray.length === 0) {
-                alert("没有搜到任何东西")
-                return
-            }
-            thisObj.review(regArray);
-        })
-    }
-}
 
 $(window).ready(function () {
     initPage().init();
