@@ -16,10 +16,26 @@
         <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="/">博文</a></li>
-                <li><a href="/photo_wall.html">照片墙</a></li>
-                <li><a href="/about.html">关于我</a></li>
-                <li><a href="/project.html">我的作品</a></li>
+                {% if page.title == "小宋的照片墙" %}
+                <li class="active">
+                 {% else %}
+                 <li>
+                {% endif %}
+                    <a href="/photo_wall.html">照片墙</a></li>
+                {% if page.title == "关于我" %}
+                <li class="active">
+                    {% else %}
+                <li>
+                    {% endif %}
+                <a href="/about.html">关于我</a></li>
+                {% if page.title == "小宋的作品" %}
+                <li class="active">
+                    {% else %}
+                <li>
+                    {% endif %}
+                <a href="/project.html">我的作品</a></li>
                 <li><a href="/sitemap.xml">站点地图</a></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">© 2014 JackSong ({{ site.time | date: "%Y年%m月%d日 %H时%M分" }}更新)</a></li>
