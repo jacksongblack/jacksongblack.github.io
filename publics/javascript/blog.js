@@ -125,7 +125,7 @@ function initPage() {
                     return
                 }
                 me.review(regArray);
-                postlistWalkel();
+                searchResultsWalkel();
             })
         }
     }
@@ -135,7 +135,7 @@ function initPage() {
         CategoryLinksWalkel();
         blogTitleLinksWalker();
         blogSidebarTitleLinkWalker();
-        postlistWalkel();
+        blogLinkWalker();
         addHoverEventInSidebarLink();
         addPostHoverEvent();
         addHoverEventIncategoryNav();
@@ -258,11 +258,16 @@ function initPage() {
         })
     }
 
-   function postlistWalkel(){
+   function searchResultsWalkel(){
        $(".search_results li a").each(function(){
            bindBlogLinkClickEvent.call(this)
        })
    }
+  function blogLinkWalker(){
+      $(".posts_list li a").each(function(){
+          bindBlogLinkClickEvent.call(this)
+      })
+  }
 
 
     function bindBlogLinkClickEvent() {
