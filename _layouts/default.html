@@ -17,8 +17,8 @@
 
 </head>
 
-<body youdao="bind" screen_capture_injected="true">
-<div class="modal fade" id="myModal">
+<body youdao="bind" screen_capture_injected="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="myModal" >
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -33,7 +33,10 @@
 
 </body>
 <script>
-    $("#myModal").modal("show")
+    $("#myModal").modal({backdrop: 'static',
+            keyboard: false,
+            show: true
+    })
 </script>
 <link rel="stylesheet" type="text/css" href="/publics/stylesheets/style.css">
 <link rel="stylesheet/less" type="text/css" href="/publics/stylesheets/default.css.less">
