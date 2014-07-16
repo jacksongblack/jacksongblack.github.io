@@ -134,7 +134,7 @@ function initPage() {
 
     var linksObjArray =[{selector:"#category li a",fn:addCategoryLinkBackgroundColor},
         {selector:"#show_post table tbody tr td a",fn:bindBlogLinkClickEvent},
-        {selector:".posts li a",fn:bindBlogLinkClickEvent},
+        {selector:"#posts ul li a",fn:bindBlogLinkClickEvent},
         {selector:"#recent ul li a ",fn:bindBlogLinkClickEvent}]
     function traversalLinks(array){
         $.each(array,function(n,v){
