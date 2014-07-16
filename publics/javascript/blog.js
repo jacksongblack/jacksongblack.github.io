@@ -274,6 +274,7 @@ function initPage() {
         var load = new AjaxLoadpage(this)
         $(this).click(function () {
             $('.progress').show()
+            $("#show_post").empty()
             display_mode.shutDown()
             load.getServer(function () {
                 toggleDuoshuoComments("#show_post")
