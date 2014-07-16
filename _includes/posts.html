@@ -30,12 +30,15 @@
     </div>
     <div id="show_post" class="show_post ">
         {% for category_name in site.category-list %}
-        <h2>{{ category_name }}<small>Category</small></h2>
-        <ul class="posts_list">
-            {% for post in site.categories[category_name] %}
-            <li><a href="{{ post.url }}" onclick="return false"><h4>{{ post.title }}<small>{{ post.date | date: "%Y-%m-%d" }}</small></h4></a></li>
+        <table class="table table-hover">
+            <thead><h2>{{ category_name }}<small>Category</small></h2></thead>
+            <tbody >{% for post in site.categories[category_name] %}
+            <tr><td><h3>{{ post.title }}</h3></br>
+                <time class="glyphicon glyphicon-time">{{ post.date | date: "%Y-%m-%d" }}</time></br><p class="glyphicon glyphicon-info-sign">{{ post.describer }}</p>
+                </br><a href="{{ post.url }}" class="btn btn-success" onclick="return false">Read Me</a></td></tr>
             {% endfor %}
-        </ul>
+            </tbody>
+        </table>
         {% endfor %}
     </div>
 </div>

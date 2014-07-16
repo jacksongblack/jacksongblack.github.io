@@ -99,7 +99,8 @@ function initPage() {
         },
         review: function (regArray) {
             var reg = RegExp('.*?'+regKey+'.*')
-            var html = '<div class="container"><h2>下面是包含关键字的文章<small>Search results</small></h2><ul class="search_results"><li>'
+            var html = '<table class="table table-hover"><thead><h2>下面是包含关键字的文章<small>Search results</small>' +
+                '</h2></thead><tbody>'
             $.each(regArray,function(){
                 var content = "内容中没有匹配到关键字"
                 var reTag = /<(?:.|\s)*?>/g
@@ -107,12 +108,13 @@ function initPage() {
                      content = this.content.match(reg)
                      content =  content.toString().replace(reTag,"")
                 }
-                html =  html + '<a href="'+ this.url +'" onclick="return false">'+
-                    '<hr class="featurette-divider"><h3>' + this.title +'<small>'+
+                html =  html + '<tr class="search_results"><td><a href="'+ this.url +
+                    '" onclick="return false">'+
+                    '<h3>' + this.title +'<small>'+
                     this.time +'</small></h3>'+'</a>' +
-                    "<p>"+ content  +'</p><hr class="featurette-divider">'
+                    "<p>"+ content  +'</p>'
             })
-            html + "</li></ul></div>"
+            html + "</td></tr></tbody></table>"
             $("#show_post").html(html)
         },
         formTableSubmit: function () {
@@ -129,13 +131,24 @@ function initPage() {
             })
         }
     }
+
+    var linksObjArray =[{selector:"#category li a",fn:addCategoryLinkBackgroundColor},
+        {selector:"#show_post table tbody tr td a",fn:bindBlogLinkClickEvent},
+        {selector:".posts li a",fn:bindBlogLinkClickEvent},
+        {selector:"#recent ul li a ",fn:bindBlogLinkClickEvent}]
+    function traversalLinks(array){
+        $.each(array,function(n,v){
+            var obj = this
+            $(this.selector).each(function(){
+                obj.fn.call(this)
+            })
+        })
+
+    }
     function init() {
         bindCategoryLinkOnclickEvent();
         bindSidebarClickEvent();
-        CategoryLinksWalkel();
-        blogTitleLinksWalker();
-        blogSidebarTitleLinkWalker();
-        blogLinkWalker();
+        traversalLinks(linksObjArray)
         addHoverEventInSidebarLink();
         addPostHoverEvent();
         addHoverEventIncategoryNav();
@@ -252,22 +265,11 @@ function initPage() {
         })
     }
 
-    function CategoryLinksWalkel() {
-        $("#category li a").each(function () {
-            addCategoryLinkBackgroundColor.call(this);
-        })
-    }
 
    function searchResultsWalkel(){
-       $(".search_results li a").each(function(){
-           bindBlogLinkClickEvent.call(this)
-       })
+       var srarch_results =[{selector:".search_results td a",fn:bindBlogLinkClickEvent}]
+       traversalLinks(srarch_results)
    }
-  function blogLinkWalker(){
-      $(".posts_list li a").each(function(){
-          bindBlogLinkClickEvent.call(this)
-      })
-  }
 
 
     function bindBlogLinkClickEvent() {
@@ -284,17 +286,6 @@ function initPage() {
         })
     }
 
-    function blogTitleLinksWalker() {
-        $("#posts ul li a").each(function () {
-            bindBlogLinkClickEvent.call(this);
-        })
-    }
-
-    function blogSidebarTitleLinkWalker() {
-        $("#recent ul li a ").each(function () {
-            bindBlogLinkClickEvent.call(this)
-        })
-    }
 
     function bindSidebarClickEvent() {
         $("#open_sidebar").sidr({
@@ -317,9 +308,6 @@ function initPage() {
                 }
             }
         )
-    }
-    function move(settion){
-
     }
 
     return {init: init}
