@@ -17,7 +17,7 @@ AjaxLoadpage.prototype = {
         try{
             window.history.pushState(state, '', this.url)
         }catch (err){
-            alert("你阅览器版本太低无法使用更改url功能")
+            alert("你阅览器版本太低无法使用更改地址栏功能")
             console.log(err)
         }
     },
