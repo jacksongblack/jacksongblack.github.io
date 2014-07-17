@@ -14,7 +14,12 @@ AjaxLoadpage.prototype = {
     constructor: AjaxLoadpage,
     addUrlHistory: function (response) {
         var state = {htmlContent: response}
-        window.history.pushState(state, '', this.url)
+        try{
+            window.history.pushState(state, '', this.url)
+        }catch (err){
+            alert("你阅览器版本太低无法使用更改url功能")
+            console.log(err)
+        }
     },
     changeBlogContent: function (response) {
         var ajaxHtml = $(response).find("div#show_post").children()
