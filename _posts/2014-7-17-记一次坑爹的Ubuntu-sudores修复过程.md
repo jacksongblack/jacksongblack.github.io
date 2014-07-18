@@ -1,6 +1,6 @@
 ---
 layout: post
-category: 前端技术
+category: 运维
 title: 一次坑爹的ubuntu-sudores修复过程
 describer: 通过这次修复，掌握ubuntu修复模式的使用和在双系统下注意点
 ---
