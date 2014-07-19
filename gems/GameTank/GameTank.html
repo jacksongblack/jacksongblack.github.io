@@ -10,16 +10,19 @@ title: game
     <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap-theme.min.css">
     <link rel="short icon" href="/publics/images/avatar.gif">
     <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/publics/stylesheets/reset.css">
     <script src="/publics/javascript/jquery-1.11.0.min.js"></script>
     <script src="/publics/javascript/bootstrap.min.js"></script>
 </head>
-<body youdao="bind">
+<body youdao="bind" style="padding: 55px 0 0 0">
 {% include navbar.html %}
-<div class="containers center-block">
-    <canvas id="playGame" style="height: 320px ;width:70%">
+<div class="container_fluid ">
+    <div class="row" style="margin: 0 15px 0 0">
+        <div class="col-xs-12  col-lg-8 col-lg-offset-2 ">
+            <canvas id="playGame" style="height: 320px ;width:70%">
 
-    </canvas>
+            </canvas>
+        </div>
+    </div>
 </div>
 <script charset="utf-8" type="text/javascript" src="javascript/tank.js"></script>
 </body>

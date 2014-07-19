@@ -58,7 +58,8 @@ var gem = {
         var context = canvas.getContext("2d")
         var radTank = {x:12,y:12,color:"red"}
         var tank =  TankModel(context,radTank)
-        console.log(tank.down())
+//        tank.down()
+        tank.up()
     }
 }
 gem.init()
