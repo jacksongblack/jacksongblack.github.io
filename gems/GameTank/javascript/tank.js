@@ -29,7 +29,7 @@ TankModel.prototype = {
         this.context.fillRect(this.x + 15, this.y, 5, 30)
         this.context.fillRect(this.x + 6, this.y + 5, 8,20)
         this.context.fillStyle = this.color
-        this.context.arc(this.x + 10, this.y + 15, 4, 0, 360, true);
+        this.context.arc(this.x + 10, this.y + 15, 4, 0, 2*Math.PI, true);
         this.context.fill();
         this.context.strokeStyle = this.color;
         this.context.lineWidth = 1.5;
@@ -49,7 +49,7 @@ TankModel.prototype = {
         this.context.fillRect(this.x + 15, this.y, 5, 30)
         this.context.fillRect(this.x + 6, this.y + 5, 8,20)
         this.context.fillStyle = this.color
-        this.context.arc(this.x + 10, this.y + 15, 4, 0, 360, true);
+        this.context.arc(this.x + 10, this.y + 15, 4, 0, 2*Math.PI, true);
         this.context.fill();
         this.context.strokeStyle = this.color;
         this.context.lineWidth = 1.5;
@@ -76,7 +76,7 @@ TankModel.prototype = {
         this.context.fillRect(this.x+5,this.y+6,20,8);
         //画出坦克的盖子
         this.context.fillStyle=this.color;
-        this.context.arc(this.x+15,this.y+10,4,0,360,true);
+        this.context.arc(this.x+15,this.y+10,4,0,2*Math.PI,true);
         this.context.fill();
         //画出炮筒(直线)
         this.context.strokeStyle=this.color;
@@ -105,7 +105,7 @@ TankModel.prototype = {
         this.context.fillRect(this.x+5,this.y+6,20,8);
         //画出坦克的盖子
         this.context.fillStyle= this.color;
-        this.context.arc(this.x+15,this.y+10,4,0,360,true);
+        this.context.arc(this.x+15,this.y+10,4,0,2*Math.PI,true);
         this.context.fill();
         //画出炮筒(直线)
         this.context.strokeStyle=this.color;
