@@ -12,6 +12,7 @@ function TankModel(context, tankstatus) {
         this.y = tankstatus.y
         this.color = tankstatus.color
         this.speed = tankstatus.speed
+        this.direction
     } else {
         return new TankModel(context,tankstatus)
     }
@@ -20,6 +21,7 @@ function TankModel(context, tankstatus) {
 TankModel.prototype = {
     constructor: TankModel,
     down: function () {
+        this.direction = "down"
         this.eraser()
         if (this.y + this.speed <= 130){
             this.y = this.y + this.speed
@@ -40,6 +42,7 @@ TankModel.prototype = {
         this.context.stroke();
     },
     up:function(){
+        this.direction = "up"
         this.eraser()
         if (this.y - this.speed >= 0){
             this.y = this.y - this.speed
@@ -60,6 +63,7 @@ TankModel.prototype = {
         this.context.stroke();
     },
     right:function(){
+        this.direction = "right"
         this.eraser()
          if (this.x + this.speed <= 275){
            this.x  = this.x +this.speed
@@ -89,6 +93,7 @@ TankModel.prototype = {
         this.context.stroke();
     },
     left:function(){
+        this.direction = "left"
         this.eraser()
         if (this.x - this.speed >= 0){
             this.x  = this.x - this.speed
@@ -161,6 +166,21 @@ var gem = {
                     break;
 
             }
+        }
+    }
+}
+function Bullet(tankObj){
+    if (this instanceof Bullet){
+        this.tank = tankObj
+    }else{
+        new Bullet(tankObj)
+    }
+}
+Bullet.prototype = {
+    constructor:Bullet,
+    locus:function(){
+        switch (this.tank.direction){
+            
         }
     }
 }
