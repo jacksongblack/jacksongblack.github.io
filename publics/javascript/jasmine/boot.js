@@ -66,7 +66,7 @@
     },
 
     spyOn: function(obj, methodName) {
-      return env.spyOn(n, methodName);
+      return env.spyOn(obj, methodName);
     },
 
     jsApiReporter: new jasmine.JsApiReporter({
