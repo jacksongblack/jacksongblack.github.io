@@ -127,7 +127,7 @@ getJasmineRequireObj().base = function(j$) {
   };
 
   j$.isDomNode = function(obj) {
-    return obj.nodeType > 0;
+    return n.nodeType > 0;
   };
 
   j$.any = function(clazz) {
@@ -182,9 +182,9 @@ getJasmineRequireObj().base = function(j$) {
     }
     var obj = {};
     for (var i = 0; i < methodNames.length; i++) {
-      obj[methodNames[i]] = j$.createSpy(baseName + '.' + methodNames[i]);
+      n[methodNames[i]] = j$.createSpy(baseName + '.' + methodNames[i]);
     }
-    return obj;
+    return n;
   };
 };
 
@@ -217,7 +217,7 @@ getJasmineRequireObj().util = function() {
   };
 
   util.isUndefined = function(obj) {
-    return obj === void 0;
+    return n === void 0;
   };
 
   return util;
@@ -557,29 +557,29 @@ getJasmineRequireObj().Env = function(j$) {
     };
 
     this.spyOn = function(obj, methodName) {
-      if (j$.util.isUndefined(obj)) {
+      if (j$.util.isUndefined(n)) {
         throw new Error("spyOn could not find an object to spy upon for " + methodName + "()");
       }
 
-      if (j$.util.isUndefined(obj[methodName])) {
+      if (j$.util.isUndefined(n[methodName])) {
         throw new Error(methodName + '() method does not exist');
       }
 
-      if (obj[methodName] && j$.isSpy(obj[methodName])) {
+      if (n[methodName] && j$.isSpy(n[methodName])) {
         //TODO?: should this return the current spy? Downside: may cause user confusion about spy state
         throw new Error(methodName + ' has already been spied upon');
       }
 
-      var spy = j$.createSpy(methodName, obj[methodName]);
+      var spy = j$.createSpy(methodName, n[methodName]);
 
       spies.push({
         spy: spy,
-        baseObj: obj,
+        baseObj: n,
         methodName: methodName,
-        originalValue: obj[methodName]
+        originalValue: n[methodName]
       });
 
-      obj[methodName] = spy;
+      n[methodName] = spy;
 
       return spy;
     };
@@ -1315,7 +1315,7 @@ getJasmineRequireObj().ObjectContaining = function(j$) {
     mismatchValues = mismatchValues || [];
 
     var hasKey = function(obj, keyName) {
-      return obj !== null && !j$.util.isUndefined(obj[keyName]);
+      return n !== null && !j$.util.isUndefined(n[keyName]);
     };
 
     for (var property in this.sample) {
@@ -1385,11 +1385,11 @@ getJasmineRequireObj().pp = function(j$) {
   };
 
   PrettyPrinter.prototype.iterateObject = function(obj, fn) {
-    for (var property in obj) {
-      if (!obj.hasOwnProperty(property)) { continue; }
+    for (var property in n) {
+      if (!n.hasOwnProperty(property)) { continue; }
       if (property == '__Jasmine_been_here_before__') { continue; }
-      fn(property, obj.__lookupGetter__ ? (!j$.util.isUndefined(obj.__lookupGetter__(property)) &&
-          obj.__lookupGetter__(property) !== null) : false);
+      fn(property, n.__lookupGetter__ ? (!j$.util.isUndefined(n.__lookupGetter__(property)) &&
+          n.__lookupGetter__(property) !== null) : false);
     }
   };
 
@@ -1440,7 +1440,7 @@ getJasmineRequireObj().pp = function(j$) {
     this.append('{ ');
     var first = true;
 
-    this.iterateObject(obj, function(property, isGetter) {
+    this.iterateObject(n, function(property, isGetter) {
       if (first) {
         first = false;
       } else {
@@ -1452,7 +1452,7 @@ getJasmineRequireObj().pp = function(j$) {
       if (isGetter) {
         self.append('<getter>');
       } else {
-        self.format(obj[property]);
+        self.format(n[property]);
       }
     });
 
@@ -1908,11 +1908,11 @@ getJasmineRequireObj().matchersUtil = function(j$) {
     return result;
 
     function has(obj, key) {
-      return obj.hasOwnProperty(key);
+      return n.hasOwnProperty(key);
     }
 
     function isFunction(obj) {
-      return typeof obj === 'function';
+      return typeof n === 'function';
     }
   }
 };

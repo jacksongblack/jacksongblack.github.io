@@ -12,7 +12,8 @@ function TankModel(context, tankstatus) {
         this.y = tankstatus.y
         this.color = tankstatus.color
         this.speed = tankstatus.speed
-        this.direction
+        this.direction = ""
+        this.bullet = {}
     } else {
         return new TankModel(context,tankstatus)
     }
@@ -126,6 +127,7 @@ TankModel.prototype = {
         this.context.clearRect(0,0,610,320)
     }
 
+
 }
 var canvas = document.getElementById("playGame")
 var gem = {
@@ -164,24 +166,78 @@ var gem = {
                 case 40:
                     fn.keyboardDown.call(hero);
                     break;
+                case 32:
+                    factoryBullet(hero)
 
             }
         }
     }
 }
-function Bullet(tankObj){
+function Bullet(tankObj,speed){
     if (this instanceof Bullet){
-        this.tank = tankObj
+        this.context = tankObj.context;
+        this.x = tankObj.x;
+        this.y = tankObj.y;
+        this.speed = speed;
+        this.direction = tankObj.direction;
+        tankObj.bullet = this
+        this.bullets = []
     }else{
-        new Bullet(tankObj)
+       return new Bullet(tankObj,speed)
     }
 }
 Bullet.prototype = {
     constructor:Bullet,
+    init:function(){
+     if(this.direction == "right" || this.direction == "left"){
+         this.x = this.x +9;
+         this.y = this.y +10;
+     }else{
+         this.x = this.x +10;
+         this.y = this.y +9;
+     }
+
+    },
     locus:function(){
-        switch (this.tank.direction){
-            
+        switch (this.direction){
+            case "up":
+              this.y = this.y - this.speed;
+                break;
+            case "down":
+                this.y = this.y + this.speed;
+                break;
+            case "right":
+                this.x = this.x +this.speed;
+                break;
+            case "left":
+                this.x = this.x - this.speed;
+
+                break;
         }
+        this.bullets.push({x:this.x,y:this.y})
+        this.render()
+        var eraser = this.eraser
+        var x = this.x
+        var y = this.y
+        var context = this.context
+        setTimeout(function(){eraser(x,y,context)},500)
+    },
+    render:function(){
+    this.context.fillStyle = "red"
+    this.context.fillRect(this.x,this.y,2,2);
+    this.context.fill();
+    this.context.closePath();
+    },
+    eraser:function(x,y,context){
+     context.clearRect(x,y,2,2)
     }
+}
+function factoryBullet(tank){
+   var bullet = Bullet(tank,5)
+    bullet.init()
+   while (0 <= bullet.x && bullet.x <= 300 && 0 <= bullet.y && bullet.y<= 140 ){
+       bullet.locus()
+   }
+
 }
 gem.init()
