@@ -211,7 +211,6 @@ Bullet.prototype = {
                 break;
             case "left":
                 this.x = this.x - this.speed;
-
                 break;
         }
         this.bullets.push({x:this.x,y:this.y})
