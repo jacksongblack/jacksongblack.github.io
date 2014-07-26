@@ -4,7 +4,7 @@ redcarpet:
 
 permalink: /:year/:month/:day/:title.html
 exclude: [Gemfile, Gemfile.lock, LICENSE, README.md, CNAME]
-category-list: [rails, 运维, 前端技术, 设计模式, 悟道, 生活杂谈]
+category-list: [rails, 运维, 前端技术, 设计模式, 感悟]
 safe: false
 pygments: true
 
