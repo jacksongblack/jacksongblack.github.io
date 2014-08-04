@@ -5,7 +5,7 @@
   {% for post in site.posts %}
   <url>
     <loc>http://www.songyuchao.com{{ post.url }}</loc>
-    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
+    <lastmod>{{ post.date | date_to_xmlschema  }}</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
