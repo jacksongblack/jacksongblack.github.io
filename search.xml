@@ -10,7 +10,7 @@ title: AtomFeed
 <blog>
   <title>{{ post.title | xml_escape  }}</title>
   <content type="html" >{{ post.content | xml_escape  }}</content>
-  <url>http://www.songyuchao.com {{ post.url }} </url>
+  <url>{{ site.url }}{{ post.url }} </url>
   <time>{{ post.date | date_to_xmlschema  }}</time>
 </blog>
 {% endfor %}

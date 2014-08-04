@@ -1,23 +1,30 @@
 ---
+layout: nil
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-<urlset>
-  {% for post in site.posts %}
-  <url>
-    <loc>http://www.songyuchao.com{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema  }}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
-    <data>
-      <display>
-        <html5_url>http://www.songyuchao.com{{ post.url }}</html5_url>
-        <wml_url></wml_url>
-        <xhtml_url></xhtml_url>
-      </display>
-    </data>
-  </url>
-  {% endfor %}
+  <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.lastmod == null %}
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+      <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+    {% endfor %}
+    {% for page in site.pages %}
+    {% if page.sitemap != null and page.sitemap != empty %}
+    <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+      <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+      <priority>{{ page.sitemap.priority }}</priority>
+    </url>
+    {% endif %}
+    {% endfor %}
   <url>
     <loc>http://www.songyuchao.com/photo_wall.html</loc>
     <title>照片墙</title>
