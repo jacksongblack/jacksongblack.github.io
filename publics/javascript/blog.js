@@ -124,6 +124,7 @@ function initPage() {
         },
         formTableSubmit: function () {
             var me = this;
+            console.log("xxxxx");
             $("#search_form").submit(function (e) {
                 e.preventDefault();
                 var regArray = me.fullTextSearch($("#search_input").val())
