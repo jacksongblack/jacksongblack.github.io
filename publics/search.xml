@@ -1,0 +1,17 @@
+---
+layout: nil
+title: AtomFeed
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blogs>
+{% for post in site.posts %}
+<blog>
+  <title>{{ post.title | xml_escape  }}</title>
+  <content type="html" >{{ post.content | xml_escape  }}</content>
+  <url>{{ site.url }}{{ post.url }} </url>
+  <time>{{ post.date | date_to_xmlschema  }}</time>
+</blog>
+{% endfor %}
+</blogs>

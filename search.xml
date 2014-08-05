@@ -1,17 +1,1660 @@
----
-layout: nil
-title: AtomFeed
----
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <blogs>
-{% for post in site.posts %}
+
 <blog>
-  <title>{{ post.title | xml_escape  }}</title>
-  <content type="html" >{{ post.content | xml_escape  }}</content>
-  <url>{{ site.url }}{{ post.url }} </url>
-  <time>{{ post.date | date_to_xmlschema  }}</time>
+  <title>辞职感想</title>
+  <content type="html" >&lt;h1&gt;辞职感想&lt;/h1&gt;
+
+&lt;p&gt;离职了，离开一个待了两年多时间的公司，本来以为会一直待下去，结果还是“半途而废”，离开时候觉得有些凄凉，还是有些人不理解，
+人走茶凉，不知道背后又要承担多少“骂名”。反正也离开了，总要总结这两年的得与失吧。&lt;/p&gt;
+
+&lt;h2&gt;带我走进开发世界的公司&lt;/h2&gt;
+
+&lt;p&gt;我大学没毕业就去沿海的昆山上班，上一家公司是我进的第二家公司，第一家待了一年，第二家待了两年，学到些的东西的还是第二家公司，
+是第二家公司带我走进了开发世界，一个一点都不懂开发的修笔记本的小子，开始进入开发岗，不管这家公司对我看法如何，我始终感谢他带我入了开发，也找到我喜欢做的事情。&lt;/p&gt;
+
+&lt;h3&gt;为什么喜欢开发&lt;/h3&gt;
+
+&lt;p&gt;不管我是不是创新性人才，我就喜欢做不一样的事情，每天做重复事情只会让我心烦，能为一个BUG茶饭不思，做12小时而不觉得累
+的时候，我就发现我适合这份工作，虽然我英语水平不高，但是也靠者悟性，做了不少功能，也能为自己作品感到激动不已。&lt;/p&gt;
+
+&lt;h3&gt;与公司发展开始冲突&lt;/h3&gt;
+
+&lt;p&gt;经过两年多开发，项目渐渐进入尾期，进入实施阶段，由于前期我在项目上总是做些边边脚脚之事，而且往往没什么结果，开始对产生一些情绪
+作为老员工也没有机会接触比较高级程序部分，后来代码开发工作也慢慢开始远离，一种抛弃感悠然而升，我想公司对我看法已开始转换，
+有一种想让我做万精油的角色，于是我开始自己写一些项目想证明我具有一个合格程序员应有的能力，但是不管我怎么努力，始终没有办法
+让领导认可，后来我想明白了，领导的意思就是让我做一个替补，慢慢把我淡化出开发工作，转而做一些附加价值低的工作，以方便“主力”的发挥，
+后面我也认了，开始做周边工作，但后面周边工作渐渐也被夺去，自己开始思考，我在公司价值是什么，做什么都这么容易被替换，以后公司
+杀我还不简单，公司完全掌握主动权，我只能是个随波逐流的浮萍。&lt;/p&gt;
+
+&lt;h3&gt;到了不是你走就是调换岗位时候&lt;/h3&gt;
+
+&lt;p&gt;前天领导开会，让我彻底下定决心，公司有类似遭遇的同事在会上发难（都是这个部门最开始创业员工），领导态度也坚决不是你走，那就是
+调换岗位，虽然自己当时没有加入讨伐的阵营，看出来了，最后时刻来了.&lt;/p&gt;
+
+&lt;h2&gt;反思？为什么会这样&lt;/h2&gt;
+
+&lt;p&gt;加入刚成立新部门，在项目完成差不多时候，领导层开始的压力，都让人不免有种“鸟尽弓藏，兔死狗烹”凄凉，我们到底是什么，也没有求公司
+多大照顾，只想保留原来岗位，继续在开发岗工作下去。其实这也是公司规模决定的，老板的逻辑是部分开发阶段已毕，将这部分多余人力
+转移到其他岗位上去，降低项目成本，本来这样做也无可后非，但是公司业务存在一定不连续性，对未来不确定，不知道其他岗位做多久，
+古云“三日不弹，手生荆棘”，那时的我再回来还能做开发么？&lt;/p&gt;
+
+&lt;h2&gt;今后要走的路&lt;/h2&gt;
+
+&lt;p&gt;不想做立业后的韩信，以现在的水平，还是进一家专业的IT公司，先把自己的IT技能变的更加专业，其实自己现在水平，只是个中级程序员，
+想继续发展，唯有更多实践。学历也是硬伤，虽然做技术的有技术实力便可，但是作为敲门砖的学历，也必须搞定。这一两年的提高太重要了，
+作为技术家族，有一门技术在手还是比较踏实。
+（完）&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/07/25/%E8%BE%9E%E8%81%8C%E6%84%9F%E6%83%B3-.html </url>
+  <time>2014-07-25T00:00:00+08:00</time>
 </blog>
-{% endfor %}
+
+<blog>
+  <title>记javascript死循环造成的setTimeout不执行错误</title>
+  <content type="html" >&lt;h1&gt;记javascript死循环造成的setTimeout不执行错误&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/publics/images/blog_images/2014-7/javaSctript.jpg&quot; alt=&quot;&quot;&gt;&lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;今天在调试一段代码时，出现一个浏览器死机的现象，调试后发现是在理解setTimeout函数时一个误解，先上示范代码的代码&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;function tank(){
+this.x = 12
+this.y =10
+}
+
+function test(){
+ var obj = new tank()
+
+ while(0 &amp;lt;= obj.x &amp;amp;&amp;amp; obj.x &amp;lt;= 50 &amp;amp;&amp;amp;  0&amp;lt;= obj.y &amp;amp;&amp;amp; obj.y &amp;lt;= 50){
+
+   setTimeout(function(){
+    obj.x = obj.x + 10;
+    obj.y = obj.y + 10;
+   },1000)
+ }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;本来设想的工作过程&lt;/h2&gt;
+
+&lt;p&gt;在&lt;code&gt;while&lt;/code&gt;中循环的函数，以为进程会停在这里等待 但事实证明我想错了，程序运行到这并没有等待&lt;code&gt;setTimeout&lt;/code&gt;函数执行，
+而是继续执行下去，但是&lt;code&gt;setTimeout&lt;/code&gt;函数里面有改变判断值的部分，由于迟迟不能改变判断值，&lt;code&gt;while&lt;/code&gt;遂成死循环，最后页
+面死掉。&lt;/p&gt;
+
+&lt;h2&gt;修改&lt;/h2&gt;
+
+&lt;p&gt;既然知道原因了，那么现在我们在更改这个函数&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;function tank(){
+    this.x = 12
+    this.y =10
+    }
+
+function test(){
+ var obj = new tank()
+ obj.x = obj.x + 10;
+ obj.y = obj.y + 10;
+
+ if(0 &amp;lt;= obj.x &amp;amp;&amp;amp; obj.x &amp;lt;= 50 &amp;amp;&amp;amp;  0&amp;lt;= obj.y &amp;amp;&amp;amp; obj.y &amp;lt;= 50){
+
+   setTimeout(function(){
+        test()   },1000)
+ }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;（完）&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/07/22/%E8%AE%B0javascript%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%80%A0%E6%88%90%E7%9A%84setTimeout%E4%B8%8D%E6%89%A7%E8%A1%8C%E9%94%99%E8%AF%AF.html </url>
+  <time>2014-07-22T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>一次坑爹的ubuntu-sudores修复过程</title>
+  <content type="html" >&lt;h1&gt;一次坑爹的ubuntu-sudores修复过程&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/publics/images/blog_images/2014-7/ubuntu.png&quot; alt=&quot;&quot;&gt;&lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;由于每次我在使用 &lt;code&gt;sudo command&lt;/code&gt;时候总是要输入我现在用户密码，我觉得很麻烦，于是想通过修改&lt;code&gt;/etc/sudores&lt;/code&gt;文件设置
+用户不需要输入密码即可使用&lt;code&gt;sudo&lt;/code&gt;。可以当我保存退出准备运行 &lt;code&gt;sudo chmod -w /etc/sudoers&lt;/code&gt;时候，悲剧出现了，系统报
+sudores文件语法错误，我又试试&lt;code&gt;sudo&lt;/code&gt;权限下其他命令，全是这个错，这下sudo权限不能使用了。&lt;/p&gt;
+
+&lt;h2&gt;解决过程&lt;/h2&gt;
+
+&lt;p&gt;于是我开始在网上找解决办法，发现网上很多东西和我遇到情况不符合，现在网络全是copy之作，可能作者自己都没实验过。现在我把我自己
+解决过程记录下来，为大伙找个经过实践的解决方法&lt;/p&gt;
+
+&lt;h3&gt;1.我的环境&lt;/h3&gt;
+
+&lt;p&gt;我使用的环境是win8 + ubuntu 12.04 在使用UBUNTU之前我安装过kylin版，后来覆盖安装，我的grub安装在ubuntu根目录下分区上。&lt;/p&gt;
+
+&lt;h3&gt;第一个问题怎么进修复模式菜单&lt;/h3&gt;
+
+&lt;p&gt;国内网上说用shift键，但是我电脑上没用，我用的是Esc键&lt;/p&gt;
+
+&lt;h3&gt;2.问题二system file only-read&lt;/h3&gt;
+
+&lt;p&gt;这是由于在修复模式下，挂载系统是只读的状态我们需要重新挂载一下，使用命令&lt;code&gt;mount -o remount,rw /&lt;/code&gt;可以重新挂载。还有给sudores
+加个可写入权限，&lt;code&gt;chmod +w /etc/sudores&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;3.问题三 vi command not found&lt;/h3&gt;
+
+&lt;p&gt;这是最坑爹，vi命令找不到，国内的大哥没几个遇到，后来还是google外国人的答案了解一点线索。方式是在进入recovery model 模式后，在菜单中
+使用&lt;code&gt;grub-update&lt;/code&gt;重新引导下，就可以使用了。&lt;/p&gt;
+
+&lt;h3&gt;4.怎么修改的sudores语法篇&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+yourname    ALL=(ALL)  NOPASSWD:ALL //加入这里
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;后来我发现，我主要是把&lt;code&gt;NOPASSWD：ALL&lt;/code&gt;这句写成了&lt;code&gt;NOPASSWORD:ALL&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;5.结尾&lt;/h3&gt;
+
+&lt;p&gt;最后记得改回sudores的权限，&lt;code&gt;chmod +w /etc/sudores&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;经过这么一劫，我想说明以后在使用linux系统中，最好注意几点&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 1.所有文本在修改前最好备份(吃过不少亏了)&lt;/li&gt;
+&lt;li&gt; 2.还是要给root用户设置密码，不然本来可以在root下解决的问题需要在recovery model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(完)&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/07/17/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%9D%91%E7%88%B9%E7%9A%84Ubuntu-sudores%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B.html </url>
+  <time>2014-07-17T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>JS中实例对象没有使用关键字new时防止技巧</title>
+  <content type="html" >&lt;h2&gt;JS中实例对象没有使用关键字new时防止技巧&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/publics/images/blog_images/2014-7/javaSctript.jpg&quot; alt=&quot;&quot;&gt;&lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;在js面对对象编程时候，我们如果定义这么一个对象&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;function Obj(n){
+ this.name =&amp;quot;my it&amp;#39;s obj&amp;quot;
+ this.number = n
+}
+
+var obj = Obj(123)
+obj.name
+obj.number
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;运行结果&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;TypeError: Cannot read property &amp;#39;name&amp;#39; of undefined
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这是为什么呢？ 不是在函数函数中定义了各个属性的值么，用&lt;code&gt;typeof obj&lt;/code&gt;查看，发现&lt;code&gt;obj&lt;/code&gt;属于没有定义状态（undefined）
+原来Obj执行后没有返回任何东西，那我在后来忘了写&lt;code&gt;new&lt;/code&gt;实例化一个JS，也会出现这个bug，而且在很多JS框架库中我们发现很多程序也不用
+使用关键字&lt;code&gt;new&lt;/code&gt;怎么实现呢，下面我就实现一个安全构造函数。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;function Obj(n){
+  if(this instanceof Obj){
+   this.name = &amp;quot;my it&amp;#39;s obj&amp;quot;
+   this.number = n
+  }else{
+   return new Obj(n)
+  }
+}
+  var obj = Obj(123)
+  obj.name
+  obj.number
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(完)&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/07/17/JS%E4%B8%AD%E5%AE%9E%E4%BE%8B%E5%AF%B9%E8%B1%A1%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8%E5%85%B3%E9%94%AE%E5%AD%97new%E6%97%B6%E9%98%B2%E6%AD%A2%E6%8A%80%E5%B7%A7.html </url>
+  <time>2014-07-17T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>ubuntu开机脚本与运行状态</title>
+  <content type="html" >&lt;h2&gt;ubuntu开机脚本与运行状态&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/publics/images/blog_images/2014-7/Linux-header.jpg&quot; alt=&quot;&quot;&gt;&lt;/br&gt;
+自己有开机服务脚本&lt;code&gt;me.sh&lt;/code&gt;想加入到开机自启动里面,以前尝试了加在 &lt;code&gt;~/.bashrc&lt;/code&gt;,&lt;code&gt;~/.bash_profile&lt;/code&gt;,&lt;code&gt;~/.profile&lt;/code&gt;等文件下，不过这些文件都是终端启动时候
+运行的命令，有时候打开一个终端也要执行这些命令，这就非常不方便了，于是在网上搜索一番。&lt;/p&gt;
+
+&lt;h3&gt;linux运行等级&lt;/h3&gt;
+
+&lt;p&gt;在ubuntu下有个一系列的文件目录&lt;code&gt;/etc/rcx.d&lt;/code&gt;系列目录，他文件夹中0～6数据分别代表不同的运行等级&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;　   0：关机。该运行级别用于系统管理员迅速关机。不能为默认的运行级别。
+     1：单用户模式，也称为维护模式。该运行级别下网络接口、文件共享等服务不能使用。
+     2：多用户模式。这是debian系统的默认运行级别，字符界面。
+     3：多用户模式。这是redhat系统的默认运行级别，字符界面。
+     4：一般不使用该运行级别。
+     5：多用户模式。提供GUI界面。。
+     6：重启。该运行级别用于系统管理员重启系统。不能为默认的运行级别。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;简单来看，0是关机；6是重启；1是维护模式，提供有限的功能；2是字符界面的debian系统；3是字符界面的redhat系统；4不常用；5是GUI界面的系统。
+ubuntu系统下，运行级别2-5提供的服务是一样的，即2-5级别没有差别，所以ubuntu系统下0表示关机，1表示维护模式，2-5表示GUI界面的系统，6表示重启系统
+这些目录下软连接地址都是真正脚本地址，也就是说你如果将软链接放在rc1.d下面，那这脚本将在单用户模式启动，最后系统在执行完所有链接后会执行
+&lt;code&gt;/etc/rc.local&lt;/code&gt;中的脚本，而怎么生成软连接呢？&lt;/p&gt;
+
+&lt;h3&gt;软连接&lt;/h3&gt;
+
+&lt;p&gt;在这些目录下有很多软链接文件，通过 &lt;code&gt;ls -al&lt;/code&gt;你可以看到它的链接地址，你会看到下面东西&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;drwxr-xr-x   2 root root  4096  7月 16 11:18 .
+drwxr-xr-x 143 root root 12288  7月 16 11:19 ..
+lrwxrwxrwx   1 root root    13  5月  4 11:37 K77ntp -&amp;gt; ../init.d/ntp
+-rw-r--r--   1 root root   677  1月 30  2013 README
+lrwxrwxrwx   1 root root    22  7月 16 11:18 S100goagent -&amp;gt; /etc/init.d/goagent.sh
+lrwxrwxrwx   1 root root    15  2月 20 15:12 S16ipsec -&amp;gt; ../init.d/ipsec
+lrwxrwxrwx   1 root root    31  3月  4 09:59 S20vboxautostart-service -&amp;gt; ../init.d/vboxautostart-service
+lrwxrwxrwx   1 root root    33  3月  4 09:59 S20vboxballoonctrl-service -&amp;gt; ../init.d/vboxballoonctrl-service
+lrwxrwxrwx   1 root root    17  3月  4 09:59 S20vboxdrv -&amp;gt; ../init.d/vboxdrv
+lrwxrwxrwx   1 root root    25  3月  4 09:59 S20vboxweb-service -&amp;gt; ../init.d/vboxweb-service
+lrwxrwxrwx   1 root root    16  2月 20 15:12 S20xl2tpd -&amp;gt; ../init.d/xl2tpd
+lrwxrwxrwx   1 root root    15  2月 20 15:12 S50rsync -&amp;gt; ../init.d/rsync
+lrwxrwxrwx   1 root root    15  2月 20 15:12 S50saned -&amp;gt; ../init.d/saned
+lrwxrwxrwx   1 root root    18  2月 20 15:12 S70pppd-dns -&amp;gt; ../init.d/pppd-dns
+lrwxrwxrwx   1 root root    14  2月 20 15:12 S75sudo -&amp;gt; ../init.d/sudo
+lrwxrwxrwx   1 root root    22  2月 20 15:12 S99acpi-support -&amp;gt; ../init.d/acpi-support
+lrwxrwxrwx   1 root root    21  2月 20 15:12 S99grub-common -&amp;gt; ../init.d/grub-common
+lrwxrwxrwx   1 root root    18  2月 20 15:12 S99ondemand -&amp;gt; ../init.d/ondemand
+lrwxrwxrwx   1 root root    18  2月 20 15:12 S99rc.local -&amp;gt; ../init.d/rc.local
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;S99rc.local -&amp;gt; ../init.d/rc.local&lt;/code&gt; 我们但看这么一条，我们会发现很多软连接地址都是链接到&lt;code&gt;/etc/init.d/&lt;/code&gt;这个目录下的文件的，
+我们还看到他的命名为&lt;code&gt;s99rc.local&lt;/code&gt;那么它的意思有下面含义&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;S 意思是 start 就是启动的时候调用 如果是K代表是关闭时候
+99 意思是运行顺序数字越小优先运行越高
+rc.loacl 意思是服务名
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我们明白了这名称中间的意思那么我们还把自己脚本设置为&lt;code&gt;进入Xwindow时候启动&lt;/code&gt;命令如下,注意你要把命令拷贝到&lt;code&gt;/etc/init.d/&lt;/code&gt;下面&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo ln -s /etc/init.d/me.sh /etc/rc5.d/S99me.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;在理解了运行状态及代表的状态后，我们在以后运维启动开机启动变的更加容易&lt;br/&gt;
+(完)&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/07/16/linux%E5%BC%80%E6%9C%BA%E8%84%9A%E6%9C%AC%E4%B8%8E%E8%BF%90%E8%A1%8C%E7%8A%B6%E6%80%81.html </url>
+  <time>2014-07-16T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>使用ruby为服务器做备份脚本</title>
+  <content type="html" >&lt;h2&gt;使用ruby为服务器做备份脚本&lt;/h2&gt;
+
+&lt;h3&gt;需求&lt;/h3&gt;
+
+&lt;p&gt;前段时间由于自己的误操作造成了客户的服务器图片丢失，自己不免被责怪一番，这里也检讨自己，删除东西不记得备份，现在客户要求把站点数据库
+和图片做备份&lt;/p&gt;
+
+&lt;h3&gt;实现&lt;/h3&gt;
+
+&lt;p&gt;本身这些东西可以用shell完成的，但是写shell的缩进不是方便，而且变量传递也不是很方便，不想那么麻烦，于是用ruby实现一个。&lt;/p&gt;
+
+&lt;h4&gt;主要技术点&lt;/h4&gt;
+
+&lt;p&gt;其实本质这个脚本很简单，主要用ruby几个函数&lt;code&gt;gets&lt;/code&gt;这是接受从键盘输入值，输入时候敲入回车也会被接受为&lt;code&gt;/n&lt;/code&gt;要注意正则匹配下。
+还有个是&lt;code&gt;system&lt;/code&gt; 他是主要调用shell命令的&lt;a href=&quot;https://github.com/jacksongblack/shell/blob/master/backup/backupShell.rb&quot;&gt;项目地址&lt;/a&gt;&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/07/15/%E4%BD%BF%E7%94%A8ruby%E4%B8%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%81%9A%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC.html </url>
+  <time>2014-07-15T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>devise+cancan+rolify构建强大角色管理</title>
+  <content type="html" >&lt;h2&gt;devise+cancan+rolify构建强大角色管理&lt;/h2&gt;
+
+&lt;p&gt;原文地址:&lt;a href=&quot;http://my.oschina.net/silentboy/blog/204772&quot;&gt;我是连接&lt;/a&gt;&lt;/br&gt;
+原文中有些问题，我按自己的实践稍稍做了些修改。不知到是不是Gem升级到最新的缘故，不过还是解决了。&lt;/p&gt;
+
+&lt;p&gt;devise、cancan和rolify这三个组件结合，可以建立完整而强大的用户权限模型。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;devise介绍，负责用户注册、登录、退出、找回密码等操作。细节参考devise on github&lt;/li&gt;
+&lt;li&gt;cancan介绍， 负责角色建立、对角色授权、在页面中根据授权是否显示元素，以及模型中超出授权时抛出异常。细节参考rolify on github&lt;/li&gt;
+&lt;li&gt;rolify介绍，负责将用户与角色关联。细节参考rolify on github
+下面就简单介绍下这三者结合使用的方法，比较浅，深层次的大家自己去看文档挖掘，这里仅仅介绍最基本的使用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;运行环境&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;这里我用的是ruby 1.9.3-p484       rails   3.2.16&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;新建一个项目&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;rails new demo --skip-bundle   #跳过bundle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在Gemfile里面添加如下Gem包&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;# add a perfect user verify system
+gem &amp;#39;devise&amp;#39;
+gem &amp;#39;cancan&amp;#39;
+gem &amp;#39;rolify&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后运行&lt;code&gt;bundle install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;执行devise初始化&lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rails generate devise:install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这句命令会产生一个用户指南，告诉你该做的几件事请，以下是内容翻译（已经去除heroku部署的那一条，增加了登录退出选项的说明）：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1) 确定你的环境中有一个缺省的URL，config/environments/development.rb:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;config.action_mailer.default_url_options = { :host =&amp;gt; &amp;#39;localhost:3000&amp;#39; }
+如果在production环境, :host 必须设置成应用的真实主机名。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2) 确定已经在config/routes.rb中定义了root_url（注意删除public下面的index.html）, 例如：&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;root :to =&amp;gt; &amp;quot;home#index&amp;quot;
+可以使用下面命令生成一个home#index的页面：&lt;/p&gt;
+
+&lt;p&gt;rails g controller home index&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3) 在app/views/layouts/application.html.erb中增加消息提醒，例如：&lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;&lt;%= notice %&gt;&lt;/p&gt;  &lt;p class=&quot;alert&quot;&gt;&lt;%= alert %&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4) 很多时候还需要增加登录、退出的选项：&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;% if current_user %&amp;gt;
+&amp;lt;%= link_to(&amp;#39;退出&amp;#39;, destroy_user_session_path, :method =&amp;gt; :delete) %&amp;gt;
+&amp;lt;%= link_to(&amp;#39;修改密码&amp;#39;, edit_registration_path(:user)) %&amp;gt;
+&amp;lt;% else %&amp;gt;
+&amp;lt;%= link_to(&amp;#39;注册&amp;#39;, new_registration_path(:user)) %&amp;gt; |
+&amp;lt;%= link_to(&amp;#39;登录&amp;#39;, new_session_path(:user)) %&amp;gt;
+&amp;lt;% end %&amp;gt;&lt;span&gt;&lt;/span&gt;
+5) 如果要定制Devise的view模型，可以再执行以下语句：&lt;/p&gt;
+
+&lt;p&gt;$ rails g devise:views&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;生成用户模型（你可以使用其他名称代替User）,并执行数据迁移&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;$ rails g devise User
+$ rake db:migrate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在Controller中增加认证过滤，即可在访问该模型页面时转向用户登录页面（这自行没验证）&lt;/p&gt;
+
+&lt;p&gt;在需要认证的模型中，如HomeController，增加下面代码：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;before_filter :authenticate_user!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;集成cancan和rolify
+cancan提供对资源的授权控制。例如，在视图中使用can?方法来决定是否显示某个页面元素。如果系统角色非常简单，那么cancan还在代码中直接指定常量就可以支持，具体操作可以参考官方文档。但要提供复杂的角色管理，最好的方案，还是在devise基础上再集成cancan+rolify。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;修改Gemfile，并再次运行bundle install&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;gem &amp;#39;cancan&amp;#39;
+gem &amp;#39;rolify&amp;#39;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;创建cancan的Ability和rolify的Role
+rails generate cancan:ability
+rails generate rolify Role User
+rake db:migrate&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;定制devise用户注册事件，可以在注册时赋予用户rolify角色，例如，下面的代码为首个用户赋予admin角色：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;class ApplicationController &amp;lt; ActionController::Base
+def after_sign_in_path_for(resource)
+   if resource.is_a?(User)
+     if User.count == 1
+       resource.add_role &amp;#39;admin&amp;#39;
+     end
+     resource
+   end
+   root_path
+ end
+end&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;使用cancan可以为rolify中建立的角色分配授权资源，例如我们为允许admin角色的用户分配针对所有控制类的”manage”资源，而其他用户分配”read”资源：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;class Ability
+ include CanCan::Ability
+ def initialize(user)
+   if user.has_role? :admin
+     can :manage, :all
+   else
+     can :read, :all
+   end
+ end
+end&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;以上已经实现了“用户－角色－权限”的三层权限模型，在view中就可以使用了。例如，在Home#index页面中增加如下代码：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;lt;% if user_signed_in? %&amp;gt;
+    &lt;p&gt;The user is loged in.&lt;/p&gt;
+    &amp;lt;% if can? :manage, :Home %&amp;gt;
+      &amp;lt;%= link_to &amp;quot;About&amp;quot;, home_about_path   %&amp;gt;
+    &amp;lt;% end %&amp;gt;
+&amp;lt;% end %&amp;gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(完）&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/07/12/devise%2Bcancan%2Brolify%E6%9E%84%E5%BB%BA%E5%BC%BA%E5%A4%A7%E8%A7%92%E8%89%B2%E7%AE%A1%E7%90%86.html </url>
+  <time>2014-07-12T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>Github搭建的博客实现JS搜索功能</title>
+  <content type="html" >&lt;h2&gt;Github搭建的博客实现JS搜索功能&lt;/h2&gt;
+
+&lt;p&gt;&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;img src=&quot;/publics/images/blog_images/2014-7/search.jpg&quot; alt=&quot;&quot;&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&amp;emsp;&amp;emsp;在github上搭建博客时候，唯一使用一点算是后端的环境就是jekyll，但是这个东西设计就是用来生成静态页面的。
+并没有设计数据库什么的，更不要提搜索功能了,那怎么来实现搜索功能呢？&lt;/p&gt;
+
+&lt;h3&gt;我的解决思路&lt;/h3&gt;
+
+&lt;p&gt;全部代码&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Search.prototype = {
+    constructor: SearchBlog,
+//    异步获取数据内容后的处理函数调用
+    init: function (xml) {
+        searchBlogObj.xmlToObjectArray(xml)
+        searchBlogObj.formTableSubmit()
+    },
+//    异步获取整个站点文章
+    getXmlHttpResponse: function () {
+        var fn = searchBlogObj.init
+        $.ajax({
+                url: this.url,
+                dataType: &amp;quot;xml&amp;quot;,
+                success: function (xml) {
+                    fn(xml)
+                }
+            }
+        )
+    },
+//    将xml转换为对象的数组
+    xmlToObjectArray: function (xml) {
+        var json = []
+        $(xml).find(&amp;quot;*:first&amp;quot;).children().each(function (i) {
+            var obj = {title: $(this).find(&amp;quot;title&amp;quot;).text(), content: $(this).find(&amp;quot;content&amp;quot;).text(), url: $(this).find(&amp;quot;url&amp;quot;).text(),time:$(this).find(&amp;quot;time&amp;quot;).text()}
+            json.push(obj)
+        })
+        searchBlogObj.json = json
+    },
+//    全站搜索
+    fullTextSearch: function (keyword) {
+        var reg = new RegExp(keyword)
+        var regArray = []
+        $.each(searchBlogObj.json, function (n, v) {
+            if (reg.test(this.title) || reg.test(this.content)) {
+                regArray.push(this)
+            }
+        })
+        return regArray
+    },
+//   搜索成功后重新渲染页面
+    review: function (regArray) {
+        $.each(regArray,function(){
+        })
+        html
+        $(&amp;quot;#show_post&amp;quot;).html(html)
+    },
+//    绑定搜索输入框获取输入框内容
+    formTableSubmit: function () {
+        var thisObj = this
+        $(&amp;quot;#search_form&amp;quot;).submit(function (e) {
+            e.preventDefault();
+            var regArray = searchBlogObj.fullTextSearch($(&amp;quot;#search_input&amp;quot;).val())
+            if (regArray.length === 0) {
+                alert(&amp;quot;没有搜到任何东西&amp;quot;)
+                return
+            }
+            thisObj.review(regArray);
+        })
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;数据来源&lt;/h4&gt;
+
+&lt;h5&gt;思路&lt;/h5&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp; 我们知道jekyll不但能生成html，也能生成XML（比如生成站点地图），为什么不利用这点将网站所有的文章做个XML，
+作为检索用的原始数据，&lt;/p&gt;
+
+&lt;h5&gt;实现&lt;/h5&gt;
+
+&lt;p&gt;下面是jekyll实现代码&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;blogs&amp;gt;
+{ % for post in site.posts % }
+&amp;lt;blog&amp;gt;
+  &amp;lt;title&amp;gt;{ {post.title | xml_escape} }&amp;lt;/title&amp;gt;
+  &amp;lt;content&amp;gt;{ {post.content | xml_escape} }&amp;lt;/content&amp;gt;
+  &amp;lt;url&amp;gt;http://www.yourUrl.com{ {post.url} }&amp;lt;/url&amp;gt;
+  &amp;lt;time&amp;gt;{ { post.date | date: &amp;quot;%Y-%m-%d&amp;quot;} }&amp;lt;/time&amp;gt;
+&amp;lt;/blog&amp;gt;
+  { % endfor % }
+&amp;lt;/blogs&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上面代码将整个站点的搜索文章全部打印了出来，这里要注意一下因为是生成XML，jekyll使用的是Liquid，在生成XML时候如果不使用
+XML_escape，逃避一些格式，就会造成jekyll出现错误。&lt;/p&gt;
+
+&lt;h5&gt;数据处理&lt;/h5&gt;
+
+&lt;p&gt;理论上jquery应该有更好的XML处理办法，只是我没有找到，于是自己写了JS代码，将异步读取的XML转化为对象的数组&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;xmlToObjectArray: function (xml) {
+    var json = []
+    $(xml).find(&amp;quot;*:first&amp;quot;).children().each(function (i) {
+        var obj = {title: $(this).find(&amp;quot;title&amp;quot;).text(), content: $(this).find(&amp;quot;content&amp;quot;).text(), url: $(this).find(&amp;quot;url&amp;quot;).text(),time:$(this).find(&amp;quot;time&amp;quot;).text()}
+        json.push(obj)
+    })
+    searchBlogObj.json = json
+},
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;内容搜索&lt;/h5&gt;
+
+&lt;p&gt;我已经拿到转换成对象数组的整站数据，现在就是我们搜索过程，我的搜索过程比较简单，一旦&lt;code&gt;正則匹配&lt;/code&gt;出有关键字
+就将这个对象放在匹配成功的数组里面，实现代码如下&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;    fullTextSearch: function (keyword) {
+        var reg = new RegExp(keyword)
+        var regArray = []
+        $.each(searchBlogObj.json, function (n, v) {
+            if (reg.test(this.title) || reg.test(this.content)) {
+                regArray.push(this)
+            }
+        })
+        return regArray
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;前端实现&lt;/h4&gt;
+
+&lt;p&gt;上面我们看到的基本就是整个代码&amp;quot;后台&amp;quot;部分,现在我们要为用户制作一个输入关键字form表单，这个表单不能真正被提交，而是当点击
+提交事件时候，更改点击后的操作处理方法为获取关键字，&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;formTableSubmit: function () {
+        var thisObj = this
+        $(&amp;quot;#search_form&amp;quot;).submit(function (e) {
+            e.preventDefault();
+            var regArray = searchBlogObj.fullTextSearch($(&amp;quot;#search_input&amp;quot;).val())
+            if (regArray.length === 0) {
+                alert(&amp;quot;没有搜到任何东西&amp;quot;)
+                return
+            }
+            thisObj.review(regArray);
+        })
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;重新渲染页面，通过JS生成HTML，另外我写了个jquery插件实现js代码部分&lt;a href=&quot;https://github.com/jacksongblack/jquery-search-site&quot;&gt;github地址&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;review: function (regArray) {
+            $.each(regArray,function(){
+
+            })
+            html + &amp;quot;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;
+            $(&amp;quot;#show_post&amp;quot;).html(html)
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+  <url>http://www.songyuchao.com/2014/07/04/Github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0JS%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD.html </url>
+  <time>2014-07-04T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>修改再生龙硬盘序列</title>
+  <content type="html" >&lt;h2&gt;修改再生龙硬盘序列&lt;/h2&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;修改再生硬盘序列只要在克隆好的文件夹下面打开&lt;code&gt;disk&lt;/code&gt;文件，修改相应的序列号即可。&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/07/01/%E4%BF%AE%E6%94%B9%E5%86%8D%E7%94%9F%E9%BE%99%E7%A1%AC%E7%9B%98%E5%BA%8F%E5%88%97.html </url>
+  <time>2014-07-01T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>爱表现的心理分析</title>
+  <content type="html" >&lt;h2&gt;爱表现的心理分析&lt;/h2&gt;
+
+&lt;p&gt;&amp;emsp; 今天看了一部电影《买凶拍人》，内容挺怪诞的，主人公阿Bart是个杀手，靠杀人为生，本来生活还可以，
+但是遇到金融危机生活开始不济。好在香港人口密集，人与人之间仇恨比较大，所以杀人市场还是不少，有一次名媛马太被偷拍而且被光盘商出版AV，
+很生气想杀死偷拍者和发行商，但她对阿bart有新的需求，要求不但要杀死她的仇人，还要录像杀人过程，但是他自己没有摄影技术
+第一次拍摄失败，于是他找到一个落魄的电源导演--全，第一合作马太很满意的，于是这两个人成为长期合作的搭档，故事讲到最后
+他们接到黑社会老大傻瓜标杀死双枪王的任务，由于竞争杀手的闯入发生失误，情急中全准备找演员重新拍摄，但是却被赶来的黑帮老大傻瓜表
+抢了主导权，最后被排挤除外，这时候出现转折，他们行为引起了巡查警察的注意，在拍摄中被捕，故事最后还是比较完美，标用积攒的钱拍了独立影片
+获得电影奖，bart不再做杀手而是做演员。&lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;好吧上面讲了一大堆的电影内容，和我这篇文章标题是否很不沾边，其实写这篇文章是我看了这个电源后洗澡时突然的情绪体验，
+事情是这样的，前段时间我把我改造女友外形过程在群里发表出来，这当中确实是有我的炫耀的成分（私下我还是自豪自己的审美），但是想到这
+我却又一种自责情绪和鄙视自己情绪在里面，这种情绪体验还真是奇怪，瞬间觉得自己好八，我自己在群里说的，可能会被别人笑话，像电源里面的
+全一样，做着别人看起来很荒诞的事情，比如给杀手摄影这件事，但是却自认为自己的“高尚”，保持着阿Q般自我陶醉。这种悲观的情绪一下占领我的。
+有时候我就这么情绪化，好吧我们还是进入我们的主题，爱表现的心理分析。
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;h3&gt;为什么我爱表现却又经常出现消极情绪&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&amp;emsp;&amp;emsp; 本质上我是个不服输的人，但是年少时成绩不好，老是被周围人轻视，所以这造成双面性格我，一方面被人说不行，
+所以缺乏一些信心，但是一方面又不服气别人说教，这种双面性格是产生我多变情绪变化的根源，这也是看了弗洛伊德心理分析后得出结论，
+意识层不自信，和我潜意识反弹不服气。造就我想表现的心理，被人夸奖后又不自信。
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;h3&gt;独立性格因素&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&amp;emsp;&amp;emsp;本质上我不是个服管教的人，不喜欢被别人说教，喜欢自己摸索路子出来，以前我也尝试过服从我父母指示，但是潜意识里面我还是
+别人话当成耳边风，好吧，这部分我承认有点自闭，但是要说我是个自大自满的孩子，那也不对。我只是有自己想法，但是一旦失败，我还是愿意听取意见的
+在我失败前，我会按照我自己方法做事。
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;h3&gt;自我反省问题&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;这篇文字,到底是自我欣赏还是自我评判，其实也是我自己探索自己心理与分析的，还是想探索下自己，想知道自己的边界
+当然也知道我我自己性格缺点。至于改不改，人无完人，做合适的自己最好。&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/06/16/%E7%88%B1%E8%A1%A8%E7%8E%B0%E5%BF%83%E7%90%86%E5%88%86%E6%9E%90.html </url>
+  <time>2014-06-16T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>CentOs网关配置错误一例</title>
+  <content type="html" >&lt;h2&gt;CentOs网关配置错误一例&lt;/h2&gt;
+
+&lt;p&gt;&amp;emsp; 这次来现场部署，我们发现一个现象，明明在&lt;code&gt;/etc/system/network-scripts/ifcfg-eth*&lt;/code&gt;配置好了
+DNS地址，但是还是不能正常的做域名解析，&lt;/p&gt;
+
+&lt;h3&gt;尝试一&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;尝试通过修改&lt;code&gt;/etc/resolv.conf&lt;/code&gt;设定&lt;code&gt;nameserver&lt;/code&gt;故障依旧。&lt;/p&gt;
+
+&lt;h3&gt;尝试二&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;又以为是双网卡，出口网卡不对查看&lt;code&gt;/etc/system/network&lt;/code&gt;但是发现也设置了&lt;code&gt;GATEWAY=eth1&lt;/code&gt;还是无解&lt;/p&gt;
+
+&lt;h3&gt;解决&lt;/h3&gt;
+
+&lt;p&gt;后来百度一番，产看路由地址命令&lt;code&gt;route&lt;/code&gt;时发现一个现象&lt;code&gt;default&lt;/code&gt;下的网络地址都是&lt;code&gt;0.0.0.0&lt;/code&gt;,后来用命令&lt;/br&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;route add default gw 192.168.1.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;故障成功解除。后来仔细检查配置&lt;code&gt;ifc-eth*&lt;/code&gt;文件，&lt;code&gt;GATEWAY&lt;/code&gt;一行拼写错误&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/06/16/centos%E7%BD%91%E5%85%B3%E9%85%8D%E7%BD%AE%E9%94%99%E8%AF%AF%E4%B8%80%E4%BE%8B.html </url>
+  <time>2014-06-16T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>又见辞职潮，内心也有些小震动</title>
+  <content type="html" >&lt;h2&gt;又见辞职潮，内心也有些小震动&lt;/h2&gt;
+
+&lt;h3&gt;团队现状及我之感受&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp; 最近我们公司又出现一阵辞职潮，周围的同事来来走走，我从新人也熬成老人，算算今年我也是在这家公司第三年了，
+这几年在这家公司从售后，售中，售前，再到研发，职务变换背后带来的是技能提升。但是最近也由于office politics问题，工作
+不是很顺利，项目也是做了两年没啥动静，也萌发跳槽的冲动，其实在这家小公司，福利待遇其实并不好，但是自己为什么一待
+就是两年，自己想想还是有一下几点？&lt;/br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.感激老板知遇之音，当年能让我进研发部门。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;2.对老板公司以后发展充满希望。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;为什么内心有震动？我也总结下&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.没有所属感，团队没有向心力，团队心散了。&lt;/li&gt;
+&lt;li&gt;2.个人价值没有实现。&lt;/li&gt;
+&lt;li&gt;3.感觉自己没什么机会了。进而个人价值更没有实现机会。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;emsp;最近内心就左右摇摆，也过得很抑郁，今天得知一位博士也辞职了，又是人事震动，我们团队倒是怎么了？在与辞职的同事交流中。&lt;/br&gt;
+我总结有下面的辞职理由。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.想做后端的同事，被安排做前端。&lt;/li&gt;
+&lt;li&gt;2.觉得自己没有被尊重，对领导层有意见。&lt;/li&gt;
+&lt;li&gt;3.对项目没有信心。&lt;/li&gt;
+&lt;li&gt;4.薪水偏低，想更多的收获。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;emsp;很多人不只是一个理由，当然很多事情都不是单个方面原因。看起来问题很多，重点和同事的需求层次不一样而不一样。和我同龄的同事多多少少，也是我纠结那几个部分。
+无疑我们现在团队处于低迷，这和大部分团队成长曲线不同，说不清楚团队现在是磨合期，还是组建期，但肯定不是成熟期，团队现状如一团死水，其实用马云的两句话总结&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;受委屈了&lt;/li&gt;
+&lt;li&gt;钱没给够&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;“核心”的团队&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;小团队也是我们团队问题之一，很多事情是由所谓核心团队决定的。剥夺了团队其他人员的积极性，造成其他人员参与度不高。但
+其实其本质就是团队归属感不强，很多事情由别人决定，自己只是局外人，其实重要事情由核心团队掌握并不是什么错事情，但是我们团队却经常出现这样的问题，明明是自己负责东西，开会却常常没有自己，
+这意思就像“你只是来担责任的，具体动作不用你操心”，这种明显冤大头的做法，是我们团队第一个问题，也是最大的问题。&lt;/br&gt;
+总结就是 “参与度不够，造成团队归属感下降”&lt;/p&gt;
+
+&lt;h3&gt;“老大”的团队&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp; 在我们团队，你对不对，就是老大对你映像，老大对你感觉好，那么你做的任何事情的都是对的，如果对你印象不好，
+那么你做的什么都是错的，没有规章制度保证你的成果是否成功，如果老大对你印象不好，那么对的也是错的。人治的团队，没有
+标准，一切都是&amp;quot;老大的团队&amp;quot;&lt;/br&gt;
+总结就是“没有成功的标准，只有老大的一句话，团队没有正确方向，只有博得老大欢心才是正确”&lt;/p&gt;
+
+&lt;h3&gt;“将”的团队&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;团队里“精英”拥有项目的绝对的控制权，作为一般人，你只有无条件的执行的权利，没有参与或是评价权利，作为岁数不大的员工
+特别是80&amp;#39;s 90&amp;#39;s  追求个性同事，这是觉得最不爽的一点。感觉没有尊重我们，也是这样，大部分的同事离职都有感觉不爽原因，
+本质是什么，其实就是这个原因。&lt;/br&gt;
+总结下 “没有发言自由，只有执行的团队，也是归属感弱”&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/06/10/%E5%8F%88%E8%A7%81%E8%BE%9E%E8%81%8C%E6%BD%AE%2C%E5%86%85%E5%BF%83%E7%9A%84%E9%9C%87%E5%8A%A8.html </url>
+  <time>2014-06-10T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>谈谈项目中的拖延症</title>
+  <content type="html" >&lt;h2&gt;谈谈项目中的拖延症&lt;/h2&gt;
+
+&lt;h3&gt;何出此悟&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp; 如题！上周端午节，公司又将全公司人全部拉去学习PMP，还是那熟悉的九大知识域，5大过程组。。
+课堂之上，老师口若悬河，滔滔不绝，让尔等无不惊叹老师学富五车，无不拍案叫绝！可每当夜后，
+想回忆白日之内容，也就只七七八八。不过我对老师所说的项目成本巨耗倒是来了感觉，我们知道一个项目最悲惨的下场就是
+应收款项迟迟不到，需求还层出不穷，人员士气不高，进度老是拖延，BUG层出不穷，成本超支，如果朋友你就在这样的项目里，
+恭喜你！你要不成为英雄，那就只能成为烈士！（叹息一声）不过孔子云：温故而知新，这次又有让我新的感悟，本篇便讲讲我的
+新感悟。谈谈项目的拖延症～～～～！&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3&gt;项目拖延症&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;有个关于时间管理老生长谈的例子，大小石头问题，大石头代表的是重要紧急的事情，小石头代表的是不重要不紧急的事情，
+稍微知道点的同学毫不犹豫就会说，先放大石头，也就是重要紧急的事情。但事实上我们真是这么做的么？项目中我们经常都是把小石头先放下去。
+大石头无法放下，所谓忙死了。我也总结了项目中拖延症状&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 1.本来可交付物的文档，总是要在客户检查时才匆匆忙交付,而且质量很差。&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt; 2.本来可以今天做完向领导交付的成果，因为完美情节，总要延期决定交付。&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt; 3.本来已经谈好的设计，一拖再拖，一直在纸上，从未被实施。&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt; 4.本来很重要的工作，总是被其他琐碎耽搁，比如明天就要去实施了，该做的准备没有做，且去忙去做其他无关紧要的事。&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt; ..........&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;项目拖延心态分析&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;有这么多现象，再来扒一扒它们的心态，为什么做事情，一拖在拖？我觉得他们主要依靠这么个假设&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 这个现在无法作出判断，还是下来慢慢从长计议，以为会后为去仔细思考，后来却不自觉逃避这件事情。&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt; 这个动作往后做肯定比现在做更合适，其实本质上这个动作先做比后做更有利。&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt; 这个动作今天拍板了一定是我的责任，所以我最好还是让别人来拍板。&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt; 这个文档好麻烦啊，今天代码都写够了，还是明天写，明日复明日，明日何其多。&lt;br/&gt;&lt;/li&gt;
+&lt;li&gt; .........&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;项目拖延治疗法&lt;/h3&gt;
+
+&lt;p&gt;&amp;amp;emsp；&amp;emsp; 我们发现并分析了这么多现象和心态说说我想的几招吧&lt;/p&gt;
+
+&lt;p&gt;在项目管理上。具体实施如下几点。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 1.将每周（月）工作包分配后，实施每日晨会制度，由每人报告进度情况.&lt;/li&gt;
+&lt;li&gt; 2.重点关心关键路径上的同事，每日“热心”询问是否需要帮助。&lt;/li&gt;
+&lt;li&gt; 3.可视化管理，由项目助理将每日进度情况公布于晨会墙上（具体表现如燃尽图，工作包状态表）。&lt;/li&gt;
+&lt;li&gt; 4.加强进度管理，明确里程碑节点不可动摇性！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;emsp; &amp;emsp; 个人管理方面，主要一下几步，&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 1.运用任务分析表格将个人任务分门别类。&lt;/li&gt;
+&lt;li&gt; &lt;img src=&quot;/publics/images/blog_images/feixi.jpg&quot; style= &quot;width:400px;height:200px&quot;&gt;。&lt;/li&gt;
+&lt;li&gt; 2.事物处理优先顺序 紧急重要 &amp;gt; 紧急有用 &amp;gt; 不紧急重要 &amp;gt;不紧急有用 &amp;gt; 紧急不重要 &amp;gt; 不紧急不重要。&lt;/li&gt;
+&lt;li&gt; 3.将不紧急的不重要的尽量授权！&lt;/li&gt;
+&lt;li&gt; 4.当有延迟心理出现时，用笔记录下你想逃脱的理由，用于觉察自己拖延行为。&lt;/li&gt;
+&lt;li&gt; 5.审视自己写在纸面上的理由，忍住五分钟再看是不是有必须性。用于行动中克服拖延行为。&lt;/li&gt;
+&lt;li&gt; 6.通过审视后预期结果和拖延心理产生时候假设做对比，明白假设欺骗性。用于调节自己行为。&lt;/li&gt;
+&lt;li&gt; 7.通过对比后，情况的差异性，接纳真实的自己，使自己更明白问题的真实性。&lt;/li&gt;
+&lt;li&gt; 8.通过不断实践，形成自己的肌肉记忆，并不断找到极限，实现自我实现&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/06/05/%E8%B0%88%E8%B0%88%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E6%8B%96%E5%BB%B6%E7%97%87.html </url>
+  <time>2014-06-05T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>html5的history对象的使用</title>
+  <content type="html" >&lt;h2&gt;ajax异步加载网页后修改阅览器URL&lt;/h2&gt;
+
+&lt;p&gt;&amp;emsp;以前我们使用ajax异步加载网页后，预览器的URl并没有被更改，这就造成一个问题，无法使用预览器的后退功能，为了解决这个
+问题，html5中为阅览器的windows对象增加了history属性，想要在预览记录新增并修改url可以这样用&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;windows.history.pushState(objState,htmlTitle,url)
+//objState 额外对象，如果适合之可以在以后触发URL更改事件时使用。
+//htmlTitle 页面标题，具体用处不详细
+//url 需要跳转的地址
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;emsp;上面讲了调用方法，我们就拿个实例来看看&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;    //这是我博客中一个JS对象中一个AJax异步get后台的方法
+    getServer: function (fn, el) {
+        if (typeof(fn) == &amp;quot;function&amp;quot;) {
+            $.get(this.url, function (response) {  //get匿名函数回调函数
+                var ajaxHtml =$(response).find(&amp;quot;div#show_post&amp;quot;).children()
+                $(&amp;quot;#show_post&amp;quot;).append(ajaxHtml)
+                var state = {htmlContent:response}  //构建 state对象
+                  window.history.pushState(state,&amp;#39;&amp;#39;,this.url) // 增加一个history记录，并赋予state对象
+                fn()
+            })
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;emsp;这样我们就能修改阅览器url了，但是我们点击阅览器返回按钮时，url是变回去了，但是页面没有变化，现在我们该为url变换事件增加处理逻辑
+我们这里需要借用windows对象中的addEventListener方法为 popstate时间增加回调方法&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;window.addEventListener(&amp;quot;popstate&amp;quot;,function(e){
+    if (e.state){ //判断是不有state对象，这个对象是我们使用windows.history.pushState时增加的
+        var ajaxHtml =$(e.state.htmlContent).find(&amp;quot;div#show_post&amp;quot;).children()
+        $(&amp;quot;#show_post&amp;quot;).empty()
+        $(&amp;quot;#show_post&amp;quot;).append(ajaxHtml)
+        toggleDuoshuoComments(&amp;quot;#show_post&amp;quot;)
+        $(&amp;#39;.progress&amp;#39;).hide()
+    }
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;本文所述方法，就是本博客首页面，点击某篇文章好所使用的异步方法，上面代码效果可以参考本博客&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/05/28/ajax%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E4%BF%AE%E6%94%B9url.html </url>
+  <time>2014-05-28T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>web前端数据与变现分离之MVCR框架初体验</title>
+  <content type="html" >&lt;h2&gt;web前端数据与变现分离之MVCR框架初体验&lt;/h2&gt;
+
+&lt;p&gt;&amp;emsp;为什么最近冒出这个研究方向，是因为自己最近用做了个webAPP，这个项目中运用大量JS实现了页面渲染与加载，以前写JS也就几行代码，
+这次规模超出了以前做web项目的大小，代码从组织上显现极大臃肿，尽管我采用面对对象方式，抽象很多功能，但是还是不能让代码变得好看点。
+后来我去几家公司，都问过我对数据与表现分离有么有概念，我也茫然（在小公司的悲哀，井底之蛙，天只有井口大小），回来搜索资料学习之。&lt;/p&gt;
+
+&lt;h3&gt;什么是前端数据与表现分离？&lt;/h3&gt;
+
+&lt;p&gt;&amp;emsp;在我写的很多前端代码中，如果页面将class，ID等元素更换后（也就是更换HTML后），我面临一个很尴尬的问题，以前写的JS代码
+无法用了，如果要修改，修改点散落在前端中各个角落，想要重用代码，几乎是不可能的事情。特别是运用大量AJax的前端上面，
+究其原因主要存在一下几个部分:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 1.对页面元素的class id等元素选择器分散在代码各个地方，没有抽象出来。&lt;/li&gt;
+&lt;li&gt; 2.对于ajax异步获取的数据，也没有对数据持久层分离,基本都是按功能分散在代码中各个部分。&lt;/li&gt;
+&lt;li&gt; 3.经常在html中镶嵌大量JS运用代码而且是JS主要功能代码，使代码分散不宜维护。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;emsp;web发展经历几个阶段，从最开始的只是html展示到后来的CSS，js等技术的出现，渐渐的出现Content（内容）-structure(结构)-Presentation(表现)
+Behavior(动作)相分离的WEB开发标准，这是业界对前端规范，但是后来由于ajax大量运用，对前端代码组织提出了新的挑战。
+在JS当中用后端MVC框架仿制的MVCR出现了。下面是我在使用后的一些经验总结 &lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;首先是目录结构的变换&lt;/br&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/publics/images/blog_images/codestructure.jpg&quot;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;p&gt;我将JS代码按照MVCR的代码的方式分为了model，controller，renderer和plugin，model文件夹中，主要放置的是ajax获取数据或是
+faye后台主动推送的数据层。其主要方法代码有&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;//实时刷新升级按钮数据模型
+function BunttonModel(){
+    this.init = function(){
+
+    }
+    this.getBunttonList =function (fn){
+        var fayeClient =  new FayeClient();
+        fayeClient.getResponse(fn);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;而这里没用的fayeclinet对象是我放置于plugin文件下的代码如下&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;//faye客户端对象
+function FayeClient() {
+    try {
+        var client = new Faye.Client(&amp;quot;&amp;lt;%= &amp;quot;http://#{SystemInfo.new.get_ip}:9292/faye&amp;quot; %&amp;gt;&amp;quot;) //这里是运用了rails模块代码
+        this.client = client
+    } catch (err) {
+        console.log(err)
+
+    }
+
+
+}
+FayeClient.prototype = {
+    constructor: FayeClient,
+    getResponse: function (fn) {
+        this.client.subscribe(&amp;quot;/message&amp;quot;, function (response) {
+            fn(response);
+        })
+
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;其实仔细的发现，我这里制作做了反射调用，因为以前已经写了很多代码了，我决定只是在model中封装下fayeclient便行，下面
+我们再看看renderer部分代码。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;//实时刷新按钮渲染对象
+function ButtonRenderer() {
+    this.init = function () {
+    }
+
+    this.renderBunttonList = function (json) {
+        var obj = new Walker(json)
+        obj.list_each();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;好吧这里walker也是我以前封装的对象，我就不再显示，下面我们再看看我们的controller部分&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;function BunttonController(){
+    this.init =function(){
+        this.model.getBunttonList(this.refreshBuntton())
+    }
+    this.refreshBuntton= function(){
+        return this.renderer.renderBunttonList
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;各位看官看了，是不是觉得这些代码运行起来肯定会报错，controller怎么去调用model，和renderer呢？我们这里要请出我们起胶水作用的第三个类
+MCR类&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;//MCR复合对象
+function MCR(Controller,Model,Renderer){
+    this.controller = new Controller()
+    this.model = new Model()
+    this.renderer = new Renderer()
+    this.controller.model = this.model
+    this.controller.renderer =  this.renderer
+    this.model.controller = this.controller
+    this.renderer.controller = this.controller
+
+    if (typeof this.controller.init == &amp;quot;function&amp;quot;){
+        this.controller.init();
+    }
+    if (typeof this.model.init == &amp;quot;function&amp;quot;){
+        this.model.init();
+    }
+    if (typeof this.renderer.init == &amp;quot;function&amp;quot;){
+        this.renderer.init();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上面的这个类将我们需要链接的controller，model，renderer，放置其中便可，而这样的操作，我一般就放在需要调用这个功能的HTML页面中如&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    $(document).ready(function () {
+      MCR(BunttonController,BunttonModel,ButtonRenderer)
+    })
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;下面我们再用个UML图表示下我们结构&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/publics/images/blog_images/JSUML.jpg&quot;&gt;&lt;/img&gt;&lt;/p&gt;
+
+&lt;h2&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;&amp;emsp; 我在使用了MVCR框架组织JS代码觉得他有这么几个特点&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.分离了JS代码中数据（model），渲染（renderer），动作（controller），使代码更加易懂，代码组织结构更加合理。&lt;/li&gt;
+&lt;li&gt;2.减少了我在html镶嵌JS代码，使内容与动作相对更加独立分离。&lt;/li&gt;
+&lt;li&gt;3.降低了代码中的耦合度，提高了聚合程度。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/05/24/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%B8%8E%E8%A1%A8%E7%8E%B0%E5%88%86%E7%A6%BB%E4%B9%8BMVCR%E6%A1%86%E6%9E%B6%E5%88%9D%E4%BD%93%E9%AA%8C.html </url>
+  <time>2014-05-24T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>rails&amp;mongoid配置问题记录</title>
+  <content type="html" >&lt;h3&gt;记录在rails4中使用mongodb遇到的坑&lt;/h3&gt;
+
+&lt;p&gt;最近想做个站点，以前一直用mysql数据库，听说现在很流行mongodb，很多站点都用了这个非关系数据库（no-sql），自己也想试试，
+到底好不好用。于是在我新做的rails project中运用这个，正好rails4也出了，所以决定采用 rails 4 + mongoid方式试试
+首先是mongoid版本问题，首先新建工程的时候，不要默认使用ActiveRecord这样会创建默认的数据库sqlite，会造成很多配置问题，
+如果你不想遇到这么多坑，还是按标准来做吧&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;rails new app_name -O
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;现在mongoid只有github上的才有用（现在只有beta版本支持rails4），所以要在GemFile里面加上下面信息&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;./Gemfile
+gem &amp;#39;mongoid&amp;#39;, github: &amp;#39;mongoid/mongoid&amp;#39;
+gem &amp;#39;bson_ext&amp;#39;, &amp;#39;~&amp;gt; 1.8.6&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果有github连接超时（timeout）最好还是clone git上的仓库&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;$ git clone git@github.com:mongoid/mongoid.git
+$ cd mongoid
+$ gem build mongoid.gemspec
+#注意安装过程会出现某些GEM没有安装，按照提示安装便可
+$ gem install mongoid-x.x.x.bate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;现在生成配置文件&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;$ rails g mongoid:config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我在这一步遇到个问题，rails 项目在require &amp;quot;sprockets/railtie&amp;quot;发生语法错误，运行bundle install时 提示运行 gem pristine --all
+这是用rvm设置gemset时，出现gem版本错误 运行这条命令后，恢复版本错误问题后，rails4不报语法错误了。解决时候注意手动安装
+没有安装或默认cache地址找不到的GEM&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/05/21/rails4%26mongoid%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html </url>
+  <time>2014-05-21T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>设计模式之抽象工厂</title>
+  <content type="html" >&lt;h2&gt;设计模式之抽象工厂&lt;/h2&gt;
+
+&lt;h3&gt;抽象工厂 （abstract factory）&lt;/h3&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;UML图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/publics/images/blog_images/abstractFactory.png&quot;&gt;
+&lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;概述&lt;/h4&gt;
+
+&lt;p&gt;&lt;br/&gt;
+抽象工厂模式提供了一种方式，可以将一组具有同一主题的单独的工厂封装起来。在正常使用中，
+客户端程序需要创建抽象工厂的具体实现，然后使用抽象工厂作为接口来创建这一主题的具体对象。
+客户端程序不需要知道（或关心）它从这些内部的工厂方法中获得对象的具体类型，因为客户端程序仅使用这些对象的通用接口。
+抽象工厂模式将一组对象的实现细节与他们的一般使用分离开来。&lt;/p&gt;
+
+&lt;h4&gt;意图&lt;/h4&gt;
+
+&lt;p&gt;&lt;br/&gt;
+提供一个创建一系列相关或相互依赖对象的接口，而无需制定他们具体类&lt;/p&gt;
+
+&lt;h4&gt;屏蔽变化点&lt;/h4&gt;
+
+&lt;p&gt;1.屏蔽了每个实现类更改的变化。
+2.屏蔽了创建类方式的更改。
+3.屏蔽了产品族与产品等级更改造成的变化&lt;/p&gt;
+
+&lt;h4&gt;ruby实现&lt;/h4&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;//本例假设是一间房间，房间中具有墙和桌子椅子
+//桌子抽象类
+class AbstractTable
+  def render
+   raise &amp;quot;abstract Method&amp;quot;
+   end
+end
+
+class simpleTable &amp;lt; AbstractTable
+   def render
+     p &amp;quot;我是简单书桌&amp;quot;
+   end
+end
+
+class ComplexTable &amp;lt; AbstractTable
+   def render
+    p &amp;quot;我是复杂桌子&amp;quot;
+   end
+end
+
+//椅子抽象类与实现类
+class AbstractChair
+  def render
+   raise &amp;quot;abstract method&amp;quot;
+  end
+end
+
+class SimpleChair &amp;lt; AbstractChair
+   def render
+    p &amp;quot;我是简单椅子&amp;quot;
+   end
+end
+
+class ComplexTable &amp;lt; AbstractChair
+    def render
+     p  &amp;quot;我是复杂桌子&amp;quot;
+    end
+end
+
+class AbstractRoom
+ def create_table
+  raise &amp;quot;abstract method&amp;quot;
+ end
+
+ def create_table
+   raise &amp;quot;abstract method&amp;quot;
+ end
+end
+
+class FactoryHouseA &amp;lt; AbstractRoom
+ def create_table
+  SimpleChair.new.render
+ end
+
+ def create_chair
+   SimpleChair.new.render
+ end
+end
+
+class FactoryHouseB &amp;lt; AbstractRoom
+ def create_table
+   ComplexTable.new.render
+ end
+
+ def create_chair
+  ComplexChair.new.render
+ end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;JavaScript实现&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;首先补充下JS继承实现函数
+//基类
+function Class(){}
+
+Class.create = function(props){
+   var instance = new this();
+   for (var name in props){
+        instance[name] = props[name]
+   }
+}
+
+Class.extend = function(props){
+  return this.prototype.extend.call(this,props)
+}
+
+Class.prototype.create=function(props){
+  var instance = new this
+  for ( var name in props ){
+     instance[name] = props[name];
+  }
+  return instance
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+  <url>http://www.songyuchao.com/2014/05/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95.html </url>
+  <time>2014-05-06T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>设计模式开篇和工厂方法模式</title>
+  <content type="html" >&lt;h1&gt;设计模式开篇和工厂方法模式&lt;/h1&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+
+&lt;h3&gt;开篇之言&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&amp;emsp;最近准备将23种设计模式用ruby和javascript两种语言分别实现，为什么要这么做&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;一.公司由于代码风格不统一造成的沟通问题而开展的全公司学设计模式。
+二.作为学习后笔记用。
+三.选择ruby和javascript是因为我现在主要使用这两门语言。
+四.作为体会各种模式的适用点。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+
+&lt;h3&gt;设计模式用途&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&amp;emsp;为什么要学设计模式？这里谈谈自己对设计模式看法&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;一.设计模式本质就是屏蔽变化点。（很精辟的悟点，看设计模式最佳角度，感谢易博士）
+二.没有一种设计模式是万能的,所以谈论哪种设计模式最好是无用的，没有最好，只有刚刚好。（基于第一条）
+三.设计模式不是为了耍酷，而是为了方便和其他OOA程序员沟通而制定一个标准名词和标准动作。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;废话完成，进入正文
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;h3&gt;工厂方法（factory method）&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&amp;emsp;首先来看看我们UML&lt;/br&gt;
+&lt;img src=&quot;/publics/images/blog_images/factory_method_uml.JPG&quot;&gt;&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;h4&gt;概述&lt;/h4&gt;
+
+&lt;p&gt;在软件系统中，经常面临着“某个对象”的创建工作，由于需求的变化，这个对象的具体实现经常面临着剧烈的变化，
+但是它却拥有比较稳定的接口。如何应对这种变化？提供一种封装机制来隔离出“这个易变对象”的变化，
+从而保持系统中“其它依赖该对象的对象”不随着需求的改变而改变？这就是要说的Factory Method模式了。&lt;/br&gt;&lt;/p&gt;
+
+&lt;h4&gt;意图&lt;/h4&gt;
+
+&lt;p&gt;&lt;/br&gt;
+定义一个用户创建对象的接口，让子类决定实例化哪一个类。Factory Method使一个类的实例化延迟到其子类。&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;h4&gt;屏蔽的变化点&lt;/h4&gt;
+
+&lt;p&gt;&lt;/br&gt;
+1.工厂类不负责实例的具体过程，将变化的具体构造过程，交给子类来实现。
+2.将到底实例哪个类，交给调用者来决定&lt;/p&gt;
+
+&lt;h4&gt;ruby的实现&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;class Car
+   def self.factory typeName
+      const_get(typeName).new #查询祖先链，如果查到返回这个静态值
+   end
+
+end
+
+class BMW &amp;lt; Car
+
+  def drive
+
+      p &amp;quot;my it&amp;#39;s BMW&amp;quot;
+
+  end
+end
+
+class Benz &amp;lt; Car
+
+   def drive
+
+     p &amp;quot;my it&amp;#39;s Benz&amp;quot;
+
+   end
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;javascript实现&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;var car = car || {}
+car.BMW = function(){
+  console.log(&amp;quot;my it&amp;#39;s BMW&amp;quot;)
+}
+
+car.Benz = function(){
+  console.log(&amp;quot;my it&amp;#39;s Benz&amp;quot;)
+}
+
+car.factory= function(name){
+  var o = {}
+  o.method = car[name]
+  return o
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;体会&lt;/h4&gt;
+
+&lt;p&gt;工厂方法适合一下情景&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;1.具体方法没有定义或不无法定义，需要子类来实现。
+2.设计时不知道到底需要实例哪个子类。
+3.处理大量类似实例
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;缺点&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;1.依赖继承链，太过复杂不好测试
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+  <url>http://www.songyuchao.com/2014/05/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95.html </url>
+  <time>2014-05-05T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>shell编程中缩进遇到的坑</title>
+  <content type="html" >&lt;h1&gt;shell编程中缩进遇到的坑&lt;/h1&gt;
+
+&lt;p&gt;平时运维的时候要写些脚本，经常碰到报错，最后调试发现大部分都是缩进惹得祸，在这里我列举下我遇到shell中那些坑吧。&lt;/br&gt;&lt;/p&gt;
+
+&lt;h2&gt;判断中的缩进&lt;/h2&gt;
+
+&lt;p&gt;来段以前初始化ruby环境中代码情况&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;if test -f ~/.rvm/scripts/rvm; then
+ [&amp;quot;$(type -t rvm)&amp;quot;== &amp;quot;function&amp;quot;] || source ~/.rvm/scripts/rvm
+fi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这段代码执行时会抛出&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;./ruby.sh: 行 2: [file=: 未找到命令
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果你看到这个错误，肯定无从着手，我们先来理解下这段脚本的意思吧&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;1.判断RVM（ruby linux上版本管理器）路径是否存在，存在执行下一步
+2.判断环境变量中rvm 类型是否为function，是 退出执行 否 执行RVM
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这里错误包涵两处错误&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;$(type -t rvm)&amp;quot;== &amp;quot;function&amp;quot; （function 前面多余空格）
+[&amp;quot;$(type -t rvm)&amp;quot;== &amp;quot;function&amp;quot;] （[]中括号中需要空格）
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;定义变量的缩进&lt;/h2&gt;
+
+&lt;p&gt;还是先来段代码&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;read text
+function puts {
+ content= $text
+ echo $content
+}
+puts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这样执行的结果就是&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;./test.sh: 行 3: content: 未找到命令
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;错误原因&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;  content= $text 这里不应该有空格
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;在shell中，缩进要求比较严密，有时候调不出问题，原因很有可能就是缩进不对，平时我们使用语言（ruby jS）都没有这么强的格式影响，&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/05/05/shell%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%BC%A9%E8%BF%9B%E7%9A%84%E5%9D%91.html </url>
+  <time>2014-05-05T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>node.js初探</title>
+  <content type="html" >&lt;h1&gt;node.js初探&lt;/h1&gt;
+
+&lt;p&gt;自己自从学习ruby on Rails做为后端开发，js作为前端使用后，似乎给我一个暗示JS只是前端开发语言，但是我突然
+听说JS也可以作为后端使用，而且比ruby更快时，我惊讶了～！遂google搜索学习之。本文是学习过程的记录。&lt;/p&gt;
+
+&lt;h2&gt;环境搭建&lt;/h2&gt;
+
+&lt;p&gt;我现在使用的操作系统为Ubuntu，首先下载node.js（&lt;a href=&quot;http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz&quot;&gt;下载地址&lt;/a&gt;）&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;一.首先安装编译环境&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get install g++ libssl-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;二.进入下载好的node目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;./configure
+sudo make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;三.安装完成后，检查安装情况&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;node -v
+npm -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;hello word&lt;/h2&gt;
+
+&lt;p&gt;按惯例编写一个“hello word”,先来打印个。&lt;/br&gt;
+vim创建一个JS文件&lt;code&gt;vim hello_word.js&lt;/code&gt; 来吧简单的打印&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;console.log(&amp;quot;hello word&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;运行起来&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;node hello_word.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果输出正常，那么现在为止环境是OK，好吧到现在为止太小儿科了，真真开启个web后台吧&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt; var http = require(&amp;#39;http&amp;#39;)
+ http.createServer(function(req,res){
+ res.writeHead(200,{&amp;#39;content-Type&amp;#39;:&amp;#39;text/plain&amp;#39;});
+ res.end(&amp;quot;hello worl\n&amp;quot;)
+ }).listen(3000,&amp;#39;127.0.0.1&amp;#39;)
+ console.log(&amp;quot;Server running at http:127.0.0.1:3000&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在阅览器中访问 http://0.0.0.0:3000/
+好吧到现在为止我们已经能在控制台和网页中显示hello word了，这简直太小儿科了来点干货吧&lt;/p&gt;
+
+&lt;h2&gt;callback function &amp;amp; 事件驱动&lt;/h2&gt;
+
+&lt;p&gt;为什么说回调函数呢？因为node.js之所以这么快，就因为他使用了基于事件的回调，我在网上看到关于这个最形象的比喻&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;如果就点餐这件事，以前的apache之类的服务器，如果要处理，他首先创建一个服务员实例A（线程），你点了一份牛排（相当于要访问后厨数据库制作你要数据并渲染）
+这时候这个服务员不会执行其他所有操作，而他客户来了要点碗汤，以前服务员无法再为客服服务，所以apache又为这位客实例了一个服务员B，但是后厨（想象成数据库）
+也是有限的，当A服务员为客人做牛排他会霸占后厨（IO锁定），这就造成瓶颈。&lt;br/&gt;
+      1.由于服务员线程是需要内存空间的，服务员不能无限制增加，如果访问人多了，可能会内存溢出。&lt;/br&gt;
+      2.当服务员A使用后厨时（数据库）时，其他服务员是不能使用的，这也造成了瓶颈。&lt;/br&gt;
+而node.js是怎么实现的呢？来了一个客人，服务器实例一个服务员A，服务员拿到了客人订单，交给后厨（数据库），后厨开始制作菜肴，这时候服务员A并没有等
+后厨处理完，他只是按照流程在这里设定一个回调（callback function），他又等下一个客户，当菜好了，后厨大叫一声“12号桌饭好了”（事件触发），服务员A端菜上桌（回调函数的执行），
+如果服务员A处理不完这么多，node.js会再实例服务员B，但是这也比apache餐厅服务员实例少的多。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原理就是这样，现在我们来看看JS回调例子，来段最常用的Jquery异步回调&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;function popMessage(response){
+alert(response)
+}
+$.get(url,popMessage)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在上面 &lt;code&gt;$.get(url,success(response,status,xhr))&lt;/code&gt;就是我们最常用的回调，我们平时大多用匿名函数而已。&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/05/04/node.js%E5%88%9D%E6%8E%A2.html </url>
+  <time>2014-05-04T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>blog中异步加入多说评论</title>
+  <content type="html" >&lt;h1&gt;在jekyll做的blog中异步加入多说评论&lt;/h1&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3&gt;一.需求&lt;/h3&gt;
+
+&lt;p&gt;&lt;br/&gt;
+做这个博客时，我遇到一个技术难题，由于我的博客设计在显示博文的时候，是采用的异步加载的方法（可加快网页加载速度），而且我在每个博文加载显示的时候，都加载评论框，
+但是多说官方给出的API只有静态的加载方法，要实现动态加载得自己想办法，在翻阅多说API时候，发现一个按钮加载评论框方法（&lt;a href=&quot;http://dev.duoshuo.com/docs/50b344447f32d30066000147&quot;&gt;http://dev.duoshuo.com/docs/50b344447f32d30066000147&lt;/a&gt; ），
+眼前一亮，发现一个解决方案。
+&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3&gt;二.解决方案&lt;br/&gt;&lt;/h3&gt;
+
+&lt;p&gt;加载多说的JS代码:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;script&amp;gt;var duoshuoQuery = {short_name:&amp;quot;你的多说二级域名&amp;quot;};&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;http://static.duoshuo.com/embed.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;br/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;增加评论框&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;function toggleDuoshuoComments(container){
+var el = document.createElement(&amp;#39;div&amp;#39;);//该div不需要设置class=&amp;quot;ds-thread&amp;quot;
+    el.setAttribute(&amp;#39;data-thread-key&amp;#39;, &amp;#39;文章的本地ID&amp;#39;);//必选参数
+    el.setAttribute(&amp;#39;data-url&amp;#39;, &amp;#39;你网页的网址&amp;#39;);//必选参数
+    el.setAttribute(&amp;#39;data-author-key&amp;#39;, &amp;#39;作者的本地用户ID&amp;#39;);//可选参数
+    DUOSHUO.EmbedThread(el);
+    jQuery(container).append(el);
+ }&amp;lt;/br&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;根据上的方式，来异步增加页面时，加载多说的评论框。在使用jekyll博文中，在&lt;code&gt;_layouts&lt;/code&gt;目录下的&lt;code&gt;post.html&lt;/code&gt;中加入&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;ds-thread&amp;quot;  data-thread-key=&amp;quot;/2014/04/29/在blog中怎么异步加入多说评论&amp;quot; &amp;lt;/br&amp;gt;
+data-title=&amp;quot;blog中异步加入多说评论&amp;quot;  &amp;lt;/br&amp;gt;
+  data-url=&amp;quot;/2014/04/29/%E5%9C%A8blog%E4%B8%AD%E6%80%8E%E4%B9%88%E5%BC%82%E6%AD%A5%E5%8A%A0%E5%85%A5%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA.html&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这一步是为了加载多说的JS代码，并且增加文章信息和用户信息&lt;/br&gt;
+然后在异步加载的回调函数中加入这么一段代码&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;function toggleDuoshuoComments(container){ &amp;lt;/br&amp;gt;
+var obj =  $(&amp;quot;.ds-thread&amp;quot;)&amp;lt;/br&amp;gt;
+var el = document.createElement(&amp;#39;div&amp;#39;);//该div不需要设置class=&amp;quot;ds-thread&amp;quot;  &amp;lt;/br&amp;gt;
+    el.setAttribute(&amp;#39;data-thread-key&amp;#39;, obj.attr(&amp;quot;data-thread-key&amp;quot;));//必选参数 &amp;lt;/br&amp;gt;
+    el.setAttribute(&amp;#39;data-url&amp;#39;, obj.attr(&amp;quot;data-url&amp;quot;));//必选参数  &amp;lt;/br&amp;gt;
+    DUOSHUO.EmbedThread(el);  &amp;lt;/br&amp;gt;
+    jQuery(container).append(el); &amp;lt;/br&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+上面代码其实就是修改下多说官网上提供按钮增加方式换成了用jquery 获取页面元素自动增加方式&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/04/29/%E5%9C%A8blog%E4%B8%AD%E6%80%8E%E4%B9%88%E5%BC%82%E6%AD%A5%E5%8A%A0%E5%85%A5%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA.html </url>
+  <time>2014-04-29T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>初创公司项目管理那些事</title>
+  <content type="html" >&lt;h1&gt;初创公司项目管理那些事&lt;/h1&gt;
+
+&lt;h2&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;看了《走出软件作坊》后，我最大的感受就是同样是初创公司我们虽然还有很多不足，制度很多方面都不完善，所以我们能做的就是，尽我们最大努力将事情做好，虽然这些制度表面看起来，都是公司问题，本质上都是人的问题，怎么用三五个人十来杆枪，在有限的资源下做无限可能的事，只有公司人员成长了，公司才会成长。所以本文，主要的讲述我在根据这本书的感悟，当中我所提到的方式或结论，只是个人观点，可能有失客观，毕竟我也是新人。
+我的原则不是说问题就没法做，路是死的，人是活的。我提问题，只是想我们项目组更加专业优秀&lt;/p&gt;
+
+&lt;h2&gt;新技术与项目关系&lt;/h2&gt;
+
+&lt;h3&gt;我认为的问题&lt;/h3&gt;
+
+&lt;p&gt;在公司中，我喜欢新技术是众所周知的，而我也经常想在项目中实践我的新技术，但是新技术不等于好项目，首先新技术铺开需要几点条件。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  1.项目是否都有这样的需求，没有新技术就不行。&lt;/li&gt;
+&lt;li&gt;  2.新技术是否对项目有明显推动。&lt;/li&gt;
+&lt;li&gt;  3.推广时机对不对，有些东西虽然很有帮助，但是当时却不是团队所有人都意识到的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;而我在项目中，渐渐发现我的做法违背这些原则，往往本来想做一些好东西共享给项目，但往往却事与愿违，结果往往造成新技术达不到明显的作用，还搞坏团队关系。
+我有时就在想，我们应该站在项目角度上来看待这个新技术问题，其实我也常常听到新技术不能占项目的百分之几的云云，以前我也是简单看待这个问题，以为只是怕技术上无法实现，所以对新技术各种管制，其实新技术推广还要需要很多方面的影响。那么团队怎么管理新技术？
+我想的理想解决办法
+在书中也有对这方面的描述。我总结下来，解决方式主要就是开会讨论。但是开会也不是随便找几个人商量，也不是几个人摆下龙门阵，得有主题思想。找人需要主要的是下面几个问题。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.相关人员需要对这项技术都有足够了解。&lt;/li&gt;
+&lt;li&gt;2.主要为有经验的老手。&lt;/li&gt;
+&lt;li&gt;3.得有个拍板的人&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;会议得有结论，会议主题主要评估一下内容&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.新技术比老技术的优缺点。（结论就是新技术是否存在价值）。&lt;/li&gt;
+&lt;li&gt;2.新技术对项目资源影响（结论就是是否对人，财，物，时间，先定性是好或者坏的影响，然后尽量量化分析）。&lt;/li&gt;
+&lt;li&gt;3.决策（结论就是做或不做，往往需要一个拍板的人）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果最后决定要实施，也就是大多数人认为利大于弊时候（其实有时候是主要拍板人的意志），也不能全部铺开，得先搞试点，验证开会所说的到达效果是不是属实。（我觉得这和邓爷爷搞改革开放一样，先开放几个地方，看看效果，大家都看到这个模式好，以后推进的阻力也就小了）&lt;/p&gt;
+
+&lt;h2&gt;文档与项目关系&lt;/h2&gt;
+
+&lt;p&gt;我们项目就是那么三四个人十来杆枪，前期也就是忙不过来，我们先说说文档的事情，我觉得我们项目上，一直对文档比较欠缺，大家用外国先进的开发理论来说项目怎么应该少写文档，一方面我赞同文档不一定马上写，但是出来混，迟早都是要换的，这些文档不是不重要，只是他现在的优先级比较低，后来看了下国家标准文档（GB8567-88）核心的多，快，好，省这些基本管理范围覆盖完了。现在的客户，你做事好不好，能力先不说，表面上浮的东西都不行，那映像差多了，以后我们欠下的文档在我们验收的时候的，肯定是要还的，这就是国情。外国东西是好，但是不符合国情。是不行的，你没环境用城市包围农村的战略来革命偏要硬上弓，最后结果就是反围剿失败，大伙一起战略转移吧。&lt;/p&gt;
+
+&lt;p&gt;文档是管理的基石(不是说没文档就不能管理了，只是说更专业更有说服力)&lt;/p&gt;
+
+&lt;h3&gt;一.从汇报工作角度看&lt;/h3&gt;
+
+&lt;p&gt;不论先进的敏捷式开发，还是老传统的管理思维，都有个基本管理过程组，启动-&amp;gt;计划-&amp;gt;实施-&amp;gt;检查-&amp;gt;结束，这一系列管理过程组，他依托的载体就是这些文档，为什么，你想想，给BOSS讲工作，本来管理就是摸不着的，任你说的天花乱坠，BOSS也最多信你2，3分，BOSS们都是以结果为导向的，怎么将无形的管理结果转化为看的见摸得着的东西，就是文档上的数据（造假数据问题不是我们这里讨论的问题，那是人品问题了）。你想想开会的时候，你就拍的脑袋说我们达到什么标准，又做了什么事。没具体数据，谁信啊。结局就像书里说的久而久之老总便不信任你了，渐渐的项目资源就要不到了。&lt;/p&gt;
+
+&lt;h3&gt;二.从项目日常管理角度看&lt;/h3&gt;
+
+&lt;p&gt;首先我们说说项目全生命周期吧，一个标准项目周期为（这里是理论上的），定义阶段-&amp;gt;开发阶段-&amp;gt;实施阶段-&amp;gt;收尾阶段，每个阶段也有相应的管理过程组和各个管理知识域，比如所有的管理基础中的范围管理吧，他输入是，可研报告，项目合同，项目章程，项目环境因数输出是项目范围说明书，WBS（工作分解表），而我们项目往往都有个这样的问题：
+客户说某某功能必须有，项目经理就和技术大牛商量这个怎么怎么做，经过一阵欢快的讨论后，项目经理说ok,就这样做，于是代码人员开始coding，做完很久以后，测试人员验收测试时大叫一声，“呀~~这是什么时候加的功能啊？”编码说“老早的事了，你问项目经理”，
+项目经理一来说“是啊，早加了，不过我怎么觉得这里做的有点问题，”
+编码人员：“当初你就是这样定的，你忘了？”
+项目经理:“呀？为什么当时会这样定啊？”
+代码人员：“xx 你xx。。。。。。。。。。。“
+于是又是一阵讨论，最后这个功能就这样糊里糊涂给验收过去了。
+这种问题为什么会出现呢？这就是范围管理没有落实，我们项目上经常说需求变化太大了，计划赶不上变化，所以这文档就算了吧，口头传达下这个指令，要知道人脑的记忆力是不敢恭维的（我就经常忘记自己写的代码）。关于变化问题，连教科书都说：“计划不变是相对的，变化是绝对的”，瀑布流式开发永远都是幻想。
+遇到这样问题，按理做法是评估-&amp;gt;更新WBS-&amp;gt;实施-&amp;gt;发布新版本的WBS,-&amp;gt;测试人员编写测试用例。不管怎么着最后都要落实到文档上去，白字黑字，如果客户能签字最好，如果不行也要发封邮件知会一声。&lt;/p&gt;
+
+&lt;h3&gt;三.从项目客户验收角度来看&lt;/h3&gt;
+
+&lt;p&gt;在《走出作坊》书中看到这样情景，有时候项目关系人太多，需求你一个我一个，而这些关系人的需求甚至有时候都是相违背的，但是项目经理也全部照单全收，也没有文档，最后验收的时候，往往达不到所有关系人需求，而这时候提这些需求的关系人，往往可能时间久了忘了，或是根本就是挖个坑给你，这时候没有文档白纸黑字写在那，你纵有舌战群雄的本事，但是客户的口水也能把你淹死。但往往为了客户关系，项目经理不会去争辩，最后也只有哑巴吃黄连。&lt;/p&gt;
+
+&lt;p&gt;如果要实施文档，我们项目组怎么做？我的建议是&lt;/p&gt;
+
+&lt;h3&gt;首先要做什么？&lt;/h3&gt;
+
+&lt;p&gt;因为我们已经有很多债需要还，想一时半会解决这些问题都是不现实的，我认为我们应该为文档排个优先级。而项目需要哪些文档呢？
+根据计算机软件产品开发文件编制指南《GB8567-88》，项目文档包含如下部分（这都只是参考，不一定全部按照执行）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.操作手册&lt;/li&gt;
+&lt;li&gt;2.测试分析报告&lt;/li&gt;
+&lt;li&gt;3.测试计划&lt;/li&gt;
+&lt;li&gt;4.概要设计说明书&lt;/li&gt;
+&lt;li&gt;5.开发进度月报&lt;/li&gt;
+&lt;li&gt;6.可行性研究报告&lt;/li&gt;
+&lt;li&gt;7.模块开发卷宗&lt;/li&gt;
+&lt;li&gt;8.软件需求说明书&lt;/li&gt;
+&lt;li&gt;9.数据库设计说明书&lt;/li&gt;
+&lt;li&gt;10.数据要求说明书&lt;/li&gt;
+&lt;li&gt;11.文件给制实施规定实例&lt;/li&gt;
+&lt;li&gt;12.详细设计文档&lt;/li&gt;
+&lt;li&gt;13.项目开发计划&lt;/li&gt;
+&lt;li&gt;14.项目开发总结报告&lt;/li&gt;
+&lt;li&gt;15.用户手册&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这些标准文档包含了项目生命周期所有的文档，晃眼一看，真是浩浩荡荡，但是我们项目就这么两三个人十多杆枪，这干脆都别开发了全部做文档了吧！当然这是不现实的，所以我们需要对这些文档分类（这在《走出作坊》书中也有说明），既然我们无法做全全部文档，那我们就抓住关键的20%，也就是管理域当中的四个核心多，快，好，省（分别对应范围管理，进度管理，质量管理，成本管理）而这四个核心，以范围管理最为基础，所以我觉得我们应该这样做&lt;/p&gt;
+
+&lt;h3&gt;怎么做？&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第一步：将项目已有功能整理成范围管理文档，形成需求说明书和工作分解图（WBS），以后如果有新的需求，就发布新的版本&lt;/li&gt;
+&lt;li&gt;第二步：根据需求说明书和WBS，完成测试用例与测试计划。&lt;/li&gt;
+&lt;li&gt;第三步：根据前两步的步骤，预估我们的进度，用前导图，甘特图等分析方法，做出项目的进度管理计划。&lt;/li&gt;
+&lt;li&gt;第四步：根据前三步方法的结果，做出成本管理计划，做到控制项目。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;谁来做？&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;需求文档：售前人员，项目经理&lt;/li&gt;
+&lt;li&gt;测试文档：测试部&lt;/li&gt;
+&lt;li&gt;进度文档：项目经理&lt;/li&gt;
+&lt;li&gt;成本管理：项目经理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;谁来监督？&lt;/h3&gt;
+
+&lt;p&gt;计划做了，实施也做了，那么就该谁来检查了，在我们公司，我觉得这就是由我方boss，甲方老大，（理论上还有监理方）组成的项目的管理层，主要工作就是审核项目经理工作报告（各种文档）。&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/04/20/%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E9%82%A3%E4%BA%9B%E4%BA%8B.html </url>
+  <time>2014-04-20T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>项目管理的系统思维</title>
+  <content type="html" >&lt;h1&gt;项目管理的系统思维&lt;/h1&gt;
+
+&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;这次培训，由于时间问题，很多问题都没有深入探讨，导致我对某些问题理解不深，可能对问题理解有所偏差，首先我这篇文章主要从以下几个方面来论述的感受。&lt;/p&gt;
+
+&lt;p&gt;用木桶效应论述系统思考&lt;/p&gt;
+
+&lt;h2&gt;原理：&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;我们知道，一个木桶盛水量是与他最短的相等的，对比做项目，质量与进度就是一个相对矛盾问题，你不能一味的追求进度放弃质量，也不能一味最求质量放弃进度，最后结果就是有进度与质量构成的“水桶”，你的产品的水平高不高，就看你这做木桶用的木头最短的高度够不够。&lt;/p&gt;
+
+&lt;h2&gt;危害与事例：&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;在实际做项目中，我们往往做事的时候找不到这样的系统思维，远期效应和近期效应相冲突的时候，往往只注重近期效应而忘记远期效应，比如测试，大家都说忙，忙了半天也看不到代码质量的提高，bug量一直居高不下，以前的老bug在经过几轮迭代后又出现，感觉老在失控状态，但是大量的人力投入后，也不见好转，投入的资源也不见成效，大伙都有感受这种测试的问题，但是谁也没有说大伙停一下，我们来检查下出了什么问题，为了照顾进度一味增加人力，但是新人进来也会增加培训的工作量，又不能马上进入项目，还有人一多，又会出现沟通管理，绩效管理，进度管理等一些管理计划，方式的变更，最后增加的人力消失在这无尽的漩涡里。最后项目项目就进入一个奇怪的圈子，增加资源不见起效，再增加资源，还不见起效。最后项目组集体来做测试吧。&lt;/p&gt;
+
+&lt;h2&gt;分析事例：&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;为什么会出现这样的问题？那当然是系统思维的欠缺！具体分析如下：&lt;/p&gt;
+
+&lt;h3&gt;一.首先远期利益无法与近期利益相结合的系统思考&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;大伙不顾现在存在问题，一直追求短期利益，盲目测试，没有长效的测试计划，及方法，这种不能兼顾长远期利益做法结果就是，测试们一直很累做测试，但是项目质量也不会有好转。&lt;/p&gt;
+
+&lt;h3&gt;二.增加人力与之带来的成本的系统思考&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;世界上最复杂的东西不是电脑，不是飞机，而是人，没有什么东西比人更难琢磨，没什么比人的七情六欲更复杂的了，项目里在增加人力后，其实人的管理问题就摆上桌面。在项目中。特别是软件这类的项目，不像生产线，可以批量重复动作（比如我以前待过的仁宝电脑厂，每个员工就像机器人，完成同样的动作就行），软件项目是脑力密集型的，很难有重复劳动，(如果有厉害的程序员都会把他自动化掉)这样就意味着项目中的每个人都很难被替代，也就意味了不是每个人进项目组就能马上上线工作的，新人加入项目后，会经过相当一段的培训期，在这期间我们将会发现新员工的优缺点，来安排相应合适的岗位。那这期间的成本，又会拖累老员工的进度，怎么合理的增加人力安排培训，我们没有这样的培训计划，也没有这样系统思维，只是口头上的口号，这是不起作用的，套用老师的话，不接地气，以前我们新员工到岗，都会有一份员工培训计划，比如去年李国强经理给我做的员工培训计划（现在还在我文件夹里），可惜这个优秀的传统并没有坚持下来。&lt;/p&gt;
+
+&lt;h3&gt;三．短期的人力资源短缺与人员职责划分的系统思考&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;我们项目老有个奇怪的现象，开发人员即是开发人员，也是测试人员，测试人员测试中，老是无故被开发中断，因为开发在测试中发现了bug情不自禁给改了，又上传到服务器。造成测试环境中断，最后测试也不是测试人员而是系统环境管理员，开发成了测试人员，又成了开发人员，虽然人手不够是现实问题，老搞得开发不像开发，测试不像测试，大家职权不清，测试过程乱的一锅粥。也不是办法（现在大家也意识到这个问题了），短期我们看来是人力少（到底是不是人力问题上面也论述了，这里是单讲这个问题），但是我们项目似乎又把这个搞成一个传统习惯的趋势，每次遇到问题，老是一伙人全部按上去，除了测试工作其他都不做了。这样测试做好，开发也做不好。&lt;/p&gt;
+
+&lt;h2&gt;自己对问题的几点思考和想法&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;我们已经知道这些问题的根源是系统思考，那么知道了“道”，但是光有“道”没有“术”是不接地气的。我想到的“术”。&lt;/p&gt;
+
+&lt;h2&gt;如果是我该如何？&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;1.多问自己为什么会出现这样的问题&lt;/p&gt;
+
+&lt;p&gt;很多事情，在你没有明白其原理时，上去做都会有问题，出了问题不可怕，可怕是不去思考，最后搞死自己。&lt;/p&gt;
+
+&lt;p&gt;2.当出现问题，我准备采取措施时候，想想我的措施会不会造成其他管理的变更？变更结果是好是坏，对其影响。&lt;/p&gt;
+
+&lt;p&gt;最典型的例子就是，比如我遇到测试人力不够的问题时,要思考的是&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.测试组人不够，开发组肯定加过去。&lt;/li&gt;
+&lt;li&gt;2.开发组人加过去怎么管理？肯定不能让开发那伙人占了主导，让他们随便乱改，得让测试组的人领导。&lt;/li&gt;
+&lt;li&gt;3.这次就这么过了，如果下次还这样搞，那么我开发人员都得停下手中的工作去搞测试，会影响项目进度。&lt;/li&gt;
+&lt;li&gt;4.怎么让测试人力充足，在考虑成本情况下，能不能用技术的手段节省人力，比如回归测试怎么自动化。&lt;/li&gt;
+&lt;li&gt;5.如果技术手段还不够怎么增加人力，招聘需要什么样技能的？&lt;/li&gt;
+&lt;li&gt;6.新员工进来后，怎么培训使之尽快上岗？&lt;/li&gt;
+&lt;li&gt;7.试用期后新员工是否符合我的需求？&lt;/li&gt;
+&lt;li&gt;8.怎么将新的人力加入项目组合适的位置？&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  <url>http://www.songyuchao.com/2014/04/19/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%80%9D%E7%BB%B4.html </url>
+  <time>2014-04-19T00:00:00+08:00</time>
+</blog>
+
+<blog>
+  <title>centos配置网卡</title>
+  <content type="html" >&lt;p&gt;最近自己学习linux下部署，在局域网中部署我们的系统，写了点shell的脚本，但是觉得服务器搞DHCP分配IP地址 ，有些不靠普，万一重启后IP换了，又要找IP，于是按照网上帖子实践了一把，但是出现一个奇怪的问题，我明明配置了静态IP 但是每次重启又是换了IP。经过和同事一起研究发现原来是配置文件中一个需要注意的事项，具体如下&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;DEVICE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eth0&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;TYPE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Ethernet&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;ONBOOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yes&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;#这是随系统启动而启动的选项&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;NM_CONTROLLED&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;no&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;#这是由系统的networkmanager来管理IP地址，也是造成问题的地方&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;BOOTPROTO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;static&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;#设置网卡获取IP地址方式 有static DHCP，none，bootp&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;IPADDR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;192&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;168&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;202&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#添加IP地址&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;NETMASK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#增加子网掩码&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;BROADCAST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;192&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;168&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#增加广播地址&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;GATEWAY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;192&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;168&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#增加网管地址&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这次出现问题地方主要就是NM_CONTROLLED 这个选项，每次重启 他都会去找系统内核中配置信息而不是我们配置网卡信息 所以这里我们一定要用no这个选项&lt;/p&gt;
+</content>
+  <url>http://www.songyuchao.com/2013/05/12/centos%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1.html </url>
+  <time>2013-05-12T00:00:00+08:00</time>
+</blog>
+
 </blogs>
