@@ -9,7 +9,7 @@ layout: none
       {% if post.lastmod == null %}
       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       {% else %}
-      <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+      <lastmod>{{ astmod | date_to_xmlschema }}</lastmod>
       {% endif %}
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
@@ -18,7 +18,7 @@ layout: none
     {% for page in site.pages %}
     {% if page.sitemap != null and page.sitemap != empty %}
     <url>
-      <loc>{{ site.url }}{{ page.url }}</loc>
+      <loc>{{ site.url }}{{ page.url | xml_escape }}<loc>
       <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
       <changefreq>{{ page.sitemap.changefreq }}</changefreq>
       <priority>{{ page.sitemap.priority }}</priority>
