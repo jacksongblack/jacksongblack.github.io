@@ -1,11 +1,11 @@
 ---
-layout: nil
+layout: none
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
 
 <blogs>
-{% for post in site.posts %}
+{% for post in site.posts limit:20 %}
 <blog>
   <title>{{ post.title | xml_escape  }}</title>
   <content type="html" >{{ post.content | xml_escape  }}</content>
