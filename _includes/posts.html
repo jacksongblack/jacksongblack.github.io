@@ -30,7 +30,7 @@
     </div>
     <div id="show_post" class="show_post ">
         <table class="table table-hover">
-            <thead><h2>文章列表<small>Article List</small></h2></thead>
+            <thead><h2>文章列表<small>Posts List</small></h2></thead>
             <tbody >{% for post in site.posts %}
             <tr><td><h3>{{ post.title }}<small>{{ post.category }}</small></h3></br>
                 <time class="glyphicon glyphicon-time">{{ post.date | date: "%Y-%m-%d" }}</time></br><p class="glyphicon glyphicon-info-sign">{{ post.describer }}</p>
