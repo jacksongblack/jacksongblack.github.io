@@ -1,167 +1,67 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in site.posts %}
     <url>
-        <loc>
-            http://www.songyuchao.com/2013/05/12/centos%E9%85%8D%E7%BD%AE%E7%BD%91%E5%8D%A1.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.lastmod == null %}
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+      <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
     </url>
+    {% endfor %}
+    {% for page in site.pages %}
+    {% if page.sitemap != null and page.sitemap != empty %}
     <url>
-        <loc>
-            http://www.songyuchao.com/2014/04/19/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%80%9D%E7%BB%B4.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+      <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+      <priority>{{ page.sitemap.priority }}</priority>
     </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/04/20/%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E9%82%A3%E4%BA%9B%E4%BA%8B.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/04/29/%E5%9C%A8blog%E4%B8%AD%E6%80%8E%E4%B9%88%E5%BC%82%E6%AD%A5%E5%8A%A0%E5%85%A5%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.songyuchao.com/2014/05/04/node.js%E5%88%9D%E6%8E%A2.html</loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/05/05/shell%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%BC%A9%E8%BF%9B%E7%9A%84%E5%9D%91.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/05/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/05/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/05/21/rails4%26mongoid%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/05/24/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%B8%8E%E8%A1%A8%E7%8E%B0%E5%88%86%E7%A6%BB%E4%B9%8BMVCR%E6%A1%86%E6%9E%B6%E5%88%9D%E4%BD%93%E9%AA%8C.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/05/28/ajax%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E4%BF%AE%E6%94%B9url.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/06/05/%E8%B0%88%E8%B0%88%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E6%8B%96%E5%BB%B6%E7%97%87.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/06/10/%E5%8F%88%E8%A7%81%E8%BE%9E%E8%81%8C%E6%BD%AE%2C%E5%86%85%E5%BF%83%E7%9A%84%E9%9C%87%E5%8A%A8.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/06/16/centos%E7%BD%91%E5%85%B3%E9%85%8D%E7%BD%AE%E9%94%99%E8%AF%AF%E4%B8%80%E4%BE%8B.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/06/16/%E7%88%B1%E8%A1%A8%E7%8E%B0%E5%BF%83%E7%90%86%E5%88%86%E6%9E%90.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/07/01/%E4%BF%AE%E6%94%B9%E5%86%8D%E7%94%9F%E9%BE%99%E7%A1%AC%E7%9B%98%E5%BA%8F%E5%88%97.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/07/04/Github%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0JS%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/07/12/devise%2Bcancan%2Brolify%E6%9E%84%E5%BB%BA%E5%BC%BA%E5%A4%A7%E8%A7%92%E8%89%B2%E7%AE%A1%E7%90%86.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/07/15/%E4%BD%BF%E7%94%A8ruby%E4%B8%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%81%9A%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/07/16/linux%E5%BC%80%E6%9C%BA%E8%84%9A%E6%9C%AC%E4%B8%8E%E8%BF%90%E8%A1%8C%E7%8A%B6%E6%80%81.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/07/17/JS%E4%B8%AD%E5%AE%9E%E4%BE%8B%E5%AF%B9%E8%B1%A1%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8%E5%85%B3%E9%94%AE%E5%AD%97new%E6%97%B6%E9%98%B2%E6%AD%A2%E6%8A%80%E5%B7%A7.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/07/17/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%9D%91%E7%88%B9%E7%9A%84Ubuntu-sudores%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://www.songyuchao.com/2014/07/22/%E8%AE%B0javascript%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%80%A0%E6%88%90%E7%9A%84setTimeout%E4%B8%8D%E6%89%A7%E8%A1%8C%E9%94%99%E8%AF%AF.html
-        </loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.songyuchao.com/2014/07/25/%E8%BE%9E%E8%81%8C%E6%84%9F%E6%83%B3-.html</loc>
-        <lastmod>2014-08-05T19:18:20+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.songyuchao.com/search.xml</loc>
-        <lastmod>2014-08-05T13:51:33+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.songyuchao.com/about.html</loc>
-        <lastmod>2014-08-02T22:01:50+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.songyuchao.com/project.html</loc>
-        <lastmod>2014-07-31T21:57:00+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.songyuchao.com/photo_wall.html</loc>
-        <lastmod>2014-07-31T21:57:00+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.songyuchao.com/</loc>
-        <lastmod>2014-08-02T22:01:50+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.songyuchao.com/gems/GameTank/GameTank.html</loc>
-        <lastmod>2014-08-02T22:01:50+08:00</lastmod>
-    </url>
+    {% endif %}
+    {% endfor %}
+  <url>
+    <loc>http://www.songyuchao.com/photo_wall.html</loc>
+    <title>照片墙</title>
+    <describer>存储和展示自己的照片</describer>
+    <lastmod>2014-05-20</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <data>
+      <display>
+        <html5_url>http://www.songyuchao.com/photo_wall.html</html5_url>
+      </display>
+    </data>
+  </url>
+  <url>
+    <loc>http://www.songyuchao.com/about.html</loc>
+    <title>关于我</title>
+    <describer>我的自我介绍</describer>
+    <lastmod>2014-05-20</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <data>
+      <display>
+        <html5_url>http://www.songyuchao.com/about.html</html5_url>
+      </display>
+    </data>
+  </url>
+  <url>
+    <loc>http://www.songyuchao.com/project.html</loc>
+    <title>作品展示</title>
+    <describer>小宋的一些作品展示</describer>
+    <lastmod>2014-05-20</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <data>
+      <display>
+        <html5_url>http://www.songyuchao.com/about.html</html5_url>
+      </display>
+    </data>
+  </url>
 </urlset>
