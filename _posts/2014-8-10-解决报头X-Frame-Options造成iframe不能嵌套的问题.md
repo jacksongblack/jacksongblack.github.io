@@ -31,8 +31,11 @@ x-frame-options的出现不久，最初设计我猜测是为了防止一些别�
 ### 在grape&Sinatra中设置办法
 
 如果想在由`grape$sinatra`设置报头可以按下面方法设置
-
-     response.headers["X-Frame-Options"] = ''
+     
+     get "/url" do
+      response.headers["X-Frame-Options"] = ''
+      do something  
+     end
 
 ## 参考资料
 
