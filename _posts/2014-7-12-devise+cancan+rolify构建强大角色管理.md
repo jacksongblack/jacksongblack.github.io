@@ -1,6 +1,6 @@
 ---
 layout: post
-category: rails
+category: 后台技术
 title: devise+cancan+rolify构建强大角色管理
 describer: 摘录三个工具在rails项目中的使用
 ---

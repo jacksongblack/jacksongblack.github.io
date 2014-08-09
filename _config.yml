@@ -4,7 +4,7 @@ redcarpet:
 
 permalink: /:year/:month/:day/:title.html
 exclude: [Gemfile, Gemfile.lock, LICENSE, README.md, CNAME]
-category-list: [rails, 运维, 前端技术, 设计模式, 感悟]
+category-list: [后台技术, 运维, 前端技术, 设计模式, 感悟]
 safe: false
 pygments: true
 url: http://www.songyuchao.com
