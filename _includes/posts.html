@@ -34,7 +34,7 @@
             <tbody >{% for post in site.posts %}
             <tr><td><h3>{{ post.title }}<small>{{ post.category }}</small></h3></br>
                 <time class="glyphicon glyphicon-time">{{ post.date | date: "%Y-%m-%d" }}</time></br><p class="glyphicon glyphicon-info-sign">{{ post.describer }}</p>
-                </br><a href="{{ post.url }}" class="btn btn-success" onclick="return false">Read Me</a></td></tr>
+                </br><a href="{{ post.url }}" class="btn btn-success" onclick="return false">开始阅读</a></td></tr>
             {% endfor %}
             </tbody>
         </table>
