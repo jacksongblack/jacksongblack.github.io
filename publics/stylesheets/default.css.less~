@@ -99,14 +99,12 @@ body {
 }
 
 .show_post {
-         padding: 10% 9% 10% 0;
-	 font-family: "microsoft yahei";
+  padding: 10% 9% 10% 0;
 }
 .show_post  p{
-       margin: 0 0 1em;
-       font-size: 16px;
-       line-height: 1.8;
-        color: #5a5a5a; 
+margin: 0 0 1em;
+font-size: 16px;
+
 }
 
 .show_post abbr {
