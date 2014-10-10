@@ -2,6 +2,7 @@
 @offset-padding: 15px;
 @posts-backgrouder-color: #D5D5D5;
 @left_category_width: 11%;
+body,div,p,ul,li,a,em,dl,dt,dd,ol,h1,h2,h3,h4,h5,h6,input,textarea,td,th,table{margin:0;padding:0; font:12px/1.5 \5FAE\8F6F\96C5\9ED1,Verdana, Geneva, sans-serif; }
 .left_category_basic(@width: @left_category_width) {
   position: fixed;
   left: 0;
@@ -42,13 +43,7 @@
   width: 100%;
 }
 
-.photo {
 
-}
-
-body {
-  padding-bottom: 4%;
-}
 
 .photo_wall {
   color: #000;
@@ -99,12 +94,14 @@ body {
 }
 
 .show_post {
-  padding: 10% 9% 10% 0;
+         padding: 10% 9% 10% 0;
+	 font-family: "microsoft yahei";
 }
 .show_post  p{
-margin: 0 0 1em;
-font-size: 16px;
-
+       margin: 0 0 1em;
+       font-size: 16px;
+       line-height: 1.8;
+       color: #5a5a5a; 
 }
 
 .show_post abbr {
