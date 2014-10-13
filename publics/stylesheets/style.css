@@ -194,9 +194,9 @@ ul.iw_thumbs li:nth-child(7n) img {
 }
 .site-logo {
   -webkit-animation: rotation 10s linear -2s infinite;
-    -moz-animation: rotation 10s linear -2s infinite;
-    -ms-animation: rotation 10s linear -2s infinite;
-    animation: rotation 10s linear  -2s infinite ;
+  -moz-animation: rotation 10s linear -2s infinite;
+  -ms-animation: rotation 10s linear -2s infinite;
+  animation: rotation 10s linear  -2s infinite ;
 }
 
 @-webkit-keyframes rotation {
