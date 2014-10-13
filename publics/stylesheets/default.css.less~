@@ -209,3 +209,32 @@
 .project-content div div a img{
   height: 300px
 }
+.site-logo {
+     animation-duration: 3s;
+     animation-name: rotation;
+}
+
+@keyframes rotation {
+    
+    0% { 
+       rotateY(10deg)
+    }
+    10% {
+       rotateY(20deg)
+    }
+    25% {
+        rotateY(50deg)
+    }
+    50% {
+        rotateY(100deg)
+    }
+    75% {
+        rotateY(150deg)
+     }   
+    90% {
+        rotateY(160deg)
+    }
+    100% {
+        rotateY(160deg)
+    }
+} 
