@@ -295,3 +295,8 @@ ul.iw_thumbs li:nth-child(7n) img {
        transform: rotateY(365deg);
     }
 }
+h1,h2,h3,h4,h5,p {
+  font-family: "microsoft yahei";
+  color: #292929;
+}
+
