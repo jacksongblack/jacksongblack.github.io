@@ -28,12 +28,10 @@ AjaxLoadpage.prototype = {
         $("title").html(ajaxHtml);
     },
     reviewPage: function (response, fn) {
-        $("div#show_post").page("open");
         this.reviewHtml.empty();
         this.changeBlogContent(response);
         this.addUrlHistory(response);
         this.changeBlogTitle(response);
-        $("div#show_post").page("close");
         fn();
     },
 //  请求数据方法
@@ -273,12 +271,12 @@ function initPage() {
     function bindBlogLinkClickEvent() {
         var load = new AjaxLoadpage(this);
         $(this).click(function () {
-            $('.progress').show();
+        $("div#show_post").page("open",$('.progress').show);
             $("#show_post").empty();
             display_mode.shutDown();
             load.getServer(function () {
                 toggleDuoshuoComments("#show_post");
-                $('.progress').hide();
+        $("div#show_post").page("close",$('.progress').hide);
             });
         });
     }
@@ -318,15 +316,17 @@ function toggleDuoshuoComments(container) {
     DUOSHUO.EmbedThread(el);
     jQuery(container).append(el);
 }
+/*翻页动画效果*/
 (function($){
     $.fn.extend({
-        page:function(state){
+        page:function(state,fn){
             var me =this;
-            function animationArray(moves,fn){
+            function animationArray(moves,step,fn){
                 $.each(moves,function(index,v){
                     $(me).animate(v,{step:function(now,fx){
-                        fn(now,fx);
-                    },speed:"slow"});
+                        step(now,fx);
+                    },speed:3000,
+                    callback:fn});
                 });
             }
            var moves= [{borderSpacing: 90}];
