@@ -28,17 +28,23 @@ AjaxLoadpage.prototype = {
         $("title").html(ajaxHtml);
     },
     reviewPage: function (response, fn) {
-        this.reviewHtml.empty();
-        this.changeBlogContent(response);
-        this.addUrlHistory(response);
-        this.changeBlogTitle(response);
-        fn();
+        var me =this;
+        $("#show_post").page("open",function(){
+        me.reviewHtml.empty();
+        me.changeBlogContent(response);
+        me.addUrlHistory(response);
+        me.changeBlogTitle(response);
+        toggleDuoshuoComments("#show_post");
+        $("#show_post").page("close");
+        });
     },
 //  请求数据方法
     getServer: function (fn, el) {
         var thisMe = this;
+        $('.progress').show();
         if (typeof(fn) == "function") {
             $.get(this.url, function (response) {
+                $('.progress').hide();
                 thisMe.reviewPage(response, fn);
             });
         }
@@ -271,12 +277,7 @@ function initPage() {
     function bindBlogLinkClickEvent() {
         var load = new AjaxLoadpage(this);
         $(this).click(function () {
-        $("div#show_post").page("open",$('.progress').show);
-            $("#show_post").empty();
-            display_mode.shutDown();
             load.getServer(function () {
-                toggleDuoshuoComments("#show_post");
-        $("div#show_post").page("close",$('.progress').hide);
             });
         });
     }
@@ -323,10 +324,12 @@ function toggleDuoshuoComments(container) {
             var me =this;
             function animationArray(moves,step,fn){
                 $.each(moves,function(index,v){
-                    $(me).animate(v,{step:function(now,fx){
+                    $(me).animate(v,{
+                        duration:3000,
+                        step:function(now,fx){
                         step(now,fx);
-                    },speed:3000,
-                    callback:fn});
+                    },speed:1000,
+                    complete:fn});
                 });
             }
            var moves= [{borderSpacing: 90}];
@@ -334,13 +337,13 @@ function toggleDuoshuoComments(container) {
                $(me).attr('style','');  
                animationArray(moves,function(now,fx){
                       $(me).css('transform','rotateY('+now+'deg)');  
-               });}
+               },fn);}
                else if(state == "close"){
                $(me).attr('style','');  
                    animationArray(moves,function(now,fx){
                        var cre = 90 - now;
                       $(me).css('transform','rotateY('+cre.toString()+'deg)');  
-                   }); 
+                   },fn); 
                }
         }});
 
