@@ -95,7 +95,7 @@
          padding: 10% 9% 10% 0;
 	 font-family: "microsoft yahei";
 }
-.show_post p ,.show_post ul li{
+.show_post  p{
        margin: 0 0 1em;
        font-size: 16px;
        line-height: 1.8;
