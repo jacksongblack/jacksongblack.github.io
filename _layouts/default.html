@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-    {% if page.title %}
-    <title>晓不得|{{ page.title }}</title>
-    <meta name="description" content="{{ page.describer }}">
-    {% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"charset="utf-8">
-    <link rel="short icon" href="/publics/images/avatar.gif">
-    <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap-theme.min.css">
-    <script src="/publics/javascript/jquery-1.11.0.min.js"></script>
-    <script src="/publics/javascript/bootstrap.min.js"></script>
+    <head>
+        {% if page.title %}
+        <title>晓不得|{{ page.title }}</title>
+        <meta name="description" content="{{ page.describer }}">
+        {% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"charset="utf-8">
+        <link rel="short icon" href="/publics/images/avatar.gif">
+        <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/publics/stylesheets/bootstrap-theme.min.css">
+        <script src="/publics/javascript/jquery-1.11.0.min.js"></script>
+        <script src="/publics/javascript/bootstrap.min.js"></script>
 
-</head>
+    </head>
 
-<body youdao="bind" screen_capture_injected="true" >
-<div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <p><img src="/publics/images/loader.gif">加载中，精彩即将呈现。。。。。。</p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-{{ page.tags }}
-{{ content }}
-<script>
-    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1dbf2e085c1fc9eaa86457dde8229fc7' type='text/javascript'%3E%3C/script%3E"));
-    $("#myModal").modal("show")
-</script>
-</body>
-<link rel="stylesheet" type="text/css" href="/publics/stylesheets/style.css">
-<link rel="stylesheet/less" type="text/css" href="/publics/stylesheets/default.css.less">
-<link rel="stylesheet" type="text/css" href="/publics/stylesheets/reset.css">
-<link rel="stylesheet/less" type="text/css" href="/publics/stylesheets/jquery.sidr.light.css">
+    <body youdao="bind" screen_capture_injected="true" >
+        <div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p><img src="/publics/images/loader.gif">加载中，精彩即将呈现。。。。。。</p>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        {{ page.tags }}
+        {{ content }}
+        <script>
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1dbf2e085c1fc9eaa86457dde8229fc7' type='text/javascript'%3E%3C/script%3E"));
+            $("#myModal").modal("show")
+        </script>
+    </body>
+    <link rel="stylesheet" type="text/css" href="/publics/stylesheets/style.css">
+    <link rel="stylesheet/less" type="text/css" href="/publics/stylesheets/default.css.less">
+    <link rel="stylesheet" type="text/css" href="/publics/stylesheets/reset.css">
+    <link rel="stylesheet/less" type="text/css" href="/publics/stylesheets/jquery.sidr.light.css">
 
-<script src="/publics/javascript/less-1.5.0.min.js"></script>
-<script src="/publics/javascript/jquery.easing.1.3.js"></script>
-<script src="/publics/javascript/jquery.masonry.min.js"></script>
-<script src="/publics/javascript/jquery.sidr.min.js"></script>
-<script src="/publics/javascript/displayModel.js"></script>
-<script>var duoshuoQuery = {short_name: "jacksong"};</script>
-<script src="http://static.duoshuo.com/embed.js"></script>
-<script src="/publics/javascript/blog.js"></script>
-<script src="/publics/javascript/jquery.lazyload.min.js"></script>
-<script src="/publics/javascript/photo.show.js"></script>
+    <script src="/publics/javascript/less-1.5.0.min.js"></script>
+    <script src="/publics/javascript/jquery.easing.1.3.js"></script>
+    <script src="/publics/javascript/jquery.masonry.min.js"></script>
+    <script src="/publics/javascript/jquery.sidr.min.js"></script>
+    <script src="/publics/javascript/displayModel.js"></script>
+    <script>var duoshuoQuery = {short_name: "jacksong"};</script>
+    <script src="http://static.duoshuo.com/embed.js"></script>
+    <script src="/publics/javascript/blog.js"></script>
+    <script src="/publics/javascript/jquery.lazyload.min.js"></script>
+    <script src="/publics/javascript/photo.show.js"></script>
 </html>

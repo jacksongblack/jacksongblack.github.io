@@ -41,10 +41,10 @@ AjaxLoadpage.prototype = {
 //  请求数据方法
     getServer: function (fn, el) {
         var thisMe = this;
-        $('.progress').show();
+        $("#myModal").modal("show");
         if (typeof(fn) == "function") {
             $.get(this.url, function (response) {
-                $('.progress').hide();
+                $("#myModal").modal("hide");
                 thisMe.reviewPage(response, fn);
             });
         }
@@ -303,7 +303,6 @@ function initPage() {
             }
         );
     }
-
     return {init: init};
 }
 /*
@@ -325,7 +324,7 @@ function toggleDuoshuoComments(container) {
             function animationArray(moves,step,fn){
                 $.each(moves,function(index,v){
                     $(me).animate(v,{
-                        duration:3000,
+                        duration:1000,
                         step:function(now,fx){
                         step(now,fx);
                     },speed:1000,
