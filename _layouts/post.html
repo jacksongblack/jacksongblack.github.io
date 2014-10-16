@@ -10,7 +10,6 @@
         <script src="/publics/javascript/jquery-1.11.0.min.js"></script>
         <script src="/publics/javascript/bootstrap.min.js"></script>
     </head>
-
     <body class="container-fluid">
         <div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
@@ -73,7 +72,6 @@
             {% for category_name in site.category-list %}
             <ul class="nav nav-tabs" id="{{ category_name }}">
                 {% for post in site.categories[category_name] %}
-
                 <li>
                 <a href="{{ post.url }}" onclick="return false">{{ post.title }}（{{ post.date | date: "%Y-%m-%d" }}）</a>
                 </li>

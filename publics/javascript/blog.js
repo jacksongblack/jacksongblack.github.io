@@ -35,7 +35,9 @@ AjaxLoadpage.prototype = {
         me.addUrlHistory(response);
         me.changeBlogTitle(response);
         toggleDuoshuoComments("#show_post");
-        $("#show_post").page("close");
+        $("#show_post").page("close",function(me){
+            $(me).attr("style","");
+        });
         });
     },
 //  请求数据方法
@@ -328,7 +330,9 @@ function toggleDuoshuoComments(container) {
                         step:function(now,fx){
                         step(now,fx);
                     },speed:1000,
-                    complete:fn});
+                    complete:function(){
+                      fn(me);
+                    }});
                 });
             }
            var moves= [{borderSpacing: 90}];
