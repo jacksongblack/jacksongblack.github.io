@@ -83,7 +83,7 @@
         </div>
         <!--正文显示-->
         <div id="post">
-            <div id="show_post" class="show_post ">
+            <div id="show_post" class="show_post">
                 {{ content }}
                 <!--多说评论框-->
                 <!-- 多说评论框 start -->
@@ -96,7 +96,6 @@
             </div>
             <!--最近文章-->
             <div id="recent">
-
                 <ul>
                     {% for post in site.posts  %}
                     <li>
@@ -104,13 +103,7 @@
                     </li>
                     {% endfor %}
                 </ul>
-
             </div>
-            <script>
-                $("#myModal").modal("show");
-                var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1dbf2e085c1fc9eaa86457dde8229fc7' type='text/javascript'%3E%3C/script%3E"));
-            </script>
         </body>
         <link rel="stylesheet" type="text/css" href="/publics/stylesheets/style.css">
         <link rel="stylesheet/less" type="text/css" href="/publics/stylesheets/default.css.less">
@@ -124,6 +117,9 @@
         <script src="http://static.duoshuo.com/embed.js"></script>
         <script src="/publics/javascript/blog.js"></script>
         <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1dbf2e085c1fc9eaa86457dde8229fc7' type='text/javascript'%3E%3C/script%3E"));
+            $("#myModal").modal("show");
             $(window).ready(function(){
                     var displayMode = new DisplayMode()
                     displayMode.shutDown();
