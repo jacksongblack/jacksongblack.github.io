@@ -20,12 +20,12 @@ AjaxLoadpage.prototype = {
         }
     },
     changeBlogContent: function (response) {
-        var ajaxHtml = $(response).find("div#show_post").children();
-        $("#show_post").html(ajaxHtml);
+        var content = $(response).find("div#show_post").children();
+        $("#show_post").html(content);
     },
     changeBlogTitle: function (response) {
-        var ajaxHtml = $(response)[3].text;
-        $("title").html(ajaxHtml);
+        var title = $(response)[1].text;
+        $("title").html(title);
     },
     reviewPage: function (response, fn) {
         var me =this;
