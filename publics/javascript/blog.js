@@ -29,7 +29,6 @@ AjaxLoadpage.prototype = {
     },
     reviewPage: function (response, fn) {
         var me =this;
-        $("#show_post").page("open",function(){
         me.reviewHtml.empty();
         me.changeBlogContent(response);
         me.addUrlHistory(response);
@@ -38,18 +37,19 @@ AjaxLoadpage.prototype = {
         $("#show_post").page("close",function(me){
             $(me).attr("style","");
         });
-        });
     },
 //  请求数据方法
     getServer: function (fn, el) {
         var thisMe = this;
-        $("#myModal").modal("show");
-        if (typeof(fn) == "function") {
-            $.get(this.url, function (response) {
-                $("#myModal").modal("hide");
-                thisMe.reviewPage(response, fn);
-            });
-        }
+        $("#show_post").page("open",function(){
+            $("#myModal").modal("show");
+            if (typeof(fn) == "function") {
+                $.get(this.url, function (response) {
+                    $("#myModal").modal("hide");
+                    thisMe.reviewPage(response, fn);
+                });
+            }
+        });
     }
 };
 //清空或是增加页面内容
