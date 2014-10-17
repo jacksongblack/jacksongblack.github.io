@@ -44,7 +44,7 @@ AjaxLoadpage.prototype = {
         $("#show_post").page("open",function(){
             $("#myModal").modal("show");
             if (typeof(fn) == "function") {
-                $.get(this.url, function (response) {
+                $.get(thisMe.url, function (response) {
                     $("#myModal").modal("hide");
                     thisMe.reviewPage(response, fn);
                 });
