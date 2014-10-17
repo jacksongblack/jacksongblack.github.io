@@ -26,7 +26,6 @@ BlogDisplayModel.prototype = {
         } catch (error) {
             console.log(error);
         }
-
         if (status == null) {
             return true;
         } else {
