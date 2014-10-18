@@ -83,7 +83,7 @@ $(window).load(function(){
                 $iw_thumbs.children('li').not($el).animate({opacity : 0.2}, imgAnim.speed);
 
                 // increase the image z-index, and set the height to 100px (default height)
-                $img.css('z-index', 100)
+                $img.css('z-index', 10001)
                     .data('originalHeight',$img.height())
                     .stop()
                     .animate({
