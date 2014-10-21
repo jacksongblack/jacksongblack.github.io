@@ -2,6 +2,7 @@
 layout: post
 title: jquery中animate动画效果详解
 category: 前端技术
+describer: animate动画中使用每步回调修改动画样式办法
 ---
 
 ## jquery中animate动画效果详解
