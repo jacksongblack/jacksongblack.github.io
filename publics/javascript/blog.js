@@ -328,7 +328,7 @@ function toggleDuoshuoComments(container) {
                     $(me).animate(v,{
                         duration:1000,
                         step:function(now,fx){
-                        step(now,fx);
+                            step(now,fx);
                     },speed:1000,
                     complete:function(){
                       fn(me);
