@@ -10,7 +10,7 @@
 </div>
 <!--博客目录菜单-->
 <div id="posts" class="left_posts_list ">
-    <a class="glyphicon  glyphicon-book f18 text-center" type="button" style="width: 100%">&nbsp;博客目录</a>
+    <a class="glyphicon  glyphicon-book f18 text-center" type="button" style="width: 100%">&nbsp;文章列表</a>
     {% for category_name in site.category-list %}
     <ul class="nav nav-tabs" id="{{ category_name }}">
     {% for post in site.categories[category_name] %}
