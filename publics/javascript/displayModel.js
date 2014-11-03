@@ -84,16 +84,14 @@ function DisplayMode(){
     }else{
         return new DisplayMode();
     }
-
 }
-
 DisplayMode.prototype = {
     constructor:DisplayMode,
     shutDown:function(){
         this.categories.hide();
         this.posts.hide();
         this.category_switch.hide(function(link){
-            link.html("打开种类");
+            link.html("<br/>博客分类");
         });
         this.category_code.hide();
     },
@@ -101,7 +99,7 @@ DisplayMode.prototype = {
         this.categories.show();
         this.posts.show();
         this.category_switch.show(function(link){
-            link.html("关闭种类");
+            link.html("关闭分类");
         });
         this.category_code.show();
     }

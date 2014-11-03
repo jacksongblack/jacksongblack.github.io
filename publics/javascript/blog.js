@@ -209,18 +209,18 @@ function initPage() {
     function addHoverEventIncategoryNav() {
         var category_menu = $("#category_menu");
         category_menu.hover(function () {
-            if (category_switch.text() == "打开种类") {
                 category_switch.click();
-            }
         });
-
+        category_menu.mouseleave(function(){
+                category_switch.click();
+        });
     }
     function addHoverEventCloseSidebar(jqueryObj, link) {
         jqueryObj.hover(function () {
             if (link.text() == "关闭最近") {
                 link.click();
             }
-            if (category_switch.text() == "关闭种类") {
+            if (category_switch.text() == "关闭分类") {
                 category_switch.click();
             }
         });
@@ -239,13 +239,11 @@ function initPage() {
             if (category_link_display_mode.getStatus("glyphicon-minus")) {
                 category_link_display_mode.show(function (link) {
                     display_mode.openUp();
-                    link.html("关闭种类");
                 });
 
             } else {
                 category_link_display_mode.hide(function (link) {
                     display_mode.shutDown();
-                    link.html("打开种类");
                 });
             }
         });

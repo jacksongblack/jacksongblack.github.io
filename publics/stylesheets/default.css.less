@@ -4,6 +4,8 @@
 .c-black{color:#5a5a5a;}
 .show-shadow{ box-shadow:0 0 2px; }
 .b{font-weight:bold;}
+.text-center { text-align:center;  }
+.text-overflow-ellipsis {text-overflow:ellipsis;}
 /* CSS reset */
 html,body {
 	margin:0;
@@ -16,7 +18,9 @@ table {
 fieldset,img { 
 	border:0;
 }
-a:hover { text-decoration: none; }
+
+a {text-decoration: none;}
+a:hover {text-decoration: none; color:#5a5a5a;; }
 input{
 	border:1px solid #b0b0b0;
 	padding:3px 5px 4px;
@@ -345,7 +349,7 @@ ul.iw_thumbs li:nth-child(7n) img {
        transform: rotateY(365deg);
     }
 }
-h1,h2,h3,h4,h5,p,a {
+h1,h2,h3,h4,h5,p,a  {
   font-family: "microsoft yahei";
 }
 /*博客布局*/
@@ -391,9 +395,6 @@ h1,h2,h3,h4,h5,p,a {
   width: 100%;
 }
 
-.photo {
-
-}
 .photo_wall {
   color: #000;
   font-family: Georgia, "Times New Roman", sans-serif;

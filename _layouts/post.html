@@ -49,10 +49,9 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </div>
-        <hr class="featurette-divider">
         <!--侧边文章种类菜单-->
         <div class="left_category" id="category_menu">
-            <a class="btn btn-warning  glyphicon glyphicon-minus  category_switch" style="width: 100%">鼠标移动后关闭种类</a>
+            <a class="btn btn-warning  glyphicon glyphicon-minus  category_switch" style="width: 100%">鼠标移动后关闭分类</a>
             <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
                 {% for category_name in site.category-list %}
                 <li><a data-url="#{{ category_name }}" class="">{{ category_name }}<span class="badge">有{{ site.categories[category_name] | size }}篇</span></a>

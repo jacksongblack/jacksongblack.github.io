@@ -1,21 +1,21 @@
 <!--侧边文章种类菜单-->
 <div class="left_category " id="category_menu">
-    <a class="btn btn-warning  glyphicon glyphicon-minus   category_switch " style="width: 100%" type="button">关闭种类</a>
-    <ul id="category" class="nav nav-stacked nav-pills  nav-tabs">
+    <a class="glyphicon glyphicon-minus category_switch f18 text-center" style="width: 100%">关闭分类</a>
+    <ul id="category" class="nav nav-stacked nav-pills nav-tabs text-center">
         {% for category_name in site.category-list %}
         <li><a data-url="#{{ category_name }}" class="">{{ category_name }}<span class="badge">有{{ site.categories[category_name] | size }}篇</span></a>
         </li>
         {% endfor %}
     </ul>
-</div>>btn-info
+</div>
 <!--博客目录菜单-->
 <div id="posts" class="left_posts_list ">
-    <a class="btn btn-info glyphicon  glyphicon-book " type="button" style="width: 100%">博客目录</a>
+    <a class="glyphicon  glyphicon-book f18 text-center" type="button" style="width: 100%">博客目录</a>
     {% for category_name in site.category-list %}
     <ul class="nav nav-tabs" id="{{ category_name }}">
     {% for post in site.categories[category_name] %}
-        <li>
-            <a href="{{ post.url }}" onclick="return false">{{ post.title }}（{{ post.date | date: "%Y-%m-%d" }}）</a>
+        <li class="text-center" style="width:100%" >
+            <a href="{{ post.url }}" style="display: block; width:100%;"  onclick="return false">{{ post.title }}（{{ post.date | date: "%Y-%m-%d" }}）</a>
         </li>
     {% endfor %}
     </ul>
