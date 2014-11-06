@@ -243,7 +243,7 @@ ul.iw_thumbs li:nth-child(7n) img {
      -webkit-animation: rotation 10s linear infinite ;
      -moz-animation: rotation 10s linear infinite;
      -ms-animation: rotation 10s linear infinite;
-     animation: rotation 10s linear;
+     animation: rotation 10s linear infinite;
      background-image:url("../images/don't.png");
      display:block;
      width: 50px;
@@ -377,7 +377,7 @@ h1,h2,h3,h4,h5,p,a  {
   text-align: left;
 }
 .hide() {
-  display: block;
+  display: none;
   overflow: hidden;
   width: 10px;
   height: 0;
@@ -425,7 +425,7 @@ h1,h2,h3,h4,h5,p,a  {
 }
 
 .left_category_hide {
-  .left_category_basic(2%);
+  .left_category_basic(30px);
 }
 
 .left_posts_list {
@@ -433,9 +433,11 @@ h1,h2,h3,h4,h5,p,a  {
 }
 
 .left_posts_list_hide {
-  .left_posts_basic(2%);
+  .left_posts_basic(30px);
 }
-
+.left_category_hide #category {
+     display:none;
+}
 #post {
   .left_posts_basic(30%, 70%);
   background-color: #ffffff;
