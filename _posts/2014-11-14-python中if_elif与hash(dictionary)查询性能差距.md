@@ -1,6 +1,6 @@
 ---
   title: python中if_elif与hash(dictionary)的性能差距
-  category: 后端技术
+  category: 后台技术
   layout: post
   describer: 本文是为了说明在Python语言中，或不止python还有比如ruby这种动态语言使用ifelse会造成巨大的性能浪费
 ---
