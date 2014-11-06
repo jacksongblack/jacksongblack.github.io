@@ -11,7 +11,7 @@ layout: none
       {% else %}
       <lastmod>{{ astmod | date_to_xmlschema }}</lastmod>
       {% endif %}
-      <changefreq>weekly</changefreq>
+      <changefreq>always</changefreq>
       <priority>1.0</priority>
     </url>
     {% endfor %}
