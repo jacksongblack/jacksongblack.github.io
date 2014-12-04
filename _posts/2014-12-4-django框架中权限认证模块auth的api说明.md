@@ -14,7 +14,7 @@ Django就是这样的，在django核心模块中auth/auth模块是核心模块�
 ### 先从数据模型说走
 
 
-django权限模块相关的表一共有9张数据表，其中三张是做多对多的关联中间表，下面分别说明每张表的作用
+django权限模块相关的表一共有9张数据表，其中三张是做多对多的关联中间表，下面是重要的表的作用
 
 
 一.auth_permission 权限表这张表有4个字段，分别是ID，name,content_type_id,codename
@@ -55,7 +55,7 @@ django权限模块相关的表一共有9张数据表，其中三张是做多对�
     youUserObejct.permisstions.add(permisstionObj) ## 增加用户的权限
     youUserObejct.permisstions.remove(user_permisstionsObj) ##删除用户的权限
     youUserObejct.permisstions.clear() ##删除用户的所有权限
-    youUserObejct.get_all_permisstions(obj_None) ##删除用户的所有权限
+    youUserObejct.get_all_permisstions(obj_None) ##得到用户的所有权限
 
 
 用户分组
