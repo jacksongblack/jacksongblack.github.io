@@ -14,7 +14,7 @@ layout: none
       <changefreq>always</changefreq>
       <priority>1.0</priority>
       <data>
-        <display></display>
+        <display>{{ site.url }}{{ post.url |xml_escape }}</display>
       </data>
     </url>
     {% endfor %}
@@ -26,7 +26,7 @@ layout: none
       <changefreq>{{ page.sitemap.changefreq }}</changefreq>
       <priority>{{ page.sitemap.priority }}</priority>
       <data>
-          <display></display>
+          <display>{{ site.url }}{{ post.url |xml_escape }}</display>
       </data>
     </url>
     {% endif %}
