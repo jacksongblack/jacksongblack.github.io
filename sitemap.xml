@@ -14,7 +14,7 @@ layout: none
       <changefreq>always</changefreq>
       <priority>1.0</priority>
       <data>
-        <display>{{ site.url }}{{ post.url |xml_escape }}</display>
+          <display><html5_url>{{ site.url }}{{ post.url |xml_escape }}</html5_url></display>
       </data>
     </url>
     {% endfor %}
@@ -26,15 +26,13 @@ layout: none
       <changefreq>{{ page.sitemap.changefreq }}</changefreq>
       <priority>{{ page.sitemap.priority }}</priority>
       <data>
-          <display>{{ site.url }}{{ post.url |xml_escape }}</display>
+          <display><html5_url>{{ site.url }}{{ post.url |xml_escape }}</html5_url></display>
       </data>
     </url>
     {% endif %}
     {% endfor %}
   <url>
     <loc>http://www.songyuchao.com/photo_wall.html</loc>
-    <title>照片墙</title>
-    <describer>存储和展示自己的照片</describer>
     <lastmod>2014-05-20</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
@@ -46,8 +44,6 @@ layout: none
   </url>
   <url>
     <loc>http://www.songyuchao.com/about.html</loc>
-    <title>关于我</title>
-    <describer>我的自我介绍</describer>
     <lastmod>2014-05-20</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
@@ -59,8 +55,6 @@ layout: none
   </url>
   <url>
     <loc>http://www.songyuchao.com/project.html</loc>
-    <title>作品展示</title>
-    <describer>小宋的一些作品展示</describer>
     <lastmod>2014-05-20</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
