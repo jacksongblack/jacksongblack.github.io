@@ -13,6 +13,7 @@ layout: none
       {% endif %}
       <changefreq>always</changefreq>
       <priority>1.0</priority>
+      <data></data>
     </url>
     {% endfor %}
     {% for page in site.pages %}
@@ -22,6 +23,7 @@ layout: none
       <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
       <changefreq>{{ page.sitemap.changefreq }}</changefreq>
       <priority>{{ page.sitemap.priority }}</priority>
+      <data></data>
     </url>
     {% endif %}
     {% endfor %}
