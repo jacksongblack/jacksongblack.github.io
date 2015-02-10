@@ -12,9 +12,7 @@
 #   - http://creativecommons.org/licenses/by/3.0/
 
 require 'rexml/document'
-require "jekyll-assets"
-require "sprockets"
-Sprockets.append_path "assets/"
+
 module Jekyll
 
   class Post
